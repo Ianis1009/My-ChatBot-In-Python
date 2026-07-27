@@ -32,7 +32,7 @@ VOICES = {
 def speak(text, voice=2):
 
     voice_name = VOICES.get(voice, VOICES[1]) 
-    text = text.replace('"', '`"')
+    text = text.replace('"', '`"') #to avoid some errors 
     cmd = f'''Add-Type -AssemblyName System.Speech
     $s = New-Object System.Speech.Synthesis.SpeechSynthesizer
     $s.SelectVoice("{voice_name}")
@@ -124,6 +124,7 @@ def process_command(command):
         return "[INFO]: Sorry, I don't recognize that command."
 
 
+#TODO add more features
 def print_commands():
     print("Available commands: ")
     print(arrow, "  hello")
