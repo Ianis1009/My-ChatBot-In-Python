@@ -27,7 +27,7 @@ VOICES = {
     5: "Microsoft Maria"
 }
 
-#TODO refactor the code
+
 
 def speak(text, voice=2):
 
