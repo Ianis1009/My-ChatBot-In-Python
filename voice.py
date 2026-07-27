@@ -27,18 +27,17 @@ VOICES = {
     5: "Microsoft Maria"
 }
 
-
+#TODO refactor the code
 
 def speak(text, voice=2):
 
-    voice_name = VOICES.get(voice, VOICES[1])
+    voice_name = VOICES.get(voice, VOICES[1]) 
     text = text.replace('"', '`"')
     cmd = f'''Add-Type -AssemblyName System.Speech
     $s = New-Object System.Speech.Synthesis.SpeechSynthesizer
     $s.SelectVoice("{voice_name}")
     $s.Speak("{text}")
     '''
-
     subprocess.run(["powershell.exe", "-Command", cmd])
 
 
@@ -70,13 +69,8 @@ def init_history():
 def get_wikipedia_info(topic):
 
     url = "https://en.wikipedia.org/api/rest_v1/page/summary/" + topic.replace(" ", "_")
-
     try:
-        response = requests.get(
-            url,
-            headers={"User-Agent": "PythonBot/1.0"},
-            timeout=5
-        )
+        response = requests.get(url,headers={"User-Agent": "PythonBot/1.0"},timeout=5)
 
         if response.status_code != 200:
             return "I couldn't find information about that topic."
@@ -156,7 +150,6 @@ def main():
 
         usr_prompt = usr_icon + " " + "You " + user_arrow + " " 
         command = input(usr_prompt)
-
         save_message("User", command)
 
         if command.lower() == "exit" or command.lower() == "quit":
