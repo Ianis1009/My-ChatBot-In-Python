@@ -39,13 +39,17 @@ HELP = {
     },
 
     "set voice": {
-        "usage": "set voice <1-5>",
+        "usage": "set voice <1-2>",
         "description": "Changes the current voice."
     },
 
     "exit": {
         "usage": "exit",
         "description": "Terminates the assistant."
+    },
+    "try voice": {
+        "usage": "try voice <1-2>",
+        "description": "Try voices."
     }
 }
 
