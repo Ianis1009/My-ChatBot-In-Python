@@ -95,10 +95,13 @@ def process_command(command):
     elif command.lower() == "how are you":
         return "I'm doing great! Thanks for asking."
     elif command.lower() == "voices":
-        print("Available voices:")
+        #print("Available voices:")
+        text_to_display_voices = "Available voices:\n"
         for number, name in VOICES.items():
-            print(f"{number} <--> {name}")
-        return "[INFO]: you must select one number from that list in order to switch my voice. Use command set voice to do that"
+            #print(f"{number} <--> {name}")
+            text_to_display_voices += f"{number}. {name}\n"
+        text_to_display_voices += "[INFO]: you must select one number from that list in order to switch my voice. Use command 'set voice' to do that"
+        return text_to_display_voices 
     elif command.lower().startswith("set voice"):
         parts = command.split()
         if  len (parts) != 3:
@@ -109,7 +112,7 @@ def process_command(command):
             if voice not in VOICES:
                 return "Invalid voice number!"
             global current_voice # from outside
-            current_voice = voice # TODO: repair
+            current_voice = voice 
             return f"[INFO]: Voice changed to {VOICES[voice]}!"
         except ValueError:
             return "[INFO]: Voice number must be an integer!"
