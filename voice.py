@@ -7,7 +7,7 @@ from datetime import datetime
 
 wikipedia.set_lang("en")
 
-
+voice_enabled = True # mute / unmute
 current_voice = 2 # set by default
 try_message1 = "This is a simple test for my voice"
 try_message2 = "If you want to switch to this voice, you must use command set voice"
@@ -33,6 +33,9 @@ VOICES = {
 
 def speak(text, voice=2):
 
+    if not voice_enabled:
+        return # mute mode
+    # else 
     voice_name = VOICES.get(voice, VOICES[1]) 
     text = text.replace('"', '`"') #to avoid some errors 
     cmd = f'''Add-Type -AssemblyName System.Speech
