@@ -90,6 +90,8 @@ def get_wikipedia_info(topic):
 
 def process_command(command):
 
+    global current_voice
+    global voice_enabled
     command = command.strip()
 
     if command.lower() == "hello":
@@ -97,6 +99,12 @@ def process_command(command):
 
     elif command.lower() == "how are you":
         return "I'm doing great! Thanks for asking."
+    elif command.lower() == "mute":
+        voice_enabled = False
+        return "[INFO]: Voice output is muted."
+    elif command.lower() == "unmute":
+        voice_enabled = True
+        return "[INFO]: Voice output is enabled."
     elif command.lower() == "voices":
         #print("Available voices:")
         text_to_display_voices = "Available voices:\n"
@@ -114,7 +122,7 @@ def process_command(command):
             
             if voice not in VOICES:
                 return "Invalid voice number!"
-            global current_voice # from outside
+            #global current_voice # from outside
             current_voice = voice 
             return f"[INFO]: Voice changed to {VOICES[voice]}!"
         except ValueError:
