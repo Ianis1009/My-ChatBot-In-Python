@@ -28,33 +28,48 @@ def get_voice_state():
 @app.route("/chat", methods=["POST"])
 def chat():
 
+    # data = request.get_json()
+
+    # if data is None:
+
+    #     return jsonify({
+    #         "response": "[ERROR]: Invalid request."
+    #     }), 400
+
+
+    # command = data.get("message", "").strip()
+
+    # if command == "":
+    #     return jsonify({
+    #         "response": "[INFO]: Please enter a command."
+    #     }), 400
+
+    # voice.save_message("User", command)
+    # response = voice.process_command(command)
+    # voice.save_message("Bot", response)
+
+    # voice.speak(response, voice.current_voice)
+
+
+    # return jsonify({
+    #     "response": response
+    # })
     data = request.get_json()
-
     if data is None:
-
-        return jsonify({
-            "response": "[ERROR]: Invalid request."
-        }), 400
-
+        return jsonify({"response":"[ERROR]: Invalid request."}), 400
 
     command = data.get("message", "").strip()
 
     if command == "":
-        return jsonify({
-            "response": "[INFO]: Please enter a command."
-        }), 400
+        return jsonify({"response":"[INFO]: Please enter a command."}), 400
 
     voice.save_message("User", command)
     response = voice.process_command(command)
     voice.save_message("Bot", response)
-
     voice.speak(response, voice.current_voice)
 
-
-    return jsonify({
-        "response": response
-    })
-
+    return jsonify({"response":response, "voice_enabled":voice.voice_enabled})
+    
 
 if __name__ == "__main__":
 
