@@ -1,3 +1,14 @@
+const ICONS = {
+
+    BOT: "\u{1F916}",
+    VOICE: "\u{1F50A}",
+    MUTED: "\u{1F507}",
+    SUN: "\u{2600}\u{FE0F}",
+    MOON: "\u{1F319}",
+    USER: "\u{1F464}"
+
+};
+
 const form = document.getElementById("chat-form");
 const input = document.getElementById("message-input");
 const chat = document.getElementById("chat");
@@ -13,9 +24,9 @@ function addMessage(text, type) {
     avatar.classList.add("message-avatar");
 
     if (type === "user") {
-        avatar.textContent = "👤";
+        avatar.textContent = ICONS.USER;
     } else {
-        avatar.textContent = "🤖";
+        avatar.textContent = ICONS.BOT;
     }
     const content = document.createElement("div");
     content.classList.add("message-content");
@@ -55,7 +66,7 @@ function showTyping() {
     typing.id = "typing";
     typing.classList.add("message", "bot-message", "typing");
 
-    typing.textContent = "🤖 Assistant is thinking...";
+    typing.textContent = ICONS.BOT + " Assistant is thinking...";
     chat.appendChild(typing);
     chat.scrollTop = chat.scrollHeight;
 }
@@ -138,8 +149,7 @@ function setTheme(theme) {
 
     if (theme === "light") {
         document.body.classList.add("light-mode");
-        themeIcon.textContent =
-            "🌙";
+        themeIcon.textContent = ICONS.MOON;
 
         themeText.textContent =
             "Dark";
@@ -153,8 +163,7 @@ function setTheme(theme) {
     }  else {
         document.body.classList.remove(
             "light-mode");
-        themeIcon.textContent =
-            "☀️";
+        themeIcon.textContent = ICONS.SUN;
         themeText.textContent =
             "Light";
         themeToggle.title =
@@ -217,7 +226,7 @@ function updateVoiceButton (enabled) {
 
     if (enabled) {
         voiceToggle.classList.remove("muted");
-        voiceIcon.textContent = "🔊";
+        voiceIcon.textContent = ICONS.VOICE;
         voiceText.textContent = "Voice";
         voiceToggle.title = "Mute voice";
         voiceToggle.setAttribute("aria-label", "Mute voice");
@@ -225,7 +234,7 @@ function updateVoiceButton (enabled) {
     }   else {
 
         voiceToggle.classList.add("muted");
-        voiceIcon.textContent = "🔇";
+        voiceIcon.textContent = ICONS.MUTED;
         voiceText.textContent = "Muted";
         voiceToggle.title = "Enable voice";
         voiceToggle.setAttribute("aria-label", "Enable voice");
