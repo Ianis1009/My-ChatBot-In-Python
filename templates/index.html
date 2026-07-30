@@ -31,11 +31,6 @@
 
     <div class="app">
 
-
-        <!-- =============================
-             NAVBAR
-        ============================== -->
-
         <header class="header">
 
 
@@ -95,63 +90,88 @@
 
             </div>
 
-
+        
             <div class="header-right">
 
 
-                <div
-                    class="voice-status"
-                    title="Voice output is enabled"
-                >
+    <!-- Voice ON / MUTE -->
 
-                    <span class="voice-icon">
+    <button
+        id="voice-toggle"
+        class="navbar-button voice-toggle"
+        type="button"
+        title="Mute voice"
+        aria-label="Mute voice"
+        aria-pressed="false"
+    >
 
-                        🔊
+        <span id="voice-toggle-icon" class="navbar-icon">
 
-                    </span>
+            🔊
 
-                    <span class="voice-label">
-
-                        Voice
-
-                    </span>
-
-                </div>
+        </span>
 
 
-                <div class="status">
+        <span id="voice-toggle-text" class="navbar-button-text">
+
+            Voice
+
+        </span>
+
+    </button>
 
 
-                    <span class="status-dot"></span>
+    <!-- DARK / LIGHT MODE -->
+
+    <button
+        id="theme-toggle"
+        class="navbar-button theme-toggle"
+        type="button"
+        title="Switch to light mode"
+        aria-label="Switch to light mode"
+        aria-pressed="false"
+    >
+
+        <span id="theme-toggle-icon" class="navbar-icon">
+
+            ☀️
+
+        </span>
 
 
-                    <span>
+        <span
+            id="theme-toggle-text"
+            class="navbar-button-text"
+        >
 
-                        Online
+            Light
 
-                    </span>
+        </span>
+
+    </button>
 
 
-                </div>
+    <div class="status">
+
+        <span class="status-dot"></span>
 
 
-            </div>
+        <span>
+
+            Online
+
+        </span>
+
+    </div>
+
+
+</div>
+
 
 
         </header>
 
-
-        <!-- =============================
-             CHAT
-        ============================== -->
-
-        <main
-            id="chat"
-            class="chat"
-        >
-
-
-            <!-- WELCOME MESSAGE -->
+        <main id="chat" class="chat">
 
             <div class="message bot-message welcome-message">
 
@@ -248,12 +268,6 @@
 
 
         </main>
-
-
-        <!-- =============================
-             INPUT
-        ============================== -->
-
         <div class="input-container">
 
 
