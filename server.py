@@ -1,14 +1,28 @@
 from flask import Flask, render_template, request, jsonify
 
-import voice
+import voice # voice.py
 
 
 app = Flask(__name__)
 
-
 @app.route("/")
 def index():
     return render_template("index.html")
+
+
+@app.route("/api/voice", methods=["POST"])
+def set_voice_state():
+    data = request.get_json()
+    enabled = data.get("enabled")
+    if not isinstance(enabled, bool):
+        return jsonify({"error":"enabled must be bool"}), 400
+    voice.voice_enabled = enabled
+    return jsonify({"voice_enabled" : voice.voice_enabled})
+
+
+@app.route("/api/voice", methods=["GET"])
+def get_voice_state():
+    return jsonify({"voice_enabled": voice.voice_enabled})
 
 
 @app.route("/chat", methods=["POST"])
