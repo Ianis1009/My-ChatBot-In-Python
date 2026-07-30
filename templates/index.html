@@ -5,26 +5,14 @@
 <head>
 
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="theme-color"
-        content="#0b1020"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
 
     <title>Python Voice Assistant</title>
 
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 
 </head>
-
 
 <body>
 
@@ -96,14 +84,7 @@
 
     <!-- Voice ON / MUTE -->
 
-    <button
-        id="voice-toggle"
-        class="navbar-button voice-toggle"
-        type="button"
-        title="Mute voice"
-        aria-label="Mute voice"
-        aria-pressed="false"
-    >
+    <button id="voice-toggle" class="navbar-button voice-toggle" type="button" title="Mute voice" aria-label="Mute voice" aria-pressed="false">
 
         <span id="voice-toggle-icon" class="navbar-icon">
 
@@ -123,14 +104,7 @@
 
     <!-- DARK / LIGHT MODE -->
 
-    <button
-        id="theme-toggle"
-        class="navbar-button theme-toggle"
-        type="button"
-        title="Switch to light mode"
-        aria-label="Switch to light mode"
-        aria-pressed="false"
-    >
+    <button id="theme-toggle" class="navbar-button theme-toggle" type="button" title="Switch to light mode" aria-label="Switch to light mode" aria-pressed="false">
 
         <span id="theme-toggle-icon" class="navbar-icon">
 
@@ -139,10 +113,7 @@
         </span>
 
 
-        <span
-            id="theme-toggle-text"
-            class="navbar-button-text"
-        >
+        <span id="theme-toggle-text" class="navbar-button-text">
 
             Light
 
@@ -271,10 +242,7 @@
         <div class="input-container">
 
 
-            <form
-                id="chat-form"
-                class="input-area"
-            >
+            <form id="chat-form" class="input-area">
 
 
                 <div class="input-box">
@@ -287,15 +255,7 @@
                     </span>
 
 
-                    <input
-                        id="message-input"
-                        type="text"
-                        placeholder="Message Voice Assistant..."
-                        autocomplete="off"
-                        autofocus
-                    >
-
-
+                    <input id="message-input" type="text" placeholder="Message Voice Assistant..." autocomplete="off" autofocus>
                     <span class="enter-hint">
 
                         Enter
@@ -306,14 +266,7 @@
                 </div>
 
 
-                <button
-                    id="send-button"
-                    type="submit"
-                    aria-label="Send message"
-                    title="Send message"
-                >
-
-
+                <button id="send-button" type="submit" aria-label="Send message" title="Send message">
                     <span class="send-text">
 
                         Send
