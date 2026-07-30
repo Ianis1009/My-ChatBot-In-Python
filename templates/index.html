@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#0b1020"
+    >
+
+    <title>Python Voice Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+
+    <div class="app">
+
+
+        <!-- =============================
+             NAVBAR
+        ============================== -->
+
+        <header class="header">
+
+
+            <div class="header-left">
+
+
+                <div class="bot-avatar">
+
+                    <span class="bot-avatar-icon">
+
+                        🤖
+
+                    </span>
+
+
+                    <span class="avatar-glow"></span>
+
+                </div>
+
+
+                <div class="title">
+
+
+                    <div class="title-row">
+
+                        <h1>
+
+                            Voice Assistant
+
+                        </h1>
+
+
+                        <span class="version">
+
+                            v1.0
+
+                        </span>
+
+                    </div>
+
+
+                    <p>
+
+                        <span class="header-subtitle-icon">
+
+                            ✦
+
+                        </span>
+
+                        Python · Flask · Wikipedia · Voice
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="header-right">
+
+
+                <div
+                    class="voice-status"
+                    title="Voice output is enabled"
+                >
+
+                    <span class="voice-icon">
+
+                        🔊
+
+                    </span>
+
+                    <span class="voice-label">
+
+                        Voice
+
+                    </span>
+
+                </div>
+
+
+                <div class="status">
+
+
+                    <span class="status-dot"></span>
+
+
+                    <span>
+
+                        Online
+
+                    </span>
+
+
+                </div>
+
+
+            </div>
+
+
+        </header>
+
+
+        <!-- =============================
+             CHAT
+        ============================== -->
+
+        <main
+            id="chat"
+            class="chat"
+        >
+
+
+            <!-- WELCOME MESSAGE -->
+
+            <div class="message bot-message welcome-message">
+
+
+                <div class="message-avatar">
+
+                    🤖
+
+                </div>
+
+
+                <div class="message-content">
+
+
+                    <div class="message-header">
+
+
+                        <span class="message-name">
+
+                            Voice Assistant
+
+                        </span>
+
+
+                        <span class="message-badge">
+
+                            AI
+
+                        </span>
+
+
+                    </div>
+
+
+                    <div class="message-text">
+
+
+                        <strong>
+
+                            Hello! I am ready to help you.
+
+                        </strong>
+
+
+                        <span class="welcome-description">
+
+                            Ask me something, search Wikipedia,
+                            or change my voice.
+
+                        </span>
+
+
+                    </div>
+
+
+                    <div class="welcome-commands">
+
+
+                        <span>
+
+                            Try:
+
+                        </span>
+
+
+                        <kbd>
+
+                            help
+
+                        </kbd>
+
+
+                        <kbd>
+
+                            info Bucharest
+
+                        </kbd>
+
+
+                        <kbd>
+
+                            voices
+
+                        </kbd>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+        </main>
+
+
+        <!-- =============================
+             INPUT
+        ============================== -->
+
+        <div class="input-container">
+
+
+            <form
+                id="chat-form"
+                class="input-area"
+            >
+
+
+                <div class="input-box">
+
+
+                    <span class="input-icon">
+
+                        ✦
+
+                    </span>
+
+
+                    <input
+                        id="message-input"
+                        type="text"
+                        placeholder="Message Voice Assistant..."
+                        autocomplete="off"
+                        autofocus
+                    >
+
+
+                    <span class="enter-hint">
+
+                        Enter
+
+                    </span>
+
+
+                </div>
+
+
+                <button
+                    id="send-button"
+                    type="submit"
+                    aria-label="Send message"
+                    title="Send message"
+                >
+
+
+                    <span class="send-text">
+
+                        Send
+
+                    </span>
+
+
+                    <span class="send-icon">
+
+                        ↑
+
+                    </span>
+
+
+                </button>
+
+
+            </form>
+
+
+            <div class="input-footer">
+
+
+                <span>
+
+                    Voice output enabled
+
+                </span>
+
+
+                <span class="footer-separator">
+
+                    ·
+
+                </span>
+
+
+                <span>
+
+                    Type
+
+                    <kbd>
+
+                        help
+
+                    </kbd>
+
+                    for commands
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
+</body>
+
+</html>
