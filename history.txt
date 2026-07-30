@@ -1,14 +1,22 @@
 🤖  Bot started.
-💬    New chat at: 27/07/2026, 23:20:28
+💬    New chat at: 30/07/2026, 10:03:20
 ────────────────────────────────────────────────────────────
 
 👤 User: hello
 🤖 Bot: Hello! How can I help you?
+👤 User: voicew
+🤖 Bot: [INFO]: Sorry, I don't recognize that command.
+👤 User: voice
+🤖 Bot: [INFO]: Sorry, I don't recognize that command.
 👤 User: voices
 🤖 Bot: [INFO]: you must select one number from that list in order to switch my voice. Use command set voice to do that
-👤 User: info Bucharest
-🤖 Bot: Bucharest is the capital and largest city of Romania. The metropolis stands on the River Dâmbovița in south-eastern Romania. Its population is officially estimated at 1.71 million residents within a greater metropolitan area of 2.31 million residents, which makes Bucharest the 9th most-populous city by population within city limits in the European Union. The city has an area of 240 km2 (93 sq mi), while the metropolitan area covers 1,811 km2 (699 sq mi). The city proper is administratively known as the "Municipality of Bucharest", and has the same administrative level as that of a national county, being further subdivided into six sectors, each governed by a local mayor. Bucharest is a major cultural, political and economic hub, the country's seat of government, and the capital of the Muntenia region. It is an enclave completely surrounded by Ilfov County.
+👤 User: try voice 2
+🤖 Bot: [INFO]: Tried voice number 2
+👤 User: set voice 2
+🤖 Bot: [INFO]: Voice changed to Microsoft Zira Desktop!
+👤 User: info Sibiu
+🤖 Bot: Sibiu is a city in central Romania, situated in the historical region of Transylvania. Located some 275 km (171 mi) north-west of Bucharest, the city straddles the Cibin River, a tributary of the Olt River. Now the seat of Sibiu County, between 1692 and 1791 and 1849–65, Sibiu was the capital of the Principality of Transylvania. Until 1876, the Hecht house in Sibiu served as the seat of the Transylvanian Saxon University.
 👤 User: exit
 🤖 Bot: Goodbye!
 ────────────────────────────────────────────────────────────
-💬    Chat ended at: 27/07/2026, 23:22:09
+💬    Chat ended at: 30/07/2026, 10:06:04
