@@ -3,210 +3,92 @@ const input = document.getElementById("message-input");
 const chat = document.getElementById("chat");
 const sendButton = document.getElementById("send-button");
 
-
 function addMessage(text, type) {
 
     const message = document.createElement("div");
-    message.classList.add(
+    message.classList.add("message", type + "-message");
 
-        "message",
-
-        type + "-message"
-
-    );
 
     const avatar = document.createElement("div");
-    avatar.classList.add(
-
-        "message-avatar"
-
-    );
+    avatar.classList.add("message-avatar");
 
     if (type === "user") {
-
         avatar.textContent = "👤";
-
-    }
-
-    else {
-
+    } else {
         avatar.textContent = "🤖";
-
     }
-
     const content = document.createElement("div");
-
-    content.classList.add(
-
-        "message-content"
-
-    );
+    content.classList.add("message-content");
 
     const header = document.createElement("div");
-    header.classList.add(
+    header.classList.add("message-header");
 
-        "message-header"
-
-    );
 
     if (type === "user") {
-
         header.textContent = "You";
-
     } else {
-
         header.textContent = "Voice Assistant";
-
     }
 
     const messageText = document.createElement("div");
-
-    messageText.classList.add(
-
-        "message-text"
-
-    );
+    messageText.classList.add("message-text");
     messageText.textContent = text;
     content.appendChild(header);
-
-
     content.appendChild(messageText);
 
-
     if (type === "user") {
-
         message.appendChild(content);
+        message.appendChild(avatar);
+    } else {
 
         message.appendChild(avatar);
-
-    }
-
-    else {
-
-        message.appendChild(avatar);
-
         message.appendChild(content);
-
     }
-
 
     chat.appendChild(message);
-
-
     chat.scrollTop = chat.scrollHeight;
-
-
 }
-
 
 function showTyping() {
 
-
     const typing = document.createElement("div");
-
-
     typing.id = "typing";
+    typing.classList.add("message", "bot-message", "typing");
 
-
-    typing.classList.add(
-
-        "message",
-
-        "bot-message",
-
-        "typing"
-
-    );
-
-
-    typing.textContent =
-
-        "🤖 Assistant is thinking...";
-
-
+    typing.textContent = "🤖 Assistant is thinking...";
     chat.appendChild(typing);
-
-
     chat.scrollTop = chat.scrollHeight;
-
-
 }
-
 
 function removeTyping() {
 
-
-    const typing =
-
-        document.getElementById("typing");
-
-
+    const typing = document.getElementById("typing");
     if (typing) {
-
         typing.remove();
-
     }
-
-
 }
-
 
 form.addEventListener(
 
-    "submit",
-
-    async function(event) {
-
-
+    "submit", async function(event) {
+        
         event.preventDefault();
-
-
-        const message =
-
-            input.value.trim();
-
+        const message = input.value.trim();
 
         if (message === "") {
-
             return;
-
         }
 
-
-        addMessage(
-
-            message,
-
-            "user"
-
-        );
-
-
+        addMessage(message,"user");
         input.value = "";
-
-
         input.disabled = true;
-
-
         sendButton.disabled = true;
-
-
         showTyping();
-
-
         try {
 
-
             const response =
-
-                await fetch(
-
-                    "/chat",
-
-                    {
-
+                await fetch("/chat", {
                         method: "POST",
-
                         headers: {
 
                             "Content-Type":
@@ -214,7 +96,6 @@ form.addEventListener(
                                 "application/json"
 
                         },
-
                         body:
 
                             JSON.stringify({
@@ -226,8 +107,6 @@ form.addEventListener(
                     }
 
                 );
-
-
             const data = await response.json();
             removeTyping();
             addMessage(data.response,"bot");
@@ -236,36 +115,13 @@ form.addEventListener(
         }
 
         catch (error) {
-
-
             removeTyping();
-
-
-            addMessage(
-
-                "[ERROR]: Could not connect to the server.",
-
-                "bot"
-
-            );
-
-
-        }
-
-        finally {
-
-
+            addMessage("[ERROR]: Could not connect to the server.","bot");
+        } finally {
             input.disabled = false;
-
-
             sendButton.disabled = false;
-
-
             input.focus();
-
-
         }
-
 
     }
 
@@ -273,200 +129,83 @@ form.addEventListener(
 
 /*DARK / LIGHT MODE*/
 
-const themeToggle =
-
-    document.getElementById(
-        "theme-toggle"
-    );
-
-
-const themeIcon =
-
-    document.getElementById(
-        "theme-toggle-icon"
-    );
-
-
-const themeText =
-
-    document.getElementById(
-        "theme-toggle-text"
-    );
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-toggle-icon");
+const themeText = document.getElementById( "theme-toggle-text");
 
 
 function setTheme(theme) {
 
-
     if (theme === "light") {
-
-
-        document.body.classList.add(
-
-            "light-mode"
-
-        );
-
-
+        document.body.classList.add("light-mode");
         themeIcon.textContent =
-
             "🌙";
 
-
         themeText.textContent =
-
             "Dark";
-
-
         themeToggle.title =
-
             "Switch to dark mode";
-
-
         themeToggle.setAttribute(
-
-            "aria-label",
-
-            "Switch to dark mode"
-
-        );
-
-
+            "aria-label", "Switch to dark mode");
         themeToggle.setAttribute(
-
             "aria-pressed",
-
-            "true"
-
-        );
-
-
-    }
-
-    else {
-
-
+            "true");
+    }  else {
         document.body.classList.remove(
-
-            "light-mode"
-
-        );
-
-
+            "light-mode");
         themeIcon.textContent =
-
             "☀️";
-
-
         themeText.textContent =
-
             "Light";
-
-
         themeToggle.title =
-
             "Switch to light mode";
-
-
         themeToggle.setAttribute(
-
             "aria-label",
-
             "Switch to light mode"
-
         );
-
-
         themeToggle.setAttribute(
-
             "aria-pressed",
-
             "false"
-
         );
-
-
     }
-
 
     localStorage.setItem(
-
-        "voice-assistant-theme",
-
-        theme
-
-    );
-
+        "voice-assistant-theme", theme);
 
 }
-
 const savedTheme =
-
     localStorage.getItem(
-
-        "voice-assistant-theme"
-
-    );
-
+        "voice-assistant-theme");
 if (savedTheme === "light") {
-
-
     setTheme("light");
-
-
 }
 themeToggle.addEventListener(
-
     "click",
-
     function() {
-
-
         const isLight =
-
             document.body.classList.contains(
 
                 "light-mode"
 
             );
 
-
         if (isLight) {
-
-
             setTheme("dark");
-
-
-        }
-
-        else {
-
-
+        } else {
             setTheme("light");
-
-
         }
-
-
     }
 
 );
 
-const voiceToggle =
-
-    document.getElementById(
-        "voice-toggle"
-    );
-
-
+const voiceToggle = document.getElementById( "voice-toggle");
 const voiceIcon =
 
     document.getElementById(
         "voice-toggle-icon"
     );
 
-
 const voiceText =
-
     document.getElementById(
         "voice-toggle-text"
     );
@@ -513,40 +252,19 @@ loadVoiceState();
 voiceToggle.addEventListener(
 
     "click",
-
     async function() {
-
-
         const isMuted =
-
-            voiceToggle.classList.contains(
-
-                "muted"
-
-            );
-
-
-        const newState =
-
-            isMuted;
-
+            voiceToggle.classList.contains( "muted");
+        const newState = isMuted;
 
         try {
-
-
-            const response = await fetch(
-
-                "/api/voice",
-
+            
+            const response = await fetch( "/api/voice",
                 {
-
                     method:
 
                         "POST",
-
-
                     headers:
-
                         {
 
                             "Content-Type":
@@ -555,17 +273,11 @@ voiceToggle.addEventListener(
 
                         },
 
-
                     body:
-
                         JSON.stringify(
-
                             {
-
                                 enabled:
-
                                 newState
-
                             }
 
                         )
@@ -587,23 +299,11 @@ voiceToggle.addEventListener(
             );
 
 
-        }
-
-        catch (error) {
-
-
+        } catch (error) {
             console.error(
-
                 "Could not change voice:",
-
                 error
-
             );
-
-
         }
-
-
     }
-
 );
