@@ -151,7 +151,11 @@ def process_command(command):
     elif command == "help":
         help.show_all_commands()
         help.print_in_history()
-        return "[INFO]: Use help <command> for more details."
+        final_message_prompt = help.return_help_prompt()
+        final_message_prompt += "[INFO]: Use help <command> for more details."
+        print(final_message_prompt)
+        return final_message_prompt
+    
     elif command.startswith("help "):
         return help.show(command[5: ]) #rest of the command
     else:
@@ -171,6 +175,8 @@ def print_commands():
     print(arrow, "  help")
     print(arrow, "  exit")
 
+
+help_command = False
 
 def main():
 
@@ -206,10 +212,19 @@ def main():
 
             break
 
+        if command.lower() == "help":
+            global help_command
+            help_command = True
+
         response = process_command(command)
         print(f"{bot_icon} Bot:", response)
         save_message("Bot", response)
+        if help_command == True:
+            voice_enabled = False
         speak(response, current_voice)
+        if help_command == True and voice_enabled == False: #TODO repair the bug
+            help_command = False
+            voice_enabled = True
 
 
 if __name__ == "__main__":
