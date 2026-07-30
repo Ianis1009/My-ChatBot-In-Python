@@ -125,11 +125,15 @@ def process_command(command):
         parts = command.split()
         if len(parts) != 3:
             return "[INFO]: try voice <1-2>"
-        else:
+        try:
             try_voc = int(parts[2])
+            if try_voc not in VOICES:
+                return "[INFO]: Invalid voice number."
             speak(try_message1, try_voc)
             speak(try_message2, try_voc)
             return f"[INFO]: Tried voice number {try_voc}"
+        except ValueError:
+            return f"[INFO]: Voice number must be in <1-2>."
     elif command == "help":
         help.show_all_commands()
         help.print_in_history()
