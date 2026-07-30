@@ -1,19 +1,12 @@
 const form = document.getElementById("chat-form");
-
 const input = document.getElementById("message-input");
-
 const chat = document.getElementById("chat");
-
 const sendButton = document.getElementById("send-button");
-
 
 
 function addMessage(text, type) {
 
-
     const message = document.createElement("div");
-
-
     message.classList.add(
 
         "message",
@@ -22,16 +15,12 @@ function addMessage(text, type) {
 
     );
 
-
     const avatar = document.createElement("div");
-
-
     avatar.classList.add(
 
         "message-avatar"
 
     );
-
 
     if (type === "user") {
 
@@ -45,9 +34,7 @@ function addMessage(text, type) {
 
     }
 
-
     const content = document.createElement("div");
-
 
     content.classList.add(
 
@@ -55,43 +42,31 @@ function addMessage(text, type) {
 
     );
 
-
     const header = document.createElement("div");
-
-
     header.classList.add(
 
         "message-header"
 
     );
 
-
     if (type === "user") {
 
         header.textContent = "You";
 
-    }
-
-    else {
+    } else {
 
         header.textContent = "Voice Assistant";
 
     }
 
-
     const messageText = document.createElement("div");
-
 
     messageText.classList.add(
 
         "message-text"
 
     );
-
-
     messageText.textContent = text;
-
-
     content.appendChild(header);
 
 
@@ -253,22 +228,10 @@ form.addEventListener(
                 );
 
 
-            const data =
-
-                await response.json();
-
-
+            const data = await response.json();
             removeTyping();
-
-
-            addMessage(
-
-                data.response,
-
-                "bot"
-
-            );
-
+            addMessage(data.response,"bot");
+            updateVoiceButton(data.voice_enabled); //switch icon mute/unmute
 
         }
 
@@ -308,9 +271,7 @@ form.addEventListener(
 
 );
 
-/* =========================================
-   DARK / LIGHT MODE
-========================================= */
+/*DARK / LIGHT MODE*/
 
 const themeToggle =
 
@@ -438,7 +399,6 @@ function setTheme(theme) {
 
 }
 
-
 const savedTheme =
 
     localStorage.getItem(
@@ -512,127 +472,136 @@ const voiceText =
     );
 
 
-let voiceEnabled = true;
+//swap interfaces
 
+function updateVoiceButton (enabled) {
+
+    if (enabled) {
+        voiceToggle.classList.remove("muted");
+        voiceIcon.textContent = "🔊";
+        voiceText.textContent = "Voice";
+        voiceToggle.title = "Mute voice";
+        voiceToggle.setAttribute("aria-label", "Mute voice");
+        voiceToggle.setAttribute("aria-pressed", "false");
+    }   else {
+
+        voiceToggle.classList.add("muted");
+        voiceIcon.textContent = "🔇";
+        voiceText.textContent = "Muted";
+        voiceToggle.title = "Enable voice";
+        voiceToggle.setAttribute("aria-label", "Enable voice");
+        voiceToggle.setAttribute("aria-passed", "true");
+    }
+}
+
+async function loadVoiceState() {
+    
+    try {
+
+        const response = await fetch("/api/voice");
+        const data = await response.json();
+        updateVoiceButton(data.voice_enabled);
+
+    } catch(error) {
+
+        console.error("Could not load voice state -->", error);
+    }
+}
+
+loadVoiceState();
 
 voiceToggle.addEventListener(
 
     "click",
 
-    function() {
+    async function() {
 
 
-        voiceEnabled =
+        const isMuted =
 
-            !voiceEnabled;
-
-
-        if (voiceEnabled) {
-
-
-            voiceToggle.classList.remove(
+            voiceToggle.classList.contains(
 
                 "muted"
 
             );
 
 
-            voiceIcon.textContent =
+        const newState =
 
-                "🔊";
-
-
-            voiceText.textContent =
-
-                "Voice";
+            isMuted;
 
 
-            voiceToggle.title =
-
-                "Mute voice";
+        try {
 
 
-            voiceToggle.setAttribute(
+            const response = await fetch(
 
-                "aria-label",
+                "/api/voice",
 
-                "Mute voice"
+                {
 
-            );
+                    method:
 
-
-            voiceToggle.setAttribute(
-
-                "aria-pressed",
-
-                "false"
-
-            );
+                        "POST",
 
 
-        }
+                    headers:
 
-        else {
+                        {
 
+                            "Content-Type":
 
-            voiceToggle.classList.add(
+                            "application/json"
 
-                "muted"
-
-            );
-
-
-            voiceIcon.textContent =
-
-                "🔇";
+                        },
 
 
-            voiceText.textContent =
+                    body:
 
-                "Muted";
+                        JSON.stringify(
 
+                            {
 
-            voiceToggle.title =
+                                enabled:
 
-                "Enable voice";
+                                newState
 
+                            }
 
-            voiceToggle.setAttribute(
+                        )
 
-                "aria-label",
-
-                "Enable voice"
+                }
 
             );
 
 
-            voiceToggle.setAttribute(
+            const data =
 
-                "aria-pressed",
+                await response.json();
 
-                "true"
+
+            updateVoiceButton(
+
+                data.voice_enabled
 
             );
 
 
         }
 
+        catch (error) {
 
-        /*
-        Aici vei conecta ulterior Flask:
 
-        fetch("/voice-toggle", {
-            method: "POST",
-            headers: {
-                "Content-Type":
-                    "application/json"
-            },
-            body: JSON.stringify({
-                enabled: voiceEnabled
-            })
-        });
+            console.error(
 
-        */
+                "Could not change voice:",
+
+                error
+
+            );
+
+
+        }
 
 
     }
