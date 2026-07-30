@@ -1,14 +1,19 @@
 import subprocess
 import wikipedia
 import requests
+
+import help # help.py
 from datetime import datetime
 
 wikipedia.set_lang("en")
 
-try_message = "This is a simple test for my voice"
+
+current_voice = 2 # set by default
+try_message1 = "This is a simple test for my voice"
+try_message2 = "If you want to switch to this voice, you must use command set voice"
 
 # some special characters that I use in UI
-current_voice = 2 # set by default
+
 arrow = "\u27A4"
 user_arrow = "\u276F"
 date_icon = "\U0001F4C5"
@@ -22,9 +27,6 @@ msg_icon = "\U0001F4AC"
 VOICES = {
     1: "Microsoft David Desktop",
     2: "Microsoft Zira Desktop",
-    3: "Microsoft Mark Desktop",
-    4: "Microsoft Andrei",
-    5: "Microsoft Maria"
 }
 
 #TODO refactor the code
@@ -100,12 +102,13 @@ def process_command(command):
     elif command.lower().startswith("set voice"):
         parts = command.split()
         if  len (parts) != 3:
-            return "[INFO]: set voice <1-5>"
+            return "[INFO]: set voice <1-2>"
         try:
             voice = int(parts[2])
             
             if voice not in VOICES:
                 return "Invalid voice number!"
+            global current_voice # from outside
             current_voice = voice # TODO: repair
             return f"[INFO]: Voice changed to {VOICES[voice]}!"
         except ValueError:
@@ -114,17 +117,31 @@ def process_command(command):
     elif command.lower().startswith("info "):
         
         topic = command[5:].strip()
-
         if topic == "":
             return "[INFO]: Please specify a topic."
 
         return get_wikipedia_info(topic)
-
+    elif command.lower().startswith("try voice"):
+        parts = command.split()
+        if len(parts) != 3:
+            return "[INFO]: try voice <1-2>"
+        else:
+            try_voc = int(parts[2])
+            speak(try_message1, try_voc)
+            speak(try_message2, try_voc)
+            return f"[INFO]: Tried voice number {try_voc}"
+    elif command == "help":
+        help.show_all_commands()
+        help.print_in_history()
+        return "[INFO]: Use help <command> for more details."
+    elif command.startswith("help "):
+        return help.show(command[5: ]) #rest of the command
     else:
         return "[INFO]: Sorry, I don't recognize that command."
 
 
 #TODO add more features
+
 def print_commands():
     print("Available commands: ")
     print(arrow, "  hello")
@@ -133,7 +150,9 @@ def print_commands():
     print(arrow, "  voices")
     print(arrow, "  set voice <voice_number>")
     print(arrow, "  try voice <voice_number>") #TO DO
+    print(arrow, "  help")
     print(arrow, "  exit")
+
 
 def main():
 
