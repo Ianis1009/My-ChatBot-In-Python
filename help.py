@@ -2,7 +2,8 @@
 import special_characters
 
 #TO DO - add all
-arr = special_characters.arrow
+arrow = special_characters.arrow
+user_arrow = special_characters.user_arrow
 
 # information about commands
 """
@@ -50,7 +51,16 @@ HELP = {
     "try voice": {
         "usage": "try voice <1-2>",
         "description": "Try voices."
+    },
+    "mute": {
+        "usage" : "mute",
+        "description":"The new state is Muted"
+    },
+    "unmute":{
+        "usage":"unmute", 
+        "description":"The new state is Voice"
     }
+
 }
 
 def show_all_commands():
@@ -66,6 +76,17 @@ def show (command):
     info = HELP[command]
     return (f"Command: {info['usage']}\n"
             f"Description: {info['description']}")
+
+
+def return_help_prompt():
+    text_to_display = "Available commands:\n"
+    for command, info in HELP.items():
+        text_to_display += arrow 
+        text_to_display += " "
+        text_to_display += f"Command: {info['usage']}\n"
+        text_to_display +=f"    Explication: {info['description']}\n"
+
+    return text_to_display
 
 def print_in_history():
     #TO DO
