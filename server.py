@@ -10,6 +10,11 @@ def index():
     return render_template("index.html")
 
 
+@app.route("/about")
+def about():
+
+    return render_template("about.html")
+
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
     data = request.get_json()
@@ -27,7 +32,7 @@ def get_voice_state():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-
+    
     data = request.get_json()
     if data is None:
         return jsonify({"response":"[ERROR]: Invalid request."}), 400
