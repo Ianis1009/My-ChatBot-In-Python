@@ -2,7 +2,8 @@ import subprocess
 import wikipedia
 import requests
 
-import jokes
+import jokes # jokes.py
+import stats # stats.py
 import help # help.py
 from datetime import datetime
 
@@ -12,7 +13,7 @@ voice_enabled = True # mute / unmute
 current_voice = 2 # set by default
 try_message1 = "This is a simple test for my voice"
 try_message2 = "If you want to switch to this voice, you must use command set voice"
-
+last_response = ""
 # some special characters that I use in UI
 
 arrow = "\u27A4"
@@ -124,13 +125,14 @@ def process_command(command):
             if voice not in VOICES:
                 return "Invalid voice number!"
             #global current_voice # from outside
+            stats.add_voice_change()
             current_voice = voice 
             return f"[INFO]: Voice changed to {VOICES[voice]}!"
         except ValueError:
             return "[INFO]: Voice number must be an integer!"
 
     elif command.lower().startswith("info "):
-        
+        stats.add_wiki() # number of searches in wiki
         topic = command[5:].strip()
         if topic == "":
             return "[INFO]: Please specify a topic."
@@ -171,6 +173,11 @@ def process_command(command):
         date_string = date_icon + " "
         date_string += current_time
         return date_string
+    elif command.lower() == "repeat":
+        return last_response
+    elif command.lower() == "stats":
+        stats_to_display = stats.get_statistics()
+        return stats_to_display
     else:
         return "[INFO]: Sorry, I don't recognize that command."
 
@@ -205,14 +212,18 @@ def main():
 
     while True:
 
+
         usr_prompt = usr_icon + " " + "You " + user_arrow + " " 
         command = input(usr_prompt)
+        stats.add_command()
+        stats.add_user() # number of commands by user
         save_message("User", command)
 
         if command.lower() == "exit" or command.lower() == "quit":
 
             response = "Goodbye!"
             print(f"{bot_icon} Bot:", response)
+            stats.add_bot()
             save_message("Bot", response)
             speak(response, current_voice)
             dtnow = datetime.now()
@@ -230,6 +241,7 @@ def main():
             help_command = True
 
         response = process_command(command)
+        #TODO FIX last_response = response
         print(f"{bot_icon} Bot:", response)
         save_message("Bot", response)
         if help_command == True:
