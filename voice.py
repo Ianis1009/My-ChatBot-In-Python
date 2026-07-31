@@ -166,6 +166,11 @@ def process_command(command):
         time_string = time_icon + " "
         time_string += f"The current time is " + f"{current_time}."
         return time_string
+    elif command.lower() == "date":
+        current_time = (datetime.now().strftime("%A, %d %B, %Y"))
+        date_string = date_icon + " "
+        date_string += current_time
+        return date_string
     else:
         return "[INFO]: Sorry, I don't recognize that command."
 
