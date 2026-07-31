@@ -1,6 +1,29 @@
 import random
 
-JOKES = [] #TODO
+JOKES = [
+
+    "Why do programmers prefer dark mode? "
+    "Because light attracts bugs.",
+
+    "Why do programmers confuse Halloween "
+    "and Christmas? "
+    "Because OCT 31 equals DEC 25.",
+
+    "What do programmers do when they are hungry? "
+    "They grab a byte.",
+
+    "Why was the computer cold? "
+    "Because it left its Windows open.",
+
+    "Why did the Python programmer wear glasses? "
+    "Because they could not C.",
+
+    "Why was the developer broke? "
+    "Because they used up all their cache."
+
+
+
+] #TODO add more
 
 def get_joke():
     return random.choice(JOKES)
