@@ -32,32 +32,30 @@ mute_changes = 0
 #     commands.append(command)
 
 def add_user():
-    global user_messages
-    user_messages += 1
+    global total_commands
+    total_commands += 1
 
 def add_bot():
 
-    global bot_messages
+    global total_responses
+    total_responses += 1
 
-    bot_messages += 1
 
 def add_wiki():
 
-    global wiki_searches
+    global wikipedia_searches
+    wikipedia_searches += 1
 
-    wiki_searches += 1
 
 def add_voice_change():
 
     global voice_changes
-
     voice_changes += 1
 
 
 def add_command():
 
     global total_commands
-
     total_commands += 1
 
 def get_statistics():
