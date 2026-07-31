@@ -161,6 +161,11 @@ def process_command(command):
         return help.show(command[5: ]) #rest of the command
     elif command.lower() == "joke":
         return jokes.get_joke() # random joke from jokes.py
+    elif command.lower() == "time":
+        current_time = (datetime.now().strftime("%H:%M:%S"))
+        time_string = time_icon + " "
+        time_string += f"The current time is " + f"{current_time}."
+        return time_string
     else:
         return "[INFO]: Sorry, I don't recognize that command."
 
