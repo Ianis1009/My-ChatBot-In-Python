@@ -19,7 +19,7 @@ JOKES = [
     "Because they could not C.",
 
     "Why was the developer broke? "
-    "Because they used up all their cache."
+    "Because they used up all their cache.",
 
     "What is a programmer's favorite type of music? "
     "Algorithm and blues.",
