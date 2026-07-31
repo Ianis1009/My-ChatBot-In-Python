@@ -21,6 +21,11 @@ JOKES = [
     "Why was the developer broke? "
     "Because they used up all their cache."
 
+    "What is a programmer's favorite type of music? "
+    "Algorithm and blues.",
+
+    "Why did the developer go outside? "
+    "To check whether the cloud was working."
 
 
 ] #TODO add more
