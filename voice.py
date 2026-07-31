@@ -2,6 +2,7 @@ import subprocess
 import wikipedia
 import requests
 
+import jokes
 import help # help.py
 from datetime import datetime
 
@@ -158,6 +159,8 @@ def process_command(command):
     
     elif command.startswith("help "):
         return help.show(command[5: ]) #rest of the command
+    elif command.lower() == "joke":
+        return jokes.get_joke() # random joke from jokes.py
     else:
         return "[INFO]: Sorry, I don't recognize that command."
 
