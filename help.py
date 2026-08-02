@@ -65,6 +65,10 @@ HELP = {
     "time": {
         "usage":"time",
         "description" : "Display current time." 
+    }, 
+    "date": {
+        "usage":"date",
+        "description" : "Display current date."
     }
 
 }
