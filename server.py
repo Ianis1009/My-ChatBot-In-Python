@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, jsonify
 
 import voice # voice.py
 
-
 app = Flask(__name__)
 
 @app.route("/")
@@ -32,7 +31,7 @@ def get_voice_state():
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    
+
     data = request.get_json()
     if data is None:
         return jsonify({"response":"[ERROR]: Invalid request."}), 400
