@@ -69,6 +69,10 @@ HELP = {
     "date": {
         "usage":"date",
         "description" : "Display current date."
+    }, 
+    "joke" : {
+        "usage" : "joke",
+        "description" : "Dispaly a random joke."
     }
 
 }
