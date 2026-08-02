@@ -1,7 +1,6 @@
 
 import special_characters
 
-#TO DO - add all
 arrow = special_characters.arrow
 user_arrow = special_characters.user_arrow
 
@@ -17,6 +16,9 @@ HELP = {
     "try voice": {}
 }
 """
+
+
+#TO DO - add all commands
 
 HELP = {
     "hello": {
@@ -59,6 +61,10 @@ HELP = {
     "unmute":{
         "usage":"unmute", 
         "description":"The new state is Voice"
+    }, 
+    "time": {
+        "usage":"time",
+        "description" : "Display current time." 
     }
 
 }
