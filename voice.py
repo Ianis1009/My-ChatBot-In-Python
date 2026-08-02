@@ -5,8 +5,10 @@ import requests
 import jokes # jokes.py
 import stats # stats.py
 import help # help.py
+import special_characters # special_charactes.py
 from datetime import datetime
 
+#TO DO: codingstyle
 wikipedia.set_lang("en")
 
 voice_enabled = True # mute / unmute
@@ -31,7 +33,6 @@ VOICES = {
     2: "Microsoft Zira Desktop",
 }
 
-#TODO refactor the code
 
 def speak(text, voice=2):
 
