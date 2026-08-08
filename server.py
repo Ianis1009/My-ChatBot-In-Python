@@ -72,6 +72,40 @@ def travel_route():
     return jsonify(result)
 
 
+@app.route("/api/travel/speak", methods=["POST"])
+def travel_speak():
+
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            "success": False,
+            "error": "Invalid request."
+        }), 400
+
+    text = data.get("text", "").strip()
+
+    if not text:
+        return jsonify({
+            "success": False,
+            "error": "No text provided."
+        }), 400
+
+    if not voice.voice_enabled:
+        return jsonify({
+            "success": False,
+            "error": "Voice is currently muted."
+        }), 400
+
+    voice.speak(
+        text,
+        voice.current_voice
+    )
+
+    return jsonify({
+        "success": True
+    })
+
 @app.route("/api/voice", methods=["GET"])
 def get_voice_state():
     return jsonify({"voice_enabled": voice.voice_enabled})
