@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 
 import voice # voice.py
-
+import travel as travel_module # travel.py
 app = Flask(__name__)
 
 @app.route("/")
@@ -33,6 +33,33 @@ def set_voice_state():
     voice.voice_enabled = enabled
     return jsonify({"voice_enabled" : voice.voice_enabled})
 
+
+
+@app.route("/api/travel/route", methods=["POST"])
+def travel_route():
+
+    data = request.get_json()
+    if not data:
+        return jsonify({
+            "success": False,
+            "error": "Invalid request."
+        }), 400
+
+    origin = data.get("origin", "").strip()
+    destination = data.get("destination", "").strip()
+
+    if not origin or not destination:
+        return jsonify({
+            "success": False,
+            "error": "Both origin and destination are required."
+        }), 400
+
+    result = travel_module.calculate_route(origin, destination)
+
+    if not result["success"]:
+        return jsonify(result), 404
+
+    return jsonify(result)
 
 @app.route("/api/voice", methods=["GET"])
 def get_voice_state():
