@@ -1,209 +1,174 @@
-
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b1020">
 
-    <title>Travel | Python Voice Assistant</title>
+    <title>Travel | Voice Assistant</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
 
 <body>
 
-    <div class="app">
+<div class="travel-page">
 
-        <!-- HEADER -->
+    <header class="travel-header">
 
-        <header class="header">
+        <a href="{{ url_for('index') }}" class="back-button">
+            ← Assistant
+        </a>
 
-            <div class="header-left">
-
-                <div class="bot-avatar">
-                    <span class="bot-avatar-icon">🤖</span>
-                    <span class="avatar-glow"></span>
-                </div>
-
-                <div class="title">
-
-                    <div class="title-row">
-                        <h1>Voice Assistant</h1>
-                        <span class="version">Version β</span>
-                    </div>
-
-                    <p>
-                        <span class="header-subtitle-icon">✦</span>
-                        Travel Mode
-                    </p>
-
-                </div>
-
-            </div>
-
-            <div class="header-right">
-
-                <!-- VOICE -->
-
-                <button
-                    id="voice-toggle"
-                    class="navbar-button voice-toggle"
-                    type="button"
-                    title="Mute voice"
-                    aria-label="Mute voice"
-                    aria-pressed="false"
-                >
-                    <span id="voice-toggle-icon" class="navbar-icon">🔊</span>
-                    <span id="voice-toggle-text" class="navbar-button-text">Voice</span>
-                </button>
-
-                <!-- THEME -->
-                <button
-                    id="theme-toggle"
-                    class="navbar-button theme-toggle"
-                    type="button"
-                    title="Switch to light mode"
-                    aria-label="Switch to light mode"
-                    aria-pressed="false"
-                >
-                    <span id="theme-toggle-icon" class="navbar-icon">☀️</span>
-                    <span id="theme-toggle-text" class="navbar-button-text">Light</span>
-                </button>
-
-                <!-- STATUS -->
-
-                <div class="status">
-                    <span class="status-dot"></span>
-                    <span>Online</span>
-                </div>
-
-            </div>
-
-        </header>
-
-
-        <!-- WORKSPACE -->
-        <div class="workspace">
-
-            <!-- SIDEBAR -->
-            <aside class="mode-sidebar">
-
-                <div class="sidebar-label">MODES</div>
-
-                <a href="{{ url_for('index') }}" class="mode-button">
-                    <span class="mode-icon">ℹ</span>
-                    <span class="mode-name">Info</span>
-                </a>
-
-                <a href="{{ url_for('travel') }}" class="mode-button active">
-                    <span class="mode-icon">✈</span>
-                    <span class="mode-name">Travel</span>
-                </a>
-
-                <a href="{{ url_for('moto') }}" class="mode-button">
-                    <span class="mode-icon">🏍</span>
-                    <span class="mode-name">Moto</span>
-                </a>
-            </aside>
-
-            <!-- TRAVEL CONTENT -->
-            <main class="travel-page">
-
-                <section class="travel-hero">
-
-                    <div class="travel-icon">
-                        ✈
-                    </div>
-
-                    <span class="travel-label">
-                        TRAVEL MODE
-                    </span>
-
-                    <h2>
-                        Where will you go?
-                    </h2>
-
-                    <p>
-                        Your personal travel assistant is getting ready.
-                        Discover destinations, plan routes and explore
-                        new places.
-                    </p>
-
-                    <div class="travel-actions">
-
-                        <button class="travel-card">
-                            <span class="travel-card-icon">🌍</span>
-                            <span>
-                                <strong>Explore</strong>
-                                <small>Discover destinations</small>
-                            </span>
-                        </button>
-
-                        <button class="travel-card">
-                            <span class="travel-card-icon">🗺️</span>
-                            <span>
-                                <strong>Plan a trip</strong>
-                                <small>Build your itinerary</small>
-                            </span>
-                        </button>
-
-                        <button class="travel-card">
-                            <span class="travel-card-icon">📍</span>
-                            <span>
-                                <strong>Find places</strong>
-                                <small>Search nearby locations</small>
-                            </span>
-                        </button>
-
-                    </div>
-
-                    <div class="travel-coming-soon">
-
-                        <span>✦</span>
-
-                        More travel features are coming soon.
-
-                    </div>
-
-                </section>
-
-            </main>
-
+        <div>
+            <span class="travel-label">TRAVEL MODE</span>
+            <h1>Plan your route</h1>
+            <p>Calculate routes between cities around the world.</p>
         </div>
-        <!-- USER AREA -->
-        <div class="user-area">
 
-            <button
-                class="user-button"
-                type="button"
-                title="Account"
-            >
+    </header>
 
-                <span class="user-icon">👤</span>
 
-                <span class="user-info">
+    <main class="travel-container">
 
-                    <span class="user-name">Guest</span>
+        <section class="route-card">
 
-                    <span class="user-status">
-                        Not logged in
-                    </span>
+            <div class="route-title">
+                <span>✈</span>
+                <div>
+                    <h2>Route planner</h2>
+                    <p>Enter two cities to calculate the route.</p>
+                </div>
+            </div>
 
+
+            <form id="route-form" class="route-form">
+
+                <div class="route-input">
+
+                    <label for="origin">
+                        From
+                    </label>
+
+                    <input
+                        id="origin"
+                        type="text"
+                        placeholder="Bucharest"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="route-arrow">
+                    →
+                </div>
+
+
+                <div class="route-input">
+
+                    <label for="destination">
+                        To
+                    </label>
+
+                    <input
+                        id="destination"
+                        type="text"
+                        placeholder="Paris"
+                        autocomplete="off"
+                        required
+                    >
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    id="calculate-route"
+                    class="route-button"
+                >
+                    Calculate route
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <section
+            id="route-result"
+            class="route-result hidden"
+        >
+
+            <div class="route-result-header">
+
+                <span class="success-icon">
+                    ✓
                 </span>
 
-            </button>
+                <div>
+                    <h2>Route calculated</h2>
+                    <p id="route-summary"></p>
+                </div>
 
-        </div>
+            </div>
 
-    </div>
-    <!-- JAVASCRIPT -->
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+            <div class="route-stats">
+
+                <div class="route-stat">
+
+                    <span class="stat-icon">
+                        ↔
+                    </span>
+
+                    <span class="stat-label">
+                        Distance
+                    </span>
+
+                    <strong id="distance">
+                        —
+                    </strong>
+
+                </div>
+
+
+                <div class="route-stat">
+
+                    <span class="stat-icon">
+                        ⏱
+                    </span>
+
+                    <span class="stat-label">
+                        Estimated time
+                    </span>
+
+                    <strong id="duration">
+                        —
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section
+            id="route-error"
+            class="route-error hidden"
+        >
+            <span>⚠</span>
+            <p id="error-message"></p>
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='travel.js') }}"></script>
 
 </body>
-
 </html>
