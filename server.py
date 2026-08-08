@@ -39,6 +39,7 @@ def set_voice_state():
 def travel_route():
 
     data = request.get_json()
+
     if not data:
         return jsonify({
             "success": False,
@@ -54,12 +55,22 @@ def travel_route():
             "error": "Both origin and destination are required."
         }), 400
 
-    result = travel_module.calculate_route(origin, destination)
+    result = travel_module.calculate_route(
+        origin,
+        destination
+    )
 
     if not result["success"]:
         return jsonify(result), 404
 
+    voice_message = travel_module.build_route_message(
+        result
+    )
+
+    result["voice_message"] = voice_message
+
     return jsonify(result)
+
 
 @app.route("/api/voice", methods=["GET"])
 def get_voice_state():
