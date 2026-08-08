@@ -27,6 +27,9 @@ JOKES = [
     "Why did the developer go outside? "
     "To check whether the cloud was working."
 
+    "Why did the computer get promoted? "
+    "It had outstanding processing skills."
+
 
 ] #TODO add more
 
