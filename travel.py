@@ -1,25 +1,50 @@
 import requests
 
-
 NOMINATIM_URL = "https://nominatim.openstreetmap.org/search"
 OSRM_URL = "https://router.project-osrm.org/route/v1/driving"
 
-HEADERS = { "User-Agent" : "VoiceAssistant/beta"};
+HEADERS = {
+    "User-Agent": "PythonVoiceAssistant/1.0"
+}
 
 
 def geocode_city(city):
-   params = {"q" : city, "format" : "json", "limit" : 1}
+    city = city.strip()
 
-   try:
-       response = requests.get(NOMINATIM_URL, params=params, headers=HEADERS, timeout=10)
-       response.raise_for_status()
-       data = response.json()
-       if not data:
-            return None 
-       return {"name": data[0].get("display_name"), "latitude": float(data[0]["lat"]), "longitude": float(data[0]["lon"])}
+    if not city:
+        return None
 
-   except requests.RequestException:
-    return None 
+    params = {
+        "q": city,
+        "format": "json",
+        "limit": 1
+    }
+
+    try:
+        response = requests.get(
+            NOMINATIM_URL,
+            params=params,
+            headers=HEADERS,
+            timeout=10
+        )
+
+        response.raise_for_status()
+
+        data = response.json()
+
+        if not data:
+            return None
+
+        return {
+            "name": data[0]["display_name"],
+            "latitude": float(data[0]["lat"]),
+            "longitude": float(data[0]["lon"])
+        }
+
+    except requests.RequestException as error:
+        print("Geocoding error:", error)
+        return None
+
 
 def calculate_route(origin, destination):
 
@@ -28,7 +53,7 @@ def calculate_route(origin, destination):
     if origin_data is None:
         return {
             "success": False,
-            "error": f"Could not find origin: {origin}"
+            "error": f"Could not find: {origin}"
         }
 
     destination_data = geocode_city(destination)
@@ -36,33 +61,41 @@ def calculate_route(origin, destination):
     if destination_data is None:
         return {
             "success": False,
-            "error": f"Could not find destination: {destination}"
+            "error": f"Could not find: {destination}"
         }
-    origin_coordinates = (f"{origin_data['longitude']}, " f"{origin_data['latitude']}")
-    destination_coordinates = (
-        f"{destination_data['longitude']},"
-        f"{destination_data['latitude']}"
+
+    coordinates = (
+        f"{origin_data['longitude']},{origin_data['latitude']};"
+        f"{destination_data['longitude']},{destination_data['latitude']}"
     )
 
-    route_url = (
-        f"{OSRM_URL}/"
-        f"{origin_coordinates};"
-        f"{destination_coordinates}"
-    )
+    url = f"{OSRM_URL}/{coordinates}"
 
     params = {
         "overview": "false",
         "steps": "false"
     }
 
-    try: 
-        response = requests.get(route_url, params=params, timeout=15)
+    try:
+        response = requests.get(
+            url,
+            params=params,
+            headers=HEADERS,
+            timeout=15
+        )
+
         response.raise_for_status()
+
         data = response.json()
+
         if data.get("code") != "Ok":
-            return {"succes":False, 
-                    "error": "Could not calculate the route."}
+            return {
+                "success": False,
+                "error": "Route could not be calculated."
+            }
+
         route = data["routes"][0]
+
         distance_km = route["distance"] / 1000
         duration_hours = route["duration"] / 3600
 
@@ -75,12 +108,11 @@ def calculate_route(origin, destination):
         }
 
     except requests.RequestException as error:
-
         return {
             "success": False,
             "error": str(error)
         }
-
+    
 
 def build_route_message (route):
     # description for a calculated route
