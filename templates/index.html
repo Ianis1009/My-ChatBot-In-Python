@@ -5,19 +5,39 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0b1020">
 
-    <title>Python Voice Assistant</title>
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta
+        name="theme-color"
+        content="#0b1020"
+    >
+
+    <title>
+        Python Voice Assistant
+    </title>
+
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
 
 </head>
+
 
 <body>
 
 
     <div class="app">
+
+
+        <!-- ================================================== -->
+        <!-- HEADER                                             -->
+        <!-- ================================================== -->
 
         <header class="header">
 
@@ -78,171 +98,412 @@
 
             </div>
 
-        
+
+            <!-- ================================================== -->
+            <!-- HEADER RIGHT                                       -->
+            <!-- ================================================== -->
+
             <div class="header-right">
 
 
+                <!-- VOICE -->
 
-                <a
-        href="{{ url_for('about') }}"
-        class="navbar-button about-button"
-        title="About this project"
-        aria-label="About this project"
-    >
+                <button
+                    id="voice-toggle"
+                    class="navbar-button voice-toggle"
+                    type="button"
+                    title="Mute voice"
+                    aria-label="Mute voice"
+                    aria-pressed="false"
+                >
 
-        <span class="navbar-icon">
+                    <span
+                        id="voice-toggle-icon"
+                        class="navbar-icon"
+                    >
 
-            ℹ️
+                        🔊
 
-        </span>
-
-
-        <span class="navbar-button-text">
-
-            About
-
-        </span>
-
-    </a>
-
-    
-    <!-- Voice ON / MUTE -->
-
-    <button id="voice-toggle" class="navbar-button voice-toggle" type="button" title="Mute voice" aria-label="Mute voice" aria-pressed="false">
-
-        <span id="voice-toggle-icon" class="navbar-icon">
-
-            🔊
-
-        </span>
+                    </span>
 
 
-        <span id="voice-toggle-text" class="navbar-button-text">
+                    <span
+                        id="voice-toggle-text"
+                        class="navbar-button-text"
+                    >
 
-            Voice
+                        Voice
 
-        </span>
+                    </span>
 
-    </button>
-
-
-    <!-- DARK / LIGHT MODE -->
-
-    <button id="theme-toggle" class="navbar-button theme-toggle" type="button" title="Switch to light mode" aria-label="Switch to light mode" aria-pressed="false">
-
-        <span id="theme-toggle-icon" class="navbar-icon">
-
-            ☀️
-
-        </span>
+                </button>
 
 
-        <span id="theme-toggle-text" class="navbar-button-text">
+                <!-- THEME -->
 
-            Light
+                <button
+                    id="theme-toggle"
+                    class="navbar-button theme-toggle"
+                    type="button"
+                    title="Switch to light mode"
+                    aria-label="Switch to light mode"
+                    aria-pressed="false"
+                >
 
-        </span>
+                    <span
+                        id="theme-toggle-icon"
+                        class="navbar-icon"
+                    >
 
-    </button>
+                        ☀️
 
-
-    <div class="status">
-
-        <span class="status-dot"></span>
-
-
-        <span>
-
-            Online
-
-        </span>
-
-    </div>
+                    </span>
 
 
-</div>
+                    <span
+                        id="theme-toggle-text"
+                        class="navbar-button-text"
+                    >
 
+                        Light
+
+                    </span>
+
+                </button>
+
+
+                <!-- STATUS -->
+
+                <div class="status">
+
+                    <span class="status-dot"></span>
+
+
+                    <span>
+
+                        Online
+
+                    </span>
+
+                </div>
+
+
+            </div>
 
 
         </header>
 
-        <main id="chat" class="chat">
-
-            <div class="message bot-message welcome-message">
 
 
-                <div class="message-avatar">
+        <!-- ================================================== -->
+        <!-- WORKSPACE                                          -->
+        <!-- ================================================== -->
 
-                    🤖
+        <div class="workspace">
+
+
+            <!-- ================================================== -->
+            <!-- LEFT SIDEBAR                                      -->
+            <!-- ================================================== -->
+
+            <aside class="mode-sidebar">
+
+
+                <div class="sidebar-label">
+
+                    MODES
 
                 </div>
 
 
-                <div class="message-content">
+                <!-- INFO -->
+
+                <a
+                    href="{{ url_for('index') }}"
+                    class="mode-button active"
+                >
+
+                    <span class="mode-icon">
+
+                        ℹ
+
+                    </span>
 
 
-                    <div class="message-header">
+                    <span class="mode-name">
+
+                        Info
+
+                    </span>
+
+                </a>
 
 
-                        <span class="message-name">
+                <!-- TRAVEL -->
 
-                            Voice Assistant
+                <a
+                    href="{{ url_for('travel') }}"
+                    class="mode-button"
+                >
 
-                        </span>
+                    <span class="mode-icon">
+
+                        ✈
+
+                    </span>
+
+
+                    <span class="mode-name">
+
+                        Travel
+
+                    </span>
+
+                </a>
+
+
+                <!-- MOTO -->
+
+                <a
+                    href="{{ url_for('moto') }}"
+                    class="mode-button"
+                >
+
+                    <span class="mode-icon">
+
+                        🏍
+
+                    </span>
+
+
+                    <span class="mode-name">
+
+                        Moto
+
+                    </span>
+
+                </a>
+
+
+            </aside>
+
+
+
+            <!-- ================================================== -->
+            <!-- CHAT SECTION                                      -->
+            <!-- ================================================== -->
+
+            <section class="chat-section">
+
+
+                <!-- ================================================== -->
+                <!-- CHAT                                             -->
+                <!-- ================================================== -->
+
+                <main
+                    id="chat"
+                    class="chat"
+                >
+
+
+                    <!-- WELCOME MESSAGE -->
+
+                    <div
+                        class="message bot-message welcome-message"
+                    >
+
+
+                        <div class="message-avatar">
+
+                            🤖
+
+                        </div>
+
+
+                        <div class="message-content">
+
+
+                            <div class="message-header">
+
+
+                                <span class="message-name">
+
+                                    Voice Assistant
+
+                                </span>
+
+
+                            </div>
+
+
+                            <div class="message-text">
+
+
+                                <strong>
+
+                                    Hello! I am ready to help you.
+
+                                </strong>
+
+
+                                <span class="welcome-description">
+
+                                    Ask me something, search Wikipedia,
+                                    or change my voice.
+
+                                </span>
+
+
+                            </div>
+
+
+                            <div class="welcome-commands">
+
+
+                                <span>
+
+                                    Try:
+
+                                </span>
+
+
+                                <kbd>
+
+                                    help
+
+                                </kbd>
+
+
+                                <kbd>
+
+                                    info Bucharest
+
+                                </kbd>
+
+
+                                <kbd>
+
+                                    voices
+
+                                </kbd>
+
+
+                            </div>
+
+
+                        </div>
+
 
                     </div>
 
 
-                    <div class="message-text">
+                </main>
 
 
-                        <strong>
 
-                            Hello! I am ready to help you.
+                <!-- ================================================== -->
+                <!-- INPUT AREA                                        -->
+                <!-- ================================================== -->
 
-                        </strong>
-
-
-                        <span class="welcome-description">
-
-                            Ask me something, search Wikipedia,
-                            or change my voice.
-
-                        </span>
+                <div class="input-container">
 
 
-                    </div>
+                    <form
+                        id="chat-form"
+                        class="input-area"
+                    >
 
 
-                    <div class="welcome-commands">
+                        <div class="input-box">
+
+
+                            <span class="input-icon">
+
+                                ✦
+
+                            </span>
+
+
+                            <input
+                                id="message-input"
+                                type="text"
+                                placeholder="Message Voice Assistant..."
+                                autocomplete="off"
+                                autofocus
+                            >
+
+
+                            <span class="enter-hint">
+
+                                Enter
+
+                            </span>
+
+
+                        </div>
+
+
+                        <button
+                            id="send-button"
+                            type="submit"
+                            aria-label="Send message"
+                            title="Send message"
+                        >
+
+
+                            <span class="send-text">
+
+                                Send
+
+                            </span>
+
+
+                            <span class="send-icon">
+
+                                ↑
+
+                            </span>
+
+
+                        </button>
+
+
+                    </form>
+
+
+
+                    <!-- INPUT FOOTER -->
+
+                    <div class="input-footer">
 
 
                         <span>
 
-                            Try:
+                            Voice output enabled
 
                         </span>
 
 
-                        <kbd>
+                        <span class="footer-separator">
 
-                            help
+                            ·
 
-                        </kbd>
-
-
-                        <kbd>
-
-                            info Bucharest
-
-                        </kbd>
+                        </span>
 
 
-                        <kbd>
+                        <span>
 
-                            voices
+                            Type
 
-                        </kbd>
+                            <kbd>
+
+                                help
+
+                            </kbd>
+
+                            for commands
+
+                        </span>
 
 
                     </div>
@@ -251,59 +512,73 @@
                 </div>
 
 
-            </div>
+            </section>
 
 
-        </main>
-        <div class="input-container">
-            <form id="chat-form" class="input-area">
-                <div class="input-box">
-                    <span class="input-icon">
-                        ✦
-                    </span>
-
-                    <input id="message-input" type="text" placeholder="Message Voice Assistant..." autocomplete="off" autofocus>
-                    <span class="enter-hint">
-
-                        Enter
-
-                    </span>
-
-
-                </div>
-                <button id="send-button" type="submit" aria-label="Send message" title="Send message">
-                    <span class="send-text">
-
-                        Send
-                    </span>
-                    <span class="send-icon">
-                        ↑
-
-                    </span>
-                </button>
-            </form>
-            <div class="input-footer">
-                <span>
-                    Voice output enabled
-                </span>
-                <span class="footer-separator">
-                    ·
-                </span>
-                <span>
-                    Type
-                    <kbd>
-                        help
-                    </kbd>
-                    for commands
-                </span>
-            </div>
         </div>
+
+
+
+        <!-- ================================================== -->
+        <!-- USER AREA                                         -->
+        <!-- ================================================== -->
+
+        <div class="user-area">
+
+
+            <button
+                class="user-button"
+                type="button"
+                title="Account"
+            >
+
+
+                <span class="user-icon">
+
+                    👤
+
+                </span>
+
+
+                <span class="user-info">
+
+
+                    <span class="user-name">
+
+                        Guest
+
+                    </span>
+
+
+                    <span class="user-status">
+
+                        Not logged in
+
+                    </span>
+
+
+                </span>
+
+
+            </button>
+
+
+        </div>
+
+
     </div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+
+
+    <!-- ================================================== -->
+    <!-- JAVASCRIPT                                         -->
+    <!-- ================================================== -->
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+
 </body>
 
 </html>
-
-<!----
-
-TODO: Add users-->
