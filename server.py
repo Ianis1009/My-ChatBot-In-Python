@@ -14,6 +14,16 @@ def about():
 
     return render_template("about.html")
 
+
+@app.route("/travel")
+def travel():
+    return render_template("travel.html")
+
+
+@app.route("/moto")
+def moto():
+    return render_template("moto.html")
+
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
     data = request.get_json()
