@@ -1,110 +1,50 @@
+
 <!DOCTYPE html>
 
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <title>Python Voice Assistant</title>
 
-    <meta
-        name="theme-color"
-        content="#0b1020"
-    >
-
-    <title>
-        Python Voice Assistant
-    </title>
-
-
-    <link
-        rel="stylesheet"
-        href="{{ url_for('static', filename='style.css') }}"
-    >
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-
 
 <body>
 
-
     <div class="app">
 
-
-        <!-- ================================================== -->
-        <!-- HEADER                                             -->
-        <!-- ================================================== -->
+        <!-- HEADER -->
 
         <header class="header">
 
-
             <div class="header-left">
 
-
                 <div class="bot-avatar">
-
-                    <span class="bot-avatar-icon">
-
-                        🤖
-
-                    </span>
-
-
+                    <span class="bot-avatar-icon">🤖</span>
                     <span class="avatar-glow"></span>
-
                 </div>
-
 
                 <div class="title">
 
-
                     <div class="title-row">
-
-                        <h1>
-
-                            Voice Assistant
-
-                        </h1>
-
-
-                        <span class="version">
-
-                            Version β
-
-                        </span>
-
+                        <h1>Voice Assistant</h1>
+                        <span class="version">Version β</span>
                     </div>
 
-
                     <p>
-
-                        <span class="header-subtitle-icon">
-
-                            ✦
-
-                        </span>
-
+                        <span class="header-subtitle-icon">✦</span>
                         Created by Iosif Ianis
-
                     </p>
-
 
                 </div>
 
-
             </div>
 
-
-            <!-- ================================================== -->
-            <!-- HEADER RIGHT                                       -->
-            <!-- ================================================== -->
-
             <div class="header-right">
-
 
                 <!-- VOICE -->
 
@@ -116,28 +56,9 @@
                     aria-label="Mute voice"
                     aria-pressed="false"
                 >
-
-                    <span
-                        id="voice-toggle-icon"
-                        class="navbar-icon"
-                    >
-
-                        🔊
-
-                    </span>
-
-
-                    <span
-                        id="voice-toggle-text"
-                        class="navbar-button-text"
-                    >
-
-                        Voice
-
-                    </span>
-
+                    <span id="voice-toggle-icon" class="navbar-icon">🔊</span>
+                    <span id="voice-toggle-text" class="navbar-button-text">Voice</span>
                 </button>
-
 
                 <!-- THEME -->
 
@@ -149,277 +70,117 @@
                     aria-label="Switch to light mode"
                     aria-pressed="false"
                 >
-
-                    <span
-                        id="theme-toggle-icon"
-                        class="navbar-icon"
-                    >
-
-                        ☀️
-
-                    </span>
-
-
-                    <span
-                        id="theme-toggle-text"
-                        class="navbar-button-text"
-                    >
-
-                        Light
-
-                    </span>
-
+                    <span id="theme-toggle-icon" class="navbar-icon">☀️</span>
+                    <span id="theme-toggle-text" class="navbar-button-text">Light</span>
                 </button>
-
 
                 <!-- STATUS -->
 
                 <div class="status">
-
                     <span class="status-dot"></span>
-
-
-                    <span>
-
-                        Online
-
-                    </span>
-
+                    <span>Online</span>
                 </div>
 
-
             </div>
-
 
         </header>
 
 
-
-        <!-- ================================================== -->
-        <!-- WORKSPACE                                          -->
-        <!-- ================================================== -->
+        <!-- WORKSPACE -->
 
         <div class="workspace">
 
-
-            <!-- ================================================== -->
-            <!-- LEFT SIDEBAR                                      -->
-            <!-- ================================================== -->
+            <!-- SIDEBAR -->
 
             <aside class="mode-sidebar">
 
-
-                <div class="sidebar-label">
-
-                    MODES
-
-                </div>
-
+                <div class="sidebar-label">MODES</div>
 
                 <!-- INFO -->
 
-                <a
-                    href="{{ url_for('index') }}"
-                    class="mode-button active"
-                >
-
-                    <span class="mode-icon">
-
-                        ℹ
-
-                    </span>
-
-
-                    <span class="mode-name">
-
-                        Info
-
-                    </span>
-
+                <a href="{{ url_for('index') }}" class="mode-button active">
+                    <span class="mode-icon">ℹ</span>
+                    <span class="mode-name">Info</span>
                 </a>
-
 
                 <!-- TRAVEL -->
 
-                <a
-                    href="{{ url_for('travel') }}"
-                    class="mode-button"
-                >
-
-                    <span class="mode-icon">
-
-                        ✈
-
-                    </span>
-
-
-                    <span class="mode-name">
-
-                        Travel
-
-                    </span>
-
+                <a href="{{ url_for('travel') }}" class="mode-button">
+                    <span class="mode-icon">✈</span>
+                    <span class="mode-name">Travel</span>
                 </a>
-
 
                 <!-- MOTO -->
 
-                <a
-                    href="{{ url_for('moto') }}"
-                    class="mode-button"
-                >
-
-                    <span class="mode-icon">
-
-                        🏍
-
-                    </span>
-
-
-                    <span class="mode-name">
-
-                        Moto
-
-                    </span>
-
+                <a href="{{ url_for('moto') }}" class="mode-button">
+                    <span class="mode-icon">🏍</span>
+                    <span class="mode-name">Moto</span>
                 </a>
-
 
             </aside>
 
 
-
-            <!-- ================================================== -->
-            <!-- CHAT SECTION                                      -->
-            <!-- ================================================== -->
+            <!-- CHAT SECTION -->
 
             <section class="chat-section">
 
-
-                <!-- ================================================== -->
-                <!-- CHAT                                             -->
-                <!-- ================================================== -->
-
-                <main
-                    id="chat"
-                    class="chat"
-                >
-
+                <main id="chat" class="chat">
 
                     <!-- WELCOME MESSAGE -->
 
-                    <div
-                        class="message bot-message welcome-message"
-                    >
-
+                    <div class="message bot-message welcome-message">
 
                         <div class="message-avatar">
-
                             🤖
-
                         </div>
-
 
                         <div class="message-content">
 
-
                             <div class="message-header">
-
-
                                 <span class="message-name">
-
                                     Voice Assistant
-
                                 </span>
-
-
                             </div>
-
 
                             <div class="message-text">
 
-
                                 <strong>
-
                                     Hello! I am ready to help you.
-
                                 </strong>
 
-
                                 <span class="welcome-description">
-
                                     Ask me something, search Wikipedia,
                                     or change my voice.
-
                                 </span>
 
-
                             </div>
-
 
                             <div class="welcome-commands">
 
+                                <span>Try:</span>
 
-                                <span>
-
-                                    Try:
-
-                                </span>
-
-
-                                <kbd>
-
-                                    help
-
-                                </kbd>
-
-
-                                <kbd>
-
-                                    info Bucharest
-
-                                </kbd>
-
-
-                                <kbd>
-
-                                    voices
-
-                                </kbd>
-
+                                <kbd>help</kbd>
+                                <kbd>info Bucharest</kbd>
+                                <kbd>voices</kbd>
 
                             </div>
 
-
                         </div>
-
 
                     </div>
 
-
                 </main>
 
-               
-                <!-- INPUT AREA                                        -->
+
+                <!-- INPUT AREA -->
 
                 <div class="input-container">
 
-
-                    <form
-                        id="chat-form"
-                        class="input-area"
-                    >
-
+                    <form id="chat-form" class="input-area">
 
                         <div class="input-box">
 
-
-                            <span class="input-icon">
-
-                                ✦
-
-                            </span>
-
+                            <span class="input-icon">✦</span>
 
                             <input
                                 id="message-input"
@@ -429,16 +190,9 @@
                                 autofocus
                             >
 
-
-                            <span class="enter-hint">
-
-                                Enter
-
-                            </span>
-
+                            <span class="enter-hint">Enter</span>
 
                         </div>
-
 
                         <button
                             id="send-button"
@@ -446,80 +200,37 @@
                             aria-label="Send message"
                             title="Send message"
                         >
-
-
-                            <span class="send-text">
-
-                                Send
-
-                            </span>
-
-
-                            <span class="send-icon">
-
-                                ↑
-
-                            </span>
-
-
+                            <span class="send-text">Send</span>
+                            <span class="send-icon">↑</span>
                         </button>
 
-
                     </form>
-
 
 
                     <!-- INPUT FOOTER -->
 
                     <div class="input-footer">
 
+                        <span>Voice output enabled</span>
+
+                        <span class="footer-separator">·</span>
 
                         <span>
-
-                            Voice output enabled
-
+                            Type <kbd>help</kbd> for commands
                         </span>
-
-
-                        <span class="footer-separator">
-
-                            ·
-
-                        </span>
-
-
-                        <span>
-
-                            Type
-
-                            <kbd>
-
-                                help
-
-                            </kbd>
-
-                            for commands
-
-                        </span>
-
 
                     </div>
 
-
                 </div>
-
 
             </section>
 
-
         </div>
 
-        <!-- ================================================== -->
-        <!-- USER AREA                                         -->
-        <!-- ================================================== -->
+
+        <!-- USER AREA -->
 
         <div class="user-area">
-
 
             <button
                 class="user-button"
@@ -527,41 +238,28 @@
                 title="Account"
             >
 
-
-                <span class="user-icon">
-
-                    👤
-
-                </span>
-
+                <span class="user-icon">👤</span>
 
                 <span class="user-info">
 
+                    <span class="user-name">Guest</span>
 
-                    <span class="user-name">
-
-                        Guest
-
-                    </span>
                     <span class="user-status">
-
                         Not logged in
                     </span>
+
                 </span>
+
             </button>
+
         </div>
+
     </div>
 
 
+    <!-- JAVASCRIPT -->
 
-  
-    <!-- JAVASCRIPT                                         -->
-
-
-    <script
-        src="{{ url_for('static', filename='script.js') }}"
-    ></script>
-
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
 </body>
 
