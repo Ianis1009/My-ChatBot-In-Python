@@ -82,3 +82,33 @@ def calculate_route(origin, destination):
         }
 
 
+def build_route_message (route):
+    # description for a calculated route
+    if not route.get("success"):
+        return route.get("error", "I could not calculate this route.")
+
+    origin = route["origin"]["name"]
+    destination = route["destination"]["name"]
+    distance = route["distance_km"]
+    duration = route["duration_hours"]
+
+    hours = int(duration)
+    minutes = round((duration - hours) * 60)
+    if hours > 0 and minutes > 0:
+        duration_text = f"{hours} hours and {minutes} minutes"
+    elif hours > 0:
+        duration_text = f"{hours} hours"
+    else:
+        duration_text = f"{minutes} minutes"
+
+    message = (
+        f"I calculated a route from {origin} to {destination}. "
+        f"The estimated driving distance is "
+        f"{distance} kilometers, "
+        f"with an estimated travel time of "
+        f"{duration_text}."
+    )
+
+
+    return message
+
