@@ -21,7 +21,7 @@ def geocode_city(city):
    except requests.RequestException:
     return None 
 
-def calculate_route(origin, festination):
-    #TODO
+def calculate_route(origin, destination):
+    
     pass
 
