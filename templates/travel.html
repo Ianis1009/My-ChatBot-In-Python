@@ -4,181 +4,483 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
 
-    <title>Travel | Voice Assistant</title>
+    <title>Travel · Python Voice Assistant</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='travel.css') }}">
+    
 </head>
 
-<body>
+<body class="travel-body">
 
-<div class="travel-page">
+<div class="app">
 
-    <header class="travel-header">
+    <!-- HEADER -->
 
-        <a href="{{ url_for('index') }}" class="back-button">
-            ← Assistant
-        </a>
+    <header class="header">
 
-        <div>
-            <span class="travel-label">TRAVEL MODE</span>
-            <h1>Plan your route: </h1>
-            <p>Calculate routes between cities around the world.</p>
+        <div class="header-left">
+
+            <div class="bot-avatar">
+                <span class="bot-avatar-icon">🤖</span>
+                <span class="avatar-glow"></span>
+            </div>
+
+            <div class="title">
+
+                <div class="title-row">
+                    <h1>Voice Assistant</h1>
+
+                    <span class="version">
+                        Version β
+                    </span>
+                </div>
+
+                <p>
+                    <span class="header-subtitle-icon">✦</span>
+                    Created by Iosif Ianis
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="header-right">
+
+            <!-- VOICE -->
+
+            <button
+                id="voice-toggle"
+                class="navbar-button voice-toggle"
+                type="button"
+                title="Mute voice"
+                aria-label="Mute voice"
+                aria-pressed="false"
+            >
+
+                <span
+                    id="voice-toggle-icon"
+                    class="navbar-icon"
+                >
+                    🔊
+                </span>
+
+                <span
+                    id="voice-toggle-text"
+                    class="navbar-button-text"
+                >
+                    Voice
+                </span>
+
+            </button>
+
+
+            <!-- THEME -->
+
+            <button
+                id="theme-toggle"
+                class="navbar-button theme-toggle"
+                type="button"
+                title="Switch to light mode"
+                aria-label="Switch to light mode"
+                aria-pressed="false"
+            >
+
+                <span
+                    id="theme-toggle-icon"
+                    class="navbar-icon"
+                >
+                    ☀️
+                </span>
+
+                <span
+                    id="theme-toggle-text"
+                    class="navbar-button-text"
+                >
+                    Light
+                </span>
+
+            </button>
+
+
+            <!-- STATUS -->
+
+            <div class="status">
+
+                <span class="status-dot"></span>
+
+                <span>Online</span>
+
+            </div>
+
         </div>
 
     </header>
 
 
-    <main class="travel-container">
+    <!-- WORKSPACE -->
 
-        <section class="route-card">
+    <div class="workspace">
 
-            <div class="route-title">
-                <span>✈</span>
-                <div>
-                    <h2>Route planner</h2>
-                    <p>Enter two cities to calculate the route.</p>
-                </div>
+        <!-- SIDEBAR -->
+
+        <aside class="mode-sidebar">
+
+            <div class="sidebar-label">
+                MODES
             </div>
 
 
-            <form id="route-form" class="route-form">
+            <!-- INFO -->
 
-                <div class="route-input">
+            <a
+                href="{{ url_for('index') }}"
+                class="mode-button"
+            >
 
-                    <label for="origin">
-                        From
-                    </label>
-
-                    <input
-                        id="origin"
-                        type="text"
-                        placeholder="Bucharest"
-                        autocomplete="off"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="route-arrow">
-                    →
-                </div>
-
-
-                <div class="route-input">
-
-                    <label for="destination">
-                        To
-                    </label>
-
-                    <input
-                        id="destination"
-                        type="text"
-                        placeholder="Paris"
-                        autocomplete="off"
-                        required
-                    >
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    id="calculate-route"
-                    class="route-button"
-                >
-                    Calculate route
-                </button>
-
-            </form>
-
-        </section>
-
-
-        <section
-            id="route-result"
-            class="route-result hidden"
-        >
-
-            <div class="route-result-header">
-
-                <span class="success-icon">
-                    ✓
+                <span class="mode-icon">
+                    ℹ
                 </span>
 
-                <div>
-                    <h2>Route calculated</h2>
-                    <p id="route-summary"></p>
+                <span class="mode-name">
+                    Info
+                </span>
+
+            </a>
+
+
+            <!-- TRAVEL -->
+
+            <a
+                href="{{ url_for('travel') }}"
+                class="mode-button active"
+            >
+
+                <span class="mode-icon">
+                    ✈
+                </span>
+
+                <span class="mode-name">
+                    Travel
+                </span>
+
+            </a>
+
+
+            <!-- MOTO -->
+
+            <a
+                href="{{ url_for('moto') }}"
+                class="mode-button"
+            >
+
+                <span class="mode-icon">
+                    🏍
+                </span>
+
+                <span class="mode-name">
+                    Moto
+                </span>
+
+            </a>
+
+        </aside>
+
+
+        <!-- TRAVEL -->
+
+        <section class="chat-section">
+
+            <main class="chat travel-content">
+
+                <!-- TITLE -->
+
+                <div class="travel-header">
+
+                    <div class="travel-header-icon">
+                        ✈
+                    </div>
+
+                    <div>
+
+                        <span class="travel-label">
+                            TRAVEL MODE
+                        </span>
+
+                        <h2>
+                            Plan your journey
+                        </h2>
+
+                        <p>
+                            Calculate a route between two cities.
+                        </p>
+
+                    </div>
+
                 </div>
 
-            </div>
+
+                <!-- ROUTE FORM -->
+
+                <div class="message bot-message travel-card">
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-header">
+
+                            <span class="message-name">
+                                Route planner
+                            </span>
+
+                        </div>
 
 
-            <div class="route-stats">
+                        <form
+                            id="route-form"
+                            class="route-form"
+                        >
 
-                <div class="route-stat">
+                            <div class="route-field">
 
-                    <span class="stat-icon">
-                        ↔
-                    </span>
+                                <label for="origin">
+                                    From
+                                </label>
 
-                    <span class="stat-label">
-                        Distance
-                    </span>
+                                <input
+                                    id="origin"
+                                    type="text"
+                                    placeholder="e.g. Bucharest"
+                                    autocomplete="off"
+                                >
 
-                    <strong id="distance">
-                        —
-                    </strong>
+                            </div>
+
+
+                            <div class="route-arrow">
+                                →
+                            </div>
+
+
+                            <div class="route-field">
+
+                                <label for="destination">
+                                    To
+                                </label>
+
+                                <input
+                                    id="destination"
+                                    type="text"
+                                    placeholder="e.g. Paris"
+                                    autocomplete="off"
+                                >
+
+                            </div>
+
+
+                            <button
+                                id="calculate-route"
+                                type="submit"
+                                class="calculate-route-button"
+                            >
+                                Calculate route
+                            </button>
+
+                        </form>
+
+                    </div>
 
                 </div>
 
 
-                <div class="route-stat">
+                <!-- ERROR -->
 
-                    <span class="stat-icon">
-                        ⏱
+                <div
+                    id="route-error"
+                    class="route-error hidden"
+                >
+
+                    <span class="error-icon">
+                        ⚠
                     </span>
 
-                    <span class="stat-label">
-                        Estimated time
-                    </span>
+                    <div>
 
-                    <strong id="duration">
-                        —
-                    </strong>
+                        <strong>
+                            Route error
+                        </strong>
+
+                        <p id="error-message">
+                            Could not calculate the route.
+                        </p>
+
+                    </div>
 
                 </div>
 
-                <div class="route-actions">
 
-    <button
-        id="speak-route"
-        class="speak-route-button"
-        type="button"
-    >
-        <span>🔊</span>
-        Speak route
-    </button>
+                <!-- RESULT -->
 
-</div>
+                <div
+                    id="route-result"
+                    class="message bot-message travel-card route-result hidden"
+                >
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+                    <div class="message-content">
+
+                        <div class="message-header">
+
+                            <span class="message-name">
+                                Route result
+                            </span>
+
+                        </div>
+
+
+                        <h3 id="route-summary">
+                            Bucharest → Paris
+                        </h3>
+
+
+                        <div class="route-stats">
+
+                            <div class="route-stat">
+
+                                <span class="route-stat-icon">
+                                    📏
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        Distance
+                                    </span>
+
+                                    <strong id="distance">
+                                        —
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="route-stat">
+
+                                <span class="route-stat-icon">
+                                    ⏱
+                                </span>
+
+                                <div>
+
+                                    <span>
+                                        Estimated time
+                                    </span>
+
+                                    <strong id="duration">
+                                        —
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <button
+                            id="speak-route"
+                            class="speak-route-button"
+                            type="button"
+                            disabled
+                        >
+
+                            <span>
+                                🔊
+                            </span>
+
+                            Speak route
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </main>
+
+
+            <!-- FOOTER -->
+
+            <div class="input-footer travel-footer">
+
+                <span>
+                    ✈ Travel mode
+                </span>
+
+                <span class="footer-separator">
+                    ·
+                </span>
+
+                <span>
+                    Enter two cities to calculate a route
+                </span>
 
             </div>
 
         </section>
 
+    </div>
 
-        <section
-            id="route-error"
-            class="route-error hidden"
+
+    <!-- USER -->
+
+    <div class="user-area">
+
+        <button
+            class="user-button"
+            type="button"
+            title="Account"
         >
-            <span>⚠</span>
-            <p id="error-message"></p>
-        </section>
 
-    </main>
+            <span class="user-icon">
+                👤
+            </span>
+
+            <span class="user-info">
+
+                <span class="user-name">
+                    Guest
+                </span>
+
+                <span class="user-status">
+                    Not logged in
+                </span>
+
+            </span>
+
+        </button>
+
+    </div>
 
 </div>
+
+
+<!-- GLOBAL JS -->
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+<!-- TRAVEL JS -->
 
 <script src="{{ url_for('static', filename='travel.js') }}"></script>
 
