@@ -33,6 +33,9 @@ JOKES = [
     "I told my computer I needed a break. "
     "Now it won't stop sending me vacation ads."
 
+    "Why did the function break up with the variable? "
+    "It needed some space."
+
 
 ] #TODO add more
 
