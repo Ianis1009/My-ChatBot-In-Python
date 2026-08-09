@@ -1,22 +1,48 @@
 🤖  Bot started.
-💬    New chat at: 30/07/2026, 10:03:20
+💬    New chat at: 10/08/2026, 00:29:54
 ────────────────────────────────────────────────────────────
 
-👤 User: hello
-🤖 Bot: Hello! How can I help you?
-👤 User: voicew
-🤖 Bot: [INFO]: Sorry, I don't recognize that command.
-👤 User: voice
-🤖 Bot: [INFO]: Sorry, I don't recognize that command.
-👤 User: voices
-🤖 Bot: [INFO]: you must select one number from that list in order to switch my voice. Use command set voice to do that
-👤 User: try voice 2
-🤖 Bot: [INFO]: Tried voice number 2
-👤 User: set voice 2
-🤖 Bot: [INFO]: Voice changed to Microsoft Zira Desktop!
-👤 User: info Sibiu
-🤖 Bot: Sibiu is a city in central Romania, situated in the historical region of Transylvania. Located some 275 km (171 mi) north-west of Bucharest, the city straddles the Cibin River, a tributary of the Olt River. Now the seat of Sibiu County, between 1692 and 1791 and 1849–65, Sibiu was the capital of the Principality of Transylvania. Until 1876, the Hecht house in Sibiu served as the seat of the Transylvanian Saxon University.
-👤 User: exit
-🤖 Bot: Goodbye!
-────────────────────────────────────────────────────────────
-💬    Chat ended at: 30/07/2026, 10:06:04
+👤 User: mute
+🤖 Bot: [INFO]: Voice output is muted.
+👤 User: help
+🤖 Bot: Available commands:
+➤ Command: hello
+    Explication: Greets the assistant.
+➤ Command: how are you
+    Explication: Shows the assistant status.
+➤ Command: info <topic>
+    Explication: Searches Wikipedia for a topic.
+➤ Command: voices
+    Explication: Displays all available voices.
+➤ Command: set voice <1-2>
+    Explication: Changes the current voice.
+➤ Command: exit
+    Explication: Terminates the assistant.
+➤ Command: try voice <1-2>
+    Explication: Try voices.
+➤ Command: mute
+    Explication: The new state is Muted
+➤ Command: unmute
+    Explication: The new state is Voice
+➤ Command: time
+    Explication: Display current time.
+➤ Command: date
+    Explication: Display current date.
+➤ Command: joke
+    Explication: Dispaly a random joke.
+[INFO]: Use help <command> for more details.
+👤 User: help joke
+🤖 Bot: Command: joke
+Description: Dispaly a random joke.
+👤 User: joke
+🤖 Bot: Why was the computer cold? Because it left its Windows open.
+👤 User: joke
+🤖 Bot: Why did the developer go outside? To check whether the cloud was working.Why did the computer get promoted? It had outstanding processing skills.I told my computer I needed a break. Now it won't stop sending me vacation ads.Why did the function break up with the variable? It needed some space.
+👤 User: joke
+🤖 Bot: Why was the developer broke? Because they used up all their cache.
+👤 User: joke
+🤖 Bot: Why was the developer broke? Because they used up all their cache.
+👤 User: unmute
+🤖 Bot: [INFO]: Voice output is enabled.
+👤 User: mute
+🤖 Bot: [INFO]: Voice output is muted.
