@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b1020">
+
     <title>Moto Garage</title>
 
     <link
@@ -22,16 +23,26 @@
 
             <div class="navbar-brand">
                 <a href="{{ url_for('index') }}" class="brand-link">
+
                     <span class="brand-icon">🏁</span>
 
-                    <div>
+                    <div class="brand-text">
                         <span class="brand-title">Moto Garage</span>
-                        <span class="brand-subtitle">Passion · Machines · Offroad</span>
+                        <span class="brand-subtitle">
+                            Passion · Machines · Offroad
+                        </span>
                     </div>
+
                 </a>
             </div>
 
+
             <nav class="moto-nav">
+
+                <a href="#all" class="nav-link active">
+                    <span>⚡</span>
+                    All
+                </a>
 
                 <a href="#atv" class="nav-link">
                     <span>🛞</span>
@@ -43,7 +54,7 @@
                     SXS
                 </a>
 
-                <a href="#motorcycles" class="nav-link">
+                <a href="#motorcycle" class="nav-link">
                     <span>🏍</span>
                     Motorcycle
                 </a>
@@ -60,7 +71,11 @@
 
             </nav>
 
-            <a href="{{ url_for('index') }}" class="back-button">
+
+            <a
+                href="{{ url_for('index') }}"
+                class="back-button"
+            >
                 ← Assistant
             </a>
 
@@ -69,57 +84,82 @@
 
         <!-- HERO -->
 
+        
         <section class="moto-hero">
 
-            <div class="hero-overlay"></div>
+    <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+    >
+        <source
+            src="{{ url_for('static', filename='videos/vb1.mp4') }}"
+            type="video/mp4"
+        >
+    </video>
 
-            <div class="hero-content">
+    <div class="hero-video-overlay"></div>
+    <div class="hero-gradient"></div>
 
-                <span class="hero-eyebrow">
-                    MOTO GARAGE
-                </span>
+    <div class="hero-content">
 
-                <h1>
-                    Machines built
-                    <span>to be ridden.</span>
-                </h1>
+        <span class="hero-eyebrow">
+            MOTO GARAGE
+        </span>
 
-                <p>
-                    Motorcycles, ATVs, SXS and offroad machines.
-                    Explore the machines, the specs and the stories
-                    behind them.
-                </p>
+        <h1>
+            Machines built
+            <span>to be ridden.</span>
+        </h1>
 
-                <div class="hero-actions">
+        <p>
+            Motorcycles, ATVs, SXS and offroad machines.
+            Explore the machines, their specifications
+            and the stories behind them.
+        </p>
 
-                    <a href="#garage" class="hero-button primary">
-                        Explore garage
-                        <span>↓</span>
-                    </a>
+        <div class="hero-actions">
 
-                    <a href="#motorcycles" class="hero-button secondary">
-                        Motorcycles
-                    </a>
+            <a
+                href="#garage"
+                class="hero-button primary"
+            >
+                Explore garage
+                <span>↓</span>
+            </a>
 
-                </div>
+            <a
+                href="#motorcycle"
+                class="hero-button secondary"
+            >
+                Motorcycles
+            </a>
 
-            </div>
+        </div>
 
-            <div class="hero-scroll">
-                <span></span>
-                Scroll to explore
-            </div>
+    </div>
 
-        </section>
+    <div class="hero-scroll">
+        <span></span>
+        Scroll to explore
+    </div>
 
+</section>
 
         <!-- GARAGE -->
 
-        <main id="garage" class="garage">
+        <main
+            id="garage"
+            class="garage"
+        >
 
             <div class="section-heading">
 
                 <div>
+
                     <span class="section-label">
                         THE GARAGE
                     </span>
@@ -127,275 +167,223 @@
                     <h2>
                         Featured machines
                     </h2>
+
                 </div>
 
                 <p>
-                    A selection of machines that deserve
-                    a place in the garage.
+                    Explore the machines currently
+                    available in the garage.
                 </p>
 
             </div>
 
 
-            <!-- CARDS -->
+            <!-- CATEGORY FILTERS -->
 
-            <section class="vehicle-grid">
+            <div class="category-filters">
 
+                <button
+                    type="button"
+                    class="category-filter active"
+                    data-category="all"
+                >
+                    All
+                </button>
 
-                <!-- CARD 1 -->
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="motorcycle"
+                >
+                    Motorcycles
+                </button>
 
-                <article class="vehicle-card" id="motorcycles">
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="atv"
+                >
+                    ATV
+                </button>
 
-                    <div class="vehicle-image">
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="sxs"
+                >
+                    SXS
+                </button>
 
-                        <img
-                            src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=1200&q=85"
-                            alt="Adventure motorcycle"
-                        >
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="offroad"
+                >
+                    Offroad
+                </button>
 
-                        <span class="vehicle-category">
-                            Motorcycle
-                        </span>
+                <button
+                    type="button"
+                    class="category-filter"
+                    data-category="others"
+                >
+                    Others
+                </button>
 
-                        <button class="favorite-button">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="vehicle-content">
-
-                        <span class="vehicle-type">
-                            ADVENTURE
-                        </span>
-
-                        <h3>
-                            Adventure Motorcycle
-                        </h3>
-
-                        <p>
-                            Built for long roads, rough terrain
-                            and everything between.
-                        </p>
-
-                        <div class="vehicle-specs">
-
-                            <div>
-                                <span>Engine</span>
-                                <strong>1000cc</strong>
-                            </div>
-
-                            <div>
-                                <span>Power</span>
-                                <strong>100 HP</strong>
-                            </div>
-
-                            <div>
-                                <span>Drive</span>
-                                <strong>2WD</strong>
-                            </div>
-
-                        </div>
-
-                        <button class="details-button">
-                            View machine →
-                        </button>
-
-                    </div>
-
-                </article>
+            </div>
 
 
-                <!-- CARD 2 -->
+            <!-- VEHICLES -->
 
-                <article class="vehicle-card" id="atv">
+            <section
+                id="vehicle-grid"
+                class="vehicle-grid"
+            >
 
-                    <div class="vehicle-image">
+                {% if vehicles %}
 
-                        <img
-                            src="https://images.unsplash.com/photo-1558980664-10ea7c0d4c0d?auto=format&fit=crop&w=1200&q=85"
-                            alt="ATV quad"
-                        >
+                    {% for vehicle in vehicles %}
 
-                        <span class="vehicle-category">
-                            ATV
-                        </span>
+                    <article
+                        class="vehicle-card"
+                        data-category="{{ vehicle.category }}"
+                        data-id="{{ vehicle.id }}"
+                    >
 
-                        <button class="favorite-button">
-                            ♡
-                        </button>
+                        <!-- IMAGE -->
 
-                    </div>
+                        <div class="vehicle-image">
 
-                    <div class="vehicle-content">
+                            <img
+                                src="{{ url_for(
+                                    'static',
+                                    filename=vehicle.image
+                                ) }}"
+                                alt="{{ vehicle.name }}"
+                                loading="lazy"
+                            >
 
-                        <span class="vehicle-type">
-                            OFFROAD
-                        </span>
+                            <span class="vehicle-category">
+                                {{ vehicle.category }}
+                            </span>
 
-                        <h3>
-                            ATV Quad
-                        </h3>
 
-                        <p>
-                            Compact, aggressive and ready for
-                            technical offroad terrain.
-                        </p>
-
-                        <div class="vehicle-specs">
-
-                            <div>
-                                <span>Engine</span>
-                                <strong>700cc</strong>
-                            </div>
-
-                            <div>
-                                <span>Power</span>
-                                <strong>65 HP</strong>
-                            </div>
-
-                            <div>
-                                <span>Drive</span>
-                                <strong>4x4</strong>
-                            </div>
+                            <button
+                                class="favorite-button"
+                                type="button"
+                                aria-label="Add to favorites"
+                                title="Add to favorites"
+                            >
+                                ♡
+                            </button>
 
                         </div>
 
-                        <button class="details-button">
-                            View machine →
-                        </button>
 
-                    </div>
+                        <!-- CONTENT -->
 
-                </article>
+                        <div class="vehicle-content">
+
+                            <span class="vehicle-type">
+                                {{ vehicle.type }}
+                            </span>
 
 
-                <!-- CARD 3 -->
+                            <h3>
+                                {{ vehicle.name }}
+                            </h3>
 
-                <article class="vehicle-card" id="sxs">
 
-                    <div class="vehicle-image">
+                            <p>
+                                {{ vehicle.description }}
+                            </p>
 
-                        <img
-                            src="https://images.unsplash.com/photo-1544191696-15693c3a2b7a?auto=format&fit=crop&w=1200&q=85"
-                            alt="Side by side offroad vehicle"
-                        >
 
-                        <span class="vehicle-category">
-                            SXS
-                        </span>
+                            <!-- SPECS -->
 
-                        <button class="favorite-button">
-                            ♡
-                        </button>
+                            <div class="vehicle-specs">
 
-                    </div>
+                                <div class="spec">
 
-                    <div class="vehicle-content">
+                                    <span>
+                                        Engine
+                                    </span>
 
-                        <span class="vehicle-type">
-                            SIDE BY SIDE
-                        </span>
+                                    <strong>
+                                        {{ vehicle.engine }}
+                                    </strong>
 
-                        <h3>
-                            Performance SXS
-                        </h3>
+                                </div>
 
-                        <p>
-                            More power, more suspension travel
-                            and serious offroad capability.
-                        </p>
 
-                        <div class="vehicle-specs">
+                                <div class="spec">
 
-                            <div>
-                                <span>Engine</span>
-                                <strong>1000cc</strong>
+                                    <span>
+                                        Power
+                                    </span>
+
+                                    <strong>
+                                        {{ vehicle.power }}
+                                    </strong>
+
+                                </div>
+
+
+                                <div class="spec">
+
+                                    <span>
+                                        Drive
+                                    </span>
+
+                                    <strong>
+                                        {{ vehicle.drive }}
+                                    </strong>
+
+                                </div>
+
                             </div>
 
-                            <div>
-                                <span>Power</span>
-                                <strong>110 HP</strong>
-                            </div>
 
-                            <div>
-                                <span>Drive</span>
-                                <strong>4x4</strong>
-                            </div>
+                            <!-- DETAILS -->
+
+                            <a
+                                href="{{ url_for(
+                                    'vehicle_page',
+                                    vehicle_id=vehicle.id
+                                ) }}"
+                                class="details-button"
+                            >
+                                View machine
+                                <span>→</span>
+                            </a>
 
                         </div>
 
-                        <button class="details-button">
-                            View machine →
-                        </button>
+                    </article>
 
-                    </div>
+                    {% endfor %}
 
-                </article>
+                {% else %}
 
+                    <!-- EMPTY STATE -->
 
-                <!-- CARD 4 -->
+                    <div class="empty-state">
 
-                <article class="vehicle-card" id="offroad">
-
-                    <div class="vehicle-image">
-
-                        <img
-                            src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=1200&q=85"
-                            alt="4x4 offroad vehicle"
-                        >
-
-                        <span class="vehicle-category">
-                            OFFROAD
-                        </span>
-
-                        <button class="favorite-button">
-                            ♡
-                        </button>
-
-                    </div>
-
-                    <div class="vehicle-content">
-
-                        <span class="vehicle-type">
-                            4x4
-                        </span>
+                        <div class="empty-icon">
+                            🏁
+                        </div>
 
                         <h3>
-                            Offroad 4x4
+                            The garage is empty
                         </h3>
 
                         <p>
-                            Big tires, high clearance and a
-                            completely different way of exploring.
+                            No vehicles have been added yet.
                         </p>
-
-                        <div class="vehicle-specs">
-
-                            <div>
-                                <span>Engine</span>
-                                <strong>3000cc</strong>
-                            </div>
-
-                            <div>
-                                <span>Power</span>
-                                <strong>250 HP</strong>
-                            </div>
-
-                            <div>
-                                <span>Drive</span>
-                                <strong>4x4</strong>
-                            </div>
-
-                        </div>
-
-                        <button class="details-button">
-                            View machine →
-                        </button>
 
                     </div>
 
-                </article>
+                {% endif %}
 
             </section>
 
@@ -406,18 +394,128 @@
 
         <footer class="moto-footer">
 
-            <div>
-                <strong>🏁 Moto Garage</strong>
-                <span>Built for people who love machines.</span>
+            <div class="footer-brand">
+
+                <strong>
+                    🏁 Moto Garage
+                </strong>
+
+                <span>
+                    Built for people who love machines.
+                </span>
+
             </div>
 
-            <span>
-                © 2026
-            </span>
+
+            <div class="footer-info">
+
+                <span>
+                    Vehicles:
+                    <strong>{{ vehicles|length }}</strong>
+                </span>
+
+                <span class="footer-separator">
+                    ·
+                </span>
+
+                <span>
+                    © 2026
+                </span>
+
+            </div>
 
         </footer>
 
     </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        const filterButtons =
+            document.querySelectorAll(".category-filter");
+
+        const vehicleCards =
+            document.querySelectorAll(".vehicle-card");
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                const category =
+                    button.dataset.category;
+
+
+                filterButtons.forEach(item => {
+
+                    item.classList.remove("active");
+
+                });
+
+
+                button.classList.add("active");
+
+
+                vehicleCards.forEach(card => {
+
+                    const cardCategory =
+                        card.dataset.category;
+
+
+                    if (
+                        category === "all" ||
+                        cardCategory === category
+                    ) {
+
+                        card.style.display = "";
+
+                    } else {
+
+                        card.style.display = "none";
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        // FAVORITES
+
+        const favoriteButtons =
+            document.querySelectorAll(".favorite-button");
+
+
+        favoriteButtons.forEach(button => {
+
+            button.addEventListener("click", event => {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+                button.classList.toggle("favorite");
+
+                if (
+                    button.classList.contains("favorite")
+                ) {
+
+                    button.textContent = "♥";
+
+                } else {
+
+                    button.textContent = "♡";
+
+                }
+
+            });
+
+        });
+
+    </script>
 
 </body>
 </html>
