@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080b12">
+
+    <title>Moto | Python Voice Assistant</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='moto.css') }}">
+</head>
+
+<body>
+
+<div class="moto-page">
+
+    <div class="moto-container">
+
+        <!-- HEADER -->
+
+        <header class="moto-header">
+
+            <div class="moto-header-left">
+
+                <div class="moto-icon">
+                    🏍️
+                </div>
+
+                <div class="moto-title">
+                    <h1>Moto</h1>
+                    <p>Motorcycle information and specifications</p>
+                </div>
+
+            </div>
+
+            <a href="{{ url_for('index') }}" class="moto-back">
+                ← Back to Assistant
+            </a>
+
+        </header>
+
+
+        <!-- HERO -->
+
+        <section class="moto-hero">
+
+            <div class="moto-hero-content">
+
+                <h2>
+                    Explore the world of motorcycles.
+                </h2>
+
+                <p>
+                    Search for a motorcycle and get information about
+                    specifications, engine, performance, category and
+                    other useful details.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SEARCH CARD -->
+
+        <section class="moto-card">
+
+            <div class="moto-card-header">
+
+                <div>
+
+                    <div class="moto-card-title">
+
+                        <span class="moto-card-title-icon">
+                            🔎
+                        </span>
+
+                        <h3>
+                            Motorcycle Search
+                        </h3>
+
+                    </div>
+
+                    <p class="moto-card-subtitle">
+                        Search for a motorcycle model
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form id="moto-search-form" class="moto-search">
+
+                <input
+                    id="moto-search-input"
+                    class="moto-input"
+                    type="text"
+                    placeholder="Example: Yamaha R1"
+                    autocomplete="off"
+                >
+
+                <button
+                    id="moto-search-button"
+                    class="moto-button"
+                    type="submit"
+                >
+                    🔎 Search
+                </button>
+
+            </form>
+
+
+            <div
+                id="moto-error"
+                class="moto-message error moto-hidden"
+            ></div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section
+            id="moto-result"
+            class="moto-card moto-hidden"
+        >
+
+            <div class="moto-card-header">
+
+                <div>
+
+                    <div class="moto-card-title">
+
+                        <span class="moto-card-title-icon">
+                            🏍️
+                        </span>
+
+                        <h3 id="moto-name">
+                            Motorcycle
+                        </h3>
+
+                    </div>
+
+                    <p
+                        id="moto-category"
+                        class="moto-card-subtitle"
+                    >
+                        Motorcycle information
+                    </p>
+
+                </div>
+
+
+                <span
+                    id="moto-status"
+                    class="moto-badge success"
+                >
+                    Found
+                </span>
+
+            </div>
+
+
+            <!-- DETAILS -->
+
+            <div class="moto-details">
+
+                <div class="moto-detail">
+
+                    <div class="moto-detail-label">
+                        Engine
+                    </div>
+
+                    <div
+                        id="moto-engine"
+                        class="moto-detail-value"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="moto-detail">
+
+                    <div class="moto-detail-label">
+                        Power
+                    </div>
+
+                    <div
+                        id="moto-power"
+                        class="moto-detail-value"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="moto-detail">
+
+                    <div class="moto-detail-label">
+                        Top Speed
+                    </div>
+
+                    <div
+                        id="moto-speed"
+                        class="moto-detail-value"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- DESCRIPTION -->
+
+            <div
+                id="moto-description"
+                class="moto-message"
+            >
+                Search for a motorcycle to see more information.
+            </div>
+
+
+            <!-- SPEAK -->
+
+            <div style="margin-top: 15px;">
+
+                <button
+                    id="moto-speak-button"
+                    class="moto-button"
+                    type="button"
+                >
+                    🔊 Speak information
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- POPULAR MOTORCYCLES -->
+
+        <section class="moto-card">
+
+            <div class="moto-card-header">
+
+                <div>
+
+                    <div class="moto-card-title">
+
+                        <span class="moto-card-title-icon">
+                            ⭐
+                        </span>
+
+                        <h3>
+                            Popular Motorcycles
+                        </h3>
+
+                    </div>
+
+                    <p class="moto-card-subtitle">
+                        Some popular models to explore
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <ul class="moto-list">
+
+                <li class="moto-list-item">
+
+                    <div class="moto-list-left">
+
+                        <div class="moto-list-icon">
+                            🏍️
+                        </div>
+
+                        <div>
+
+                            <div class="moto-list-name">
+                                Yamaha YZF-R1
+                            </div>
+
+                            <div class="moto-list-description">
+                                High-performance sport motorcycle
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <span class="moto-badge">
+                        Sport
+                    </span>
+
+                </li>
+
+
+                <li class="moto-list-item">
+
+                    <div class="moto-list-left">
+
+                        <div class="moto-list-icon">
+                            🏍️
+                        </div>
+
+                        <div>
+
+                            <div class="moto-list-name">
+                                Kawasaki Ninja ZX-10R
+                            </div>
+
+                            <div class="moto-list-description">
+                                Performance-focused superbike
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <span class="moto-badge">
+                        Sport
+                    </span>
+
+                </li>
+
+
+                <li class="moto-list-item">
+
+                    <div class="moto-list-left">
+
+                        <div class="moto-list-icon">
+                            🏍️
+                        </div>
+
+                        <div>
+
+                            <div class="moto-list-name">
+                                BMW R 1300 GS
+                            </div>
+
+                            <div class="moto-list-description">
+                                Adventure touring motorcycle
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <span class="moto-badge">
+                        Adventure
+                    </span>
+
+                </li>
+
+
+                <li class="moto-list-item">
+
+                    <div class="moto-list-left">
+
+                        <div class="moto-list-icon">
+                            🏍️
+                        </div>
+
+                        <div>
+
+                            <div class="moto-list-name">
+                                Honda CBR1000RR-R
+                            </div>
+
+                            <div class="moto-list-description">
+                                Liter-class sport motorcycle
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <span class="moto-badge">
+                        Sport
+                    </span>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- FEATURES -->
+
+        <section class="moto-features">
+
+            <div class="moto-feature">
+
+                <div class="moto-feature-icon">
+                    ⚙️
+                </div>
+
+                <h4>
+                    Specifications
+                </h4>
+
+                <p>
+                    View engine size, power, speed and other
+                    technical specifications.
+                </p>
+
+            </div>
+
+
+            <div class="moto-feature">
+
+                <div class="moto-feature-icon">
+                    🏁
+                </div>
+
+                <h4>
+                    Performance
+                </h4>
+
+                <p>
+                    Explore performance-oriented information
+                    about different motorcycles.
+                </p>
+
+            </div>
+
+
+            <div class="moto-feature">
+
+                <div class="moto-feature-icon">
+                    🔊
+                </div>
+
+                <h4>
+                    Voice
+                </h4>
+
+                <p>
+                    Let the assistant read motorcycle information
+                    using the configured voice.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+
+        <footer class="moto-footer">
+
+            <span>
+                Python Voice Assistant
+            </span>
+
+            <span>·</span>
+
+            <span>
+                Moto Mode
+            </span>
+
+        </footer>
+
+    </div>
+
+</div>
+
+
+<script src="{{ url_for('static', filename='moto.js') }}"></script>
+
+</body>
+</html>
