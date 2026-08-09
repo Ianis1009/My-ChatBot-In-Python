@@ -7,26 +7,16 @@ HEADERS = {
     "User-Agent": "PythonVoiceAssistant/1.0"
 }
 
-
 def geocode_city(city):
     city = city.strip()
 
     if not city:
         return None
 
-    params = {
-        "q": city,
-        "format": "json",
-        "limit": 1
-    }
+    params = {"q": city, "format": "json", "limit": 1}
 
     try:
-        response = requests.get(
-            NOMINATIM_URL,
-            params=params,
-            headers=HEADERS,
-            timeout=10
-        )
+        response = requests.get(NOMINATIM_URL, params=params, headers=HEADERS, timeout=10)
 
         response.raise_for_status()
 
