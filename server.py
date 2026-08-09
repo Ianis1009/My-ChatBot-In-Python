@@ -24,8 +24,11 @@ def travel():
 
 
 @app.route("/moto")
-def moto():
-    return render_template("moto.html")
+def moto_page():
+
+    vehicles = moto.get_all_vehicles() #TODO: make function
+    return render_template("moto.html",vehicles=vehicles) 
+
 
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
