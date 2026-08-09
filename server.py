@@ -30,6 +30,20 @@ def moto_page():
     return render_template("moto.html",vehicles=vehicles) 
 
 
+@app.route("/moto/<int:vehicle_id>")
+def vehicle_page(vehicle_id):
+
+    vehicle = moto.get_vehicle_by_id(vehicle_id)
+
+    if vehicle is None:
+        return "Vehicle not found", 404
+
+    return render_template(
+        "vehicle.html",
+        vehicle=vehicle
+    )
+
+
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
     data = request.get_json()
