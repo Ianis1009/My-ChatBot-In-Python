@@ -67,12 +67,7 @@ def calculate_route(origin, destination):
     }
 
     try:
-        response = requests.get(
-            url,
-            params=params,
-            headers=HEADERS,
-            timeout=15
-        )
+        response = requests.get(url, params=params, headers=HEADERS, timeout=15)
 
         response.raise_for_status()
 
@@ -98,10 +93,7 @@ def calculate_route(origin, destination):
         }
 
     except requests.RequestException as error:
-        return {
-            "success": False,
-            "error": str(error)
-        }
+        return {"success": False, "error": str(error)}
     
 
 def build_route_message (route):
