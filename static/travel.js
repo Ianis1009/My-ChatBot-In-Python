@@ -31,9 +31,7 @@ const speakRouteButton =
 let currentVoiceMessage = "";
 
 
-/* =========================================================
-   MESSAGE MANAGEMENT
-   ========================================================= */
+/* MESSAGE MANAGEMENT */
 
 function hideMessages() {
 
@@ -50,9 +48,8 @@ function showError(message) {
 }
 
 
-/* =========================================================
-   DURATION FORMAT
-   ========================================================= */
+/* 
+   DURATION FORMAT */
 
 function formatDuration(hours) {
 
@@ -76,9 +73,8 @@ function formatDuration(hours) {
 }
 
 
-/* =========================================================
-   CALCULATE ROUTE
-   ========================================================= */
+/* 
+   CALCULATE ROUTE */
 
 if (routeForm) {
 
@@ -248,9 +244,8 @@ if (routeForm) {
 }
 
 
-/* =========================================================
-   SPEAK ROUTE
-   ========================================================= */
+/* 
+   SPEAK ROUTE */
 
 if (speakRouteButton) {
 
@@ -336,7 +331,6 @@ if (speakRouteButton) {
         }
     );
 }
-
 
 /* =========================================================
    INITIAL STATE
