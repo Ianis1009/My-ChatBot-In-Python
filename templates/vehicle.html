@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#08090b">
+
+    <title>{{ vehicle.name }} · Moto Garage</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='vehicle.css') }}">
+</head>
+
+<body>
+
+<div class="vehicle-page">
+
+    <header class="vehicle-navbar">
+
+        <a href="{{ url_for('moto_page') }}" class="back-link">
+            ← Back to garage
+        </a>
+
+        <div class="navbar-title">
+            Moto Garage
+        </div>
+
+        <a href="{{ url_for('index') }}" class="assistant-link">
+            Assistant
+        </a>
+
+    </header>
+
+
+    <main class="vehicle-main">
+
+        <section class="vehicle-hero">
+
+            <div class="vehicle-image-wrapper">
+
+                <img
+                    src="{{ url_for('static', filename=vehicle.image) }}"
+                    alt="{{ vehicle.name }}"
+                    class="vehicle-main-image"
+                >
+
+            </div>
+
+
+            <div class="vehicle-info">
+
+                <span class="vehicle-category">
+                    {{ vehicle.category }}
+                </span>
+
+                <span class="vehicle-type">
+                    {{ vehicle.type }}
+                </span>
+
+                <h1>
+                    {{ vehicle.name }}
+                </h1>
+
+                <p class="vehicle-description">
+                    {{ vehicle.description }}
+                </p>
+
+
+                <button
+                    id="speak-vehicle"
+                    class="speak-button"
+                    type="button"
+                >
+                    <span id="speak-icon">🔊</span>
+                    <span id="speak-text">Speak information</span>
+                </button>
+
+
+                <div class="vehicle-specs">
+
+                    <div class="spec-card">
+                        <span>Engine</span>
+                        <strong>{{ vehicle.engine }}</strong>
+                    </div>
+
+                    <div class="spec-card">
+                        <span>Power</span>
+                        <strong>{{ vehicle.power }}</strong>
+                    </div>
+
+                    <div class="spec-card">
+                        <span>Drive</span>
+                        <strong>{{ vehicle.drive }}</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="vehicle-details">
+
+            <div class="section-heading">
+                <span>SPECIFICATIONS</span>
+                <h2>Machine details</h2>
+            </div>
+
+
+            <div class="details-grid">
+
+                {% if vehicle.year %}
+                <div class="detail">
+                    <span>Year</span>
+                    <strong>{{ vehicle.year }}</strong>
+                </div>
+                {% endif %}
+
+                {% if vehicle.engine %}
+                <div class="detail">
+                    <span>Engine</span>
+                    <strong>{{ vehicle.engine }}</strong>
+                </div>
+                {% endif %}
+
+                {% if vehicle.power %}
+                <div class="detail">
+                    <span>Power</span>
+                    <strong>{{ vehicle.power }}</strong>
+                </div>
+                {% endif %}
+
+                {% if vehicle.drive %}
+                <div class="detail">
+                    <span>Drivetrain</span>
+                    <strong>{{ vehicle.drive }}</strong>
+                </div>
+                {% endif %}
+
+                {% if vehicle.transmission %}
+                <div class="detail">
+                    <span>Transmission</span>
+                    <strong>{{ vehicle.transmission }}</strong>
+                </div>
+                {% endif %}
+
+                {% if vehicle.weight %}
+                <div class="detail">
+                    <span>Weight</span>
+                    <strong>{{ vehicle.weight }}</strong>
+                </div>
+                {% endif %}
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="vehicle-footer">
+        Moto Garage · Machines built to be ridden.
+    </footer>
+
+</div>
+
+
+<script>
+    const speakButton = document.getElementById("speak-vehicle");
+    const speakIcon = document.getElementById("speak-icon");
+    const speakText = document.getElementById("speak-text");
+
+    const vehicleMessage = {{ vehicle.voice_message | tojson }};
+
+    speakButton.addEventListener("click", async () => {
+
+        speakButton.disabled = true;
+
+        speakIcon.textContent = "…";
+        speakText.textContent = "Speaking...";
+
+        try {
+
+            const response = await fetch("/api/moto/speak", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    text: vehicleMessage
+                })
+            });
+
+            const data = await response.json();
+
+            if (!data.success) {
+                console.error(data.error);
+            }
+
+        } catch (error) {
+
+            console.error("Could not speak vehicle:", error);
+
+        } finally {
+
+            speakButton.disabled = false;
+            speakIcon.textContent = "🔊";
+            speakText.textContent = "Speak information";
+
+        }
+
+    });
+</script>
+
+</body>
+</html>
