@@ -121,5 +121,27 @@
         "power":"63 HP",
         "drive":"2WD",
         "description":"TODO"
+    }, 
+    {
+        "id": 12, 
+        "name": "CFMOTO V4 SR-RR",
+        "category":"motorcycle",
+        "type": "Rally",
+        "image":"images/moto/motorcycles/moto_cf3.jpg",
+        "engine":"497cc",
+        "power":"60 HP",
+        "drive":"2WD",
+        "description":"TODO"
+    }, 
+    {
+        "id": 13, 
+        "name": "CAN AM CANYON",
+        "category":"others",
+        "type": "Adventure",
+        "image":"images/moto/others/canion.jpg",
+        "engine":"1000cc",
+        "power":"92 HP",
+        "drive":"1x3",
+        "description":"TODO"
     }
 ]
