@@ -92,11 +92,23 @@
         "id": 9,
         "name": "CFMOTO 450RS",
         "category": "motorcycle",
-        "type": "rally",
+        "type": "Rally",
         "image": "images/moto/motorcycles/moto_cf2.jpg",
         "engine": "398cc",
         "power": "45 HP",
         "drive": "2WD",
         "description": "TODO"
+    }, 
+    {
+        "id":10, 
+        "name": "CFMOTO C5",
+        "category": "atv",
+        "type":"Offroad",
+        "image": "images/moto/atv/cfmoto_520_gen4.jpg",
+        "engine": "500cc",
+        "power": "41 HP",
+        "drive" :"4x4",
+        "description": "TODO"
+
     }
 ]
