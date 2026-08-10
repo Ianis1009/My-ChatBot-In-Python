@@ -110,5 +110,16 @@
         "drive" :"4x4",
         "description": "TODO"
 
+    },
+    {
+        "id": 11, 
+        "name": "CFMOTO Concept",
+        "category":"motorcycle",
+        "type": "Rally",
+        "image":"images/moto/motorcycles/cfmoto_concept.jpg",
+        "engine":"698cc",
+        "power":"63 HP",
+        "drive":"2WD",
+        "description":"TODO"
     }
 ]
