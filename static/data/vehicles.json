@@ -8,7 +8,23 @@
         "engine": "1000cc",
         "power": "100 HP",
         "drive": "2WD",
-        "description": "A versatile adventure motorcycle built for long roads and demanding offroad terrain."
+        "description": "A versatile adventure motorcycle built for long roads and demanding offroad terrain.",
+        "overview": "An adventure motorcycle designed for long-distance travel, mixed terrain and demanding journeys.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "100 HP",
+            "drive": "2WD",
+            "type": "Adventure"
+        },
+        "highlights": [
+            "Adventure focused",
+            "Long distance capable",
+            "Offroad capable"
+        ],
+        "gallery": [
+            "images/moto/motorcycles/adventure.jpg"
+        ],
+        "videos": []
     },
     {
         "id": 2,
@@ -19,7 +35,23 @@
         "engine": "1000cc",
         "power": "100 HP",
         "drive": "4x4",
-        "description": "Designed for technical terrain and exploration."
+        "description": "Designed for technical terrain and exploration.",
+        "overview": "A powerful ATV designed to tackle technical terrain, mud and demanding offroad environments.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "100 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "Technical terrain",
+            "Mud focused",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/atv/atv_adv.jpg"
+        ],
+        "videos": []
     },
     {
         "id": 3,
@@ -30,10 +62,26 @@
         "engine": "999cc",
         "power": "240 HP",
         "drive": "4x4",
-        "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving."
-    }, 
+        "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving.",
+        "overview": "A high-performance side-by-side focused on speed, suspension travel and aggressive offroad driving.",
+        "specifications": {
+            "engine": "999cc",
+            "power": "240 HP",
+            "drive": "4x4",
+            "type": "Side by Side"
+        },
+        "highlights": [
+            "High performance",
+            "Long suspension travel",
+            "Serious offroad capability"
+        ],
+        "gallery": [
+            "images/moto/sxs/sxs_adv.jpg"
+        ],
+        "videos": []
+    },
     {
-        "id": 4, 
+        "id": 4,
         "name": "Suzuki Samurai",
         "category": "offroad",
         "type": "Offroad car",
@@ -41,10 +89,26 @@
         "engine": "1300cc",
         "power": "90 HP",
         "drive": "4x4",
-        "description": "TODO"
-    }, 
+        "description": "TODO",
+        "overview": "An iconic compact offroad vehicle with a lightweight construction and four-wheel-drive system.",
+        "specifications": {
+            "engine": "1300cc",
+            "power": "90 HP",
+            "drive": "4x4",
+            "type": "Offroad car"
+        },
+        "highlights": [
+            "Compact offroader",
+            "Lightweight platform",
+            "4x4 capability"
+        ],
+        "gallery": [
+            "images/moto/offroad/suzuki_adv.jpg"
+        ],
+        "videos": []
+    },
     {
-        "id": 5, 
+        "id": 5,
         "name": "Can Am Spyder",
         "category": "others",
         "type": "spyder",
@@ -52,10 +116,26 @@
         "engine": "1330cc",
         "power": "140 HP",
         "drive": "1x3",
-        "description": "TODO"
+        "description": "TODO",
+        "overview": "A three-wheel road machine combining motorcycle-inspired riding with a distinctive three-wheel configuration.",
+        "specifications": {
+            "engine": "1330cc",
+            "power": "140 HP",
+            "drive": "1x3",
+            "type": "Spyder"
+        },
+        "highlights": [
+            "Three-wheel configuration",
+            "Road focused",
+            "Touring capability"
+        ],
+        "gallery": [
+            "images/moto/others/spyder.jpg"
+        ],
+        "videos": []
     },
     {
-        "id": 6, 
+        "id": 6,
         "name": "Can Am Ryker",
         "category": "others",
         "type": "spyder",
@@ -63,10 +143,26 @@
         "engine": "900cc",
         "power": "87 HP",
         "drive": "1x3",
-        "description": "TODO"
+        "description": "TODO",
+        "overview": "A three-wheel machine focused on an accessible and customizable riding experience.",
+        "specifications": {
+            "engine": "900cc",
+            "power": "87 HP",
+            "drive": "1x3",
+            "type": "Spyder"
+        },
+        "highlights": [
+            "Three-wheel configuration",
+            "Customizable platform",
+            "Road focused"
+        ],
+        "gallery": [
+            "images/moto/others/ryker.jpg"
+        ],
+        "videos": []
     },
     {
-        "id": 7, 
+        "id": 7,
         "name": "CFMOTO X10 GEN4",
         "category": "atv",
         "type": "Offroad",
@@ -74,10 +170,25 @@
         "engine": "1000cc",
         "power": "115 HP",
         "drive": "4x4",
-        "description":"TODO"
+        "description": "TODO",
+        "overview": "A large-displacement ATV designed for demanding offroad use and exploration.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "115 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "Large displacement",
+            "4x4 drivetrain",
+            "Offroad focused"
+        ],
+        "gallery": [
+            "images/moto/atv/cf_gen4.jpg"
+        ],
+        "videos": []
     },
-
-     {
+    {
         "id": 8,
         "name": "CFMOTO 1000MT",
         "category": "motorcycle",
@@ -86,8 +197,24 @@
         "engine": "1000cc",
         "power": "100 HP",
         "drive": "2WD",
-        "description": "TODO"
-    }, 
+        "description": "TODO",
+        "overview": "An adventure motorcycle designed for road touring and exploration beyond the pavement.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "100 HP",
+            "drive": "2WD",
+            "type": "Adventure"
+        },
+        "highlights": [
+            "Adventure platform",
+            "Long-distance oriented",
+            "Mixed-terrain capable"
+        ],
+        "gallery": [
+            "images/moto/motorcycles/moto_cf1.jpg"
+        ],
+        "videos": []
+    },
     {
         "id": 9,
         "name": "CFMOTO 450RS",
@@ -97,73 +224,184 @@
         "engine": "398cc",
         "power": "45 HP",
         "drive": "2WD",
-        "description": "TODO"
-    }, 
+        "description": "TODO",
+        "overview": "A lightweight motorcycle platform focused on an engaging riding experience and sporty character.",
+        "specifications": {
+            "engine": "398cc",
+            "power": "45 HP",
+            "drive": "2WD",
+            "type": "Rally"
+        },
+        "highlights": [
+            "Lightweight platform",
+            "Sporty character",
+            "Road focused"
+        ],
+        "gallery": [
+            "images/moto/motorcycles/moto_cf2.jpg"
+        ],
+        "videos": []
+    },
     {
-        "id":10, 
+        "id": 10,
         "name": "CFMOTO C5",
         "category": "atv",
-        "type":"Offroad",
+        "type": "Offroad",
         "image": "images/moto/atv/cfmoto_520_gen4.jpg",
         "engine": "500cc",
         "power": "41 HP",
-        "drive" :"4x4",
-        "description": "TODO"
-
+        "drive": "4x4",
+        "description": "TODO",
+        "overview": "A compact ATV designed for recreational riding, exploration and offroad use.",
+        "specifications": {
+            "engine": "500cc",
+            "power": "41 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "Compact ATV",
+            "4x4 drivetrain",
+            "Recreational use"
+        ],
+        "gallery": [
+            "images/moto/atv/cfmoto_520_gen4.jpg"
+        ],
+        "videos": []
     },
     {
-        "id": 11, 
+        "id": 11,
         "name": "CFMOTO MTX Concept",
-        "category":"motorcycle",
+        "category": "motorcycle",
         "type": "Rally",
-        "image":"images/moto/motorcycles/cfmoto_concept.jpg",
-        "engine":"698cc",
-        "power":"63 HP",
-        "drive":"2WD",
-        "description":"TODO"
-    }, 
-    {
-        "id": 12, 
-        "name": "CFMOTO V4 SR-RR",
-        "category":"motorcycle",
-        "type": "Rally",
-        "image":"images/moto/motorcycles/moto_cf3.jpg",
-        "engine":"497cc",
-        "power":"60 HP",
-        "drive":"2WD",
-        "description":"TODO"
-    }, 
-    {
-        "id": 13, 
-        "name": "CAN AM CANYON",
-        "category":"others",
-        "type": "Adventure",
-        "image":"images/moto/others/canion.jpg",
-        "engine":"1000cc",
-        "power":"92 HP",
-        "drive":"1x3",
-        "description":"TODO"
-    }, 
-    {
-        "id": 14, 
-        "name": "CFMOTO X10 OVERLAND",
-        "category":"atv",
-        "type": "Offroad",
-        "image":"images/moto/atv/overland.jpg",
-        "engine":"1000cc",
-        "power":"95 HP",
-        "drive":"4x4",
-        "description":"TODO"
+        "image": "images/moto/motorcycles/cfmoto_concept.jpg",
+        "engine": "698cc",
+        "power": "63 HP",
+        "drive": "2WD",
+        "description": "TODO",
+        "overview": "A concept motorcycle showcasing a rally-inspired approach to adventure and performance.",
+        "specifications": {
+            "engine": "698cc",
+            "power": "63 HP",
+            "drive": "2WD",
+            "type": "Rally"
+        },
+        "highlights": [
+            "Rally inspired",
+            "Concept design",
+            "Adventure focused"
+        ],
+        "gallery": [
+            "images/moto/motorcycles/cfmoto_concept.jpg"
+        ],
+        "videos": []
     },
     {
-        "id": 15, 
-        "name": "CFMOTO Z10 Turbo",
-        "category":"sxs",
+        "id": 12,
+        "name": "CFMOTO V4 SR-RR",
+        "category": "motorcycle",
+        "type": "Rally",
+        "image": "images/moto/motorcycles/moto_cf3.jpg",
+        "engine": "497cc",
+        "power": "60 HP",
+        "drive": "2WD",
+        "description": "TODO",
+        "overview": "A performance-oriented motorcycle concept with an aggressive design and rally-inspired character.",
+        "specifications": {
+            "engine": "497cc",
+            "power": "60 HP",
+            "drive": "2WD",
+            "type": "Rally"
+        },
+        "highlights": [
+            "Aggressive design",
+            "Rally inspired",
+            "Performance focused"
+        ],
+        "gallery": [
+            "images/moto/motorcycles/moto_cf3.jpg"
+        ],
+        "videos": []
+    },
+    {
+        "id": 13,
+        "name": "CAN AM CANYON",
+        "category": "others",
+        "type": "Adventure",
+        "image": "images/moto/others/canion.jpg",
+        "engine": "1000cc",
+        "power": "92 HP",
+        "drive": "1x3",
+        "description": "TODO",
+        "overview": "An adventure-oriented three-wheel machine designed for exploring roads and longer journeys.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "92 HP",
+            "drive": "1x3",
+            "type": "Adventure"
+        },
+        "highlights": [
+            "Adventure oriented",
+            "Three-wheel configuration",
+            "Touring focused"
+        ],
+        "gallery": [
+            "images/moto/others/canion.jpg"
+        ],
+        "videos": []
+    },
+    {
+        "id": 14,
+        "name": "CFMOTO X10 OVERLAND",
+        "category": "atv",
         "type": "Offroad",
-        "image":"images/moto/sxs/z10.jpg",
-        "engine":"1000cc",
-        "power":" 140 HP",
-        "drive":"4x4",
-        "description":"TODO"
+        "image": "images/moto/atv/overland.jpg",
+        "engine": "1000cc",
+        "power": "95 HP",
+        "drive": "4x4",
+        "description": "TODO",
+        "overview": "An overland-oriented ATV designed for extended offroad exploration and difficult terrain.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "95 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "Overland focused",
+            "4x4 drivetrain",
+            "Long-range exploration"
+        ],
+        "gallery": [
+            "images/moto/atv/overland.jpg"
+        ],
+        "videos": []
+    },
+    {
+        "id": 15,
+        "name": "CFMOTO Z10 Turbo",
+        "category": "sxs",
+        "type": "Offroad",
+        "image": "images/moto/sxs/z10.jpg",
+        "engine": "1000cc",
+        "power": " 140 HP",
+        "drive": "4x4",
+        "description": "TODO",
+        "overview": "A turbocharged side-by-side designed for high-performance offroad driving and demanding terrain.",
+        "specifications": {
+            "engine": "1000cc",
+            "power": " 140 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "Turbocharged platform",
+            "High-performance offroad",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/sxs/z10.jpg"
+        ],
+        "videos": []
     }
 ]
