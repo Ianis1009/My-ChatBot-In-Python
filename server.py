@@ -28,7 +28,6 @@ def moto_page():
     vehicles = moto.get_all_vehicles()
     return render_template("moto.html", vehicles=vehicles)
 
-
 @app.route("/moto/<int:vehicle_id>")
 def vehicle_page(vehicle_id):
 
@@ -37,11 +36,12 @@ def vehicle_page(vehicle_id):
     if vehicle is None:
         return "Vehicle not found", 404
 
+    vehicle["voice_message"] = moto.build_vehicle_message(vehicle)
+
     return render_template(
         "vehicle.html",
         vehicle=vehicle
     )
-
 
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
