@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "name": "Adventure Motorcycle",
+        "name": "BMW 1250GSA",
         "category": "motorcycle",
         "type": "Adventure",
         "image": "images/moto/motorcycles/adventure.jpg",
@@ -12,7 +12,7 @@
     },
     {
         "id": 2,
-        "name": "ATV 4x4",
+        "name": "CFMOTO 1000 MUD",
         "category": "atv",
         "type": "Offroad",
         "image": "images/moto/atv/atv_adv.jpg",
@@ -35,7 +35,7 @@
     {
         "id": 4, 
         "name": "Suzuki Samurai",
-        "category": "Extreme Offroad",
+        "category": "offroad",
         "type": "Offroad car",
         "image": "images/moto/offroad/suzuki_adv.jpg",
         "engine": "1300cc",
