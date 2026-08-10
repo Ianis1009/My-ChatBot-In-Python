@@ -43,6 +43,42 @@ def vehicle_page(vehicle_id):
         vehicle=vehicle
     )
 
+
+@app.route("/api/moto/speak", methods=["POST"])
+def moto_speak():
+
+    data = request.get_json()
+
+    if not data:
+        return jsonify({
+            "success": False,
+            "error": "Invalid request."
+        }), 400
+
+    text = data.get("text", "").strip()
+
+    if not text:
+        return jsonify({
+            "success": False,
+            "error": "No text provided."
+        }), 400
+
+    if not voice.voice_enabled:
+        return jsonify({
+            "success": False,
+            "error": "Voice is currently muted."
+        }), 400
+
+    voice.speak(
+        text,
+        voice.current_voice
+    )
+
+    return jsonify({
+        "success": True
+    })
+
+
 @app.route("/api/voice", methods=["POST"])
 def set_voice_state():
     data = request.get_json()
