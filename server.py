@@ -25,9 +25,8 @@ def travel():
 
 @app.route("/moto")
 def moto_page():
-
-    vehicles = moto.get_all_vehicles() #TODO: make function
-    return render_template("moto.html",vehicles=vehicles) 
+    vehicles = moto.get_all_vehicles()
+    return render_template("moto.html", vehicles=vehicles)
 
 
 @app.route("/moto/<int:vehicle_id>")
