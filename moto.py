@@ -33,7 +33,7 @@ def get_all_vehicles():
     return load_vehicles()
 
 
-def get_vehicle_by_id(vehicle_id):
+def get_vehicle_by_id(vehicle_id): #good
     vehicles = load_vehicles()
 
     for vehicle in vehicles:
@@ -53,3 +53,16 @@ def get_vehicles_by_category(category):
         for vehicle in vehicles
         if vehicle["category"].lower() == category
     ]
+
+
+#TODO: get it better
+
+def build_vehicle_message (vehicle):
+    info_to_display = f"Here is some information about the {vehicle['name']}. "
+    info_to_display += f"This is a {vehicle['type']} from the {vehicle['category']} category. "
+    info_to_display += f"It is powered by a {vehicle['engine']} engine "
+    info_to_display += f"with {vehicle['power']} of power. "
+    info_to_display += f"The drivetrain is {vehicle['drive']}. "
+    info_to_display +=  f"{vehicle['description']}"
+
+    return info_to_display
