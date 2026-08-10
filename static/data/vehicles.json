@@ -53,5 +53,27 @@
         "power": "140 HP",
         "drive": "1x3",
         "description": "TODO"
+    },
+    {
+        "id": 6, 
+        "name": "Can Am Ryker",
+        "category": "others",
+        "type": "spyder",
+        "image": "images/moto/others/ryker.jpg",
+        "engine": "900cc",
+        "power": "87 HP",
+        "drive": "1x3",
+        "description": "TODO"
+    },
+    {
+        "id": 7, 
+        "name": "CFMOTO X10 GEN4",
+        "category": "atv",
+        "type": "Offroad",
+        "image": "images/moto/atv/cf_gen4.jpg",
+        "engine": "1000cc",
+        "power": "115 HP",
+        "drive": "4x4",
+        "description":"TODO"
     }
 ]
