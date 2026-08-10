@@ -15,21 +15,32 @@
         "name": "ATV 4x4",
         "category": "atv",
         "type": "Offroad",
-        "image": "images/moto/motorcycles/adventure.jpg",
-        "engine": "700cc",
-        "power": "65 HP",
+        "image": "images/moto/atv/atv_adv.jpg",
+        "engine": "1000cc",
+        "power": "100 HP",
         "drive": "4x4",
-        "description": "A compact and aggressive ATV designed for technical terrain and exploration."
+        "description": "Designed for technical terrain and exploration."
     },
     {
         "id": 3,
-        "name": "Performance SXS",
+        "name": "SXS",
         "category": "sxs",
         "type": "Side by Side",
-        "image": "images/moto/motorcycles/adventure.jpg",
-        "engine": "1000cc",
-        "power": "110 HP",
+        "image": "images/moto/sxs/sxs_adv.jpg",
+        "engine": "999cc",
+        "power": "240 HP",
         "drive": "4x4",
         "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving."
+    }, 
+    {
+        "id": 4, 
+        "name": "Suzuki Samurai",
+        "category": "Extreme Offroad",
+        "type": "Offroad car",
+        "image": "images/moto/offroad/suzuki_adv.jpg",
+        "engine": "1300cc",
+        "power": "90 HP",
+        "drive": "4x4",
+        "description": "TODO"
     }
 ]
