@@ -42,5 +42,16 @@
         "power": "90 HP",
         "drive": "4x4",
         "description": "TODO"
+    }, 
+    {
+        "id": 5, 
+        "name": "Can Am Spyder",
+        "category": "others",
+        "type": "spyder",
+        "image": "images/moto/others/spyder.jpg",
+        "engine": "1330cc",
+        "power": "140 HP",
+        "drive": "1x3",
+        "description": "TODO"
     }
 ]
