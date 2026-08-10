@@ -143,5 +143,16 @@
         "power":"92 HP",
         "drive":"1x3",
         "description":"TODO"
+    }, 
+    {
+        "id": 14, 
+        "name": "CF X10 OVERLAND",
+        "category":"atv",
+        "type": "Offroad",
+        "image":"images/moto/atv/overland.jpg",
+        "engine":"1000cc",
+        "power":"95 HP",
+        "drive":"4x4",
+        "description":"TODO"
     }
 ]
