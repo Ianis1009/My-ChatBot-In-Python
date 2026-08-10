@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#08090b">
+    <meta name="theme-color" content="#070809">
 
     <title>{{ vehicle.name }} · Moto Garage</title>
 
@@ -11,46 +11,62 @@
 </head>
 
 <body>
-<!----->
+
 <div class="vehicle-page">
+
+    <!-- NAVBAR -->
 
     <header class="vehicle-navbar">
 
-        <a href="{{ url_for('moto_page') }}" class="back-link">
-            ← Back to garage
+        <a href="{{ url_for('moto_page') }}" class="nav-back">
+            <span>←</span>
+            Back to garage
         </a>
 
-        <div class="navbar-title">
-            Moto Garage
+        <div class="nav-brand">
+            MOTO GARAGE
         </div>
 
-        <a href="{{ url_for('index') }}" class="assistant-link">
+        <a href="{{ url_for('index') }}" class="nav-assistant">
             Assistant
         </a>
 
     </header>
 
 
-    <main class="vehicle-main">
+    <!-- HERO -->
+
+    <main>
 
         <section class="vehicle-hero">
 
-            <div class="vehicle-image-wrapper">
+            <div class="hero-image">
 
                 <img
                     src="{{ url_for('static', filename=vehicle.image) }}"
                     alt="{{ vehicle.name }}"
-                    class="vehicle-main-image"
                 >
+
+                <div class="hero-image-overlay"></div>
+
+                <div class="hero-image-meta">
+
+                    <span>
+                        {{ vehicle.category }}
+                    </span>
+
+                    {% if vehicle.year %}
+                    <span>
+                        {{ vehicle.year }}
+                    </span>
+                    {% endif %}
+
+                </div>
 
             </div>
 
 
-            <div class="vehicle-info">
-
-                <span class="vehicle-category">
-                    {{ vehicle.category }}
-                </span>
+            <div class="hero-content">
 
                 <span class="vehicle-type">
                     {{ vehicle.type }}
@@ -60,98 +76,396 @@
                     {{ vehicle.name }}
                 </h1>
 
-                <p class="vehicle-description">
+                <p class="hero-description">
                     {{ vehicle.description }}
                 </p>
 
 
-                <button
-                    id="speak-vehicle"
-                    class="speak-button"
-                    type="button"
-                >
-                    <span id="speak-icon">🔊</span>
-                    <span id="speak-text">Speak information</span>
-                </button>
+                <div class="hero-actions">
 
-
-                <div class="vehicle-specs">
-
-                    <div class="spec-card">
-                        <span>Engine</span>
-                        <strong>{{ vehicle.engine }}</strong>
-                    </div>
-
-                    <div class="spec-card">
-                        <span>Power</span>
-                        <strong>{{ vehicle.power }}</strong>
-                    </div>
-
-                    <div class="spec-card">
-                        <span>Drive</span>
-                        <strong>{{ vehicle.drive }}</strong>
-                    </div>
+                    <button
+                        id="speak-overview"
+                        class="speak-button"
+                        type="button"
+                    >
+                        <span id="speak-icon">🔊</span>
+                        <span id="speak-text">Speak overview</span>
+                    </button>
 
                 </div>
+
+
+                {% if vehicle.specifications %}
+
+                <div class="quick-specs">
+
+                    {% for key, value in vehicle.specifications.items() %}
+
+                        {% if loop.index <= 3 %}
+
+                        <div class="quick-spec">
+
+                            <span>
+                                {{ key }}
+                            </span>
+
+                            <strong>
+                                {{ value }}
+                            </strong>
+
+                        </div>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+                {% endif %}
 
             </div>
 
         </section>
 
 
-        <section class="vehicle-details">
+        <!-- OVERVIEW -->
+
+        {% if vehicle.overview %}
+
+        <section class="content-section overview-section">
 
             <div class="section-heading">
-                <span>SPECIFICATIONS</span>
-                <h2>Machine details</h2>
+
+                <span class="section-label">
+                    THE MACHINE
+                </span>
+
+                <h2>
+                    Overview
+                </h2>
+
+            </div>
+
+
+            <div class="overview-layout">
+
+                <div class="overview-text">
+
+                    <p>
+                        {{ vehicle.overview }}
+                    </p>
+
+                    <button
+                        type="button"
+                        class="text-speak-button"
+                        data-speak="overview"
+                    >
+                        <span>🔊</span>
+                        Read overview
+                    </button>
+
+                </div>
+
+                {% if vehicle.facts %}
+
+                <aside class="fact-card">
+
+                    <span class="fact-label">
+                        DID YOU KNOW?
+                    </span>
+
+                    <p id="fact-text">
+                        {{ vehicle.facts[0] }}
+                    </p>
+
+                    <button
+                        id="next-fact"
+                        type="button"
+                    >
+                        Next fact →
+                    </button>
+
+                </aside>
+
+                {% endif %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- STORY -->
+
+        {% if vehicle.story %}
+
+        <section class="story-section">
+
+            <div class="story-inner">
+
+                <span class="section-label">
+                    THE STORY
+                </span>
+
+                <h2>
+                    Behind the machine.
+                </h2>
+
+                <p>
+                    {{ vehicle.story }}
+                </p>
+
+                <button
+                    type="button"
+                    class="text-speak-button"
+                    data-speak="story"
+                >
+                    <span>🔊</span>
+                    Read the story
+                </button>
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- SPECIFICATIONS -->
+
+        {% if vehicle.specifications %}
+
+        <section class="content-section specifications-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    TECHNICAL DATA
+                </span>
+
+                <h2>
+                    Specifications
+                </h2>
+
             </div>
 
 
-            <div class="details-grid">
+            <div class="specifications-grid">
 
-                {% if vehicle.year %}
-                <div class="detail">
-                    <span>Year</span>
-                    <strong>{{ vehicle.year }}</strong>
-                </div>
-                {% endif %}
+                {% for key, value in vehicle.specifications.items() %}
 
-                {% if vehicle.engine %}
-                <div class="detail">
-                    <span>Engine</span>
-                    <strong>{{ vehicle.engine }}</strong>
-                </div>
-                {% endif %}
+                <div class="specification">
 
-                {% if vehicle.power %}
-                <div class="detail">
-                    <span>Power</span>
-                    <strong>{{ vehicle.power }}</strong>
-                </div>
-                {% endif %}
+                    <span>
+                        {{ key }}
+                    </span>
 
-                {% if vehicle.drive %}
-                <div class="detail">
-                    <span>Drivetrain</span>
-                    <strong>{{ vehicle.drive }}</strong>
-                </div>
-                {% endif %}
+                    <strong>
+                        {{ value }}
+                    </strong>
 
-                {% if vehicle.transmission %}
-                <div class="detail">
-                    <span>Transmission</span>
-                    <strong>{{ vehicle.transmission }}</strong>
                 </div>
-                {% endif %}
 
-                {% if vehicle.weight %}
-                <div class="detail">
-                    <span>Weight</span>
-                    <strong>{{ vehicle.weight }}</strong>
-                </div>
-                {% endif %}
+                {% endfor %}
 
             </div>
+
+
+            <button
+                type="button"
+                class="text-speak-button"
+                data-speak="specifications"
+            >
+                <span>🔊</span>
+                Read specifications
+            </button>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- VIDEO -->
+
+        {% if vehicle.media %}
+
+            {% if vehicle.media.youtube %}
+
+            <section class="content-section media-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        WATCH
+                    </span>
+
+                    <h2>
+                        The machine in action.
+                    </h2>
+
+                </div>
+
+
+                <div class="video-wrapper">
+
+                    <iframe
+                        src="https://www.youtube.com/embed/{{ vehicle.media.youtube }}"
+                        title="{{ vehicle.name }} video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen
+                    ></iframe>
+
+                </div>
+
+            </section>
+
+            {% elif vehicle.media.video %}
+
+            <section class="content-section media-section">
+
+                <div class="section-heading">
+
+                    <span class="section-label">
+                        WATCH
+                    </span>
+
+                    <h2>
+                        The machine in action.
+                    </h2>
+
+                </div>
+
+
+                <div class="video-wrapper">
+
+                    <video
+                        controls
+                        preload="metadata"
+                    >
+                        <source
+                            src="{{ url_for(
+                                'static',
+                                filename=vehicle.media.video
+                            ) }}"
+                            type="video/mp4"
+                        >
+                    </video>
+
+                </div>
+
+            </section>
+
+            {% endif %}
+
+        {% endif %}
+
+
+        <!-- HIGHLIGHTS -->
+
+        {% if vehicle.highlights %}
+
+        <section class="content-section highlights-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    WHY IT MATTERS
+                </span>
+
+                <h2>
+                    Built with purpose.
+                </h2>
+
+            </div>
+
+
+            <div class="highlights-grid">
+
+                {% for highlight in vehicle.highlights %}
+
+                <article class="highlight-card">
+
+                    <span class="highlight-number">
+                        {{ "%02d"|format(loop.index) }}
+                    </span>
+
+                    <h3>
+                        {{ highlight.title }}
+                    </h3>
+
+                    <p>
+                        {{ highlight.text }}
+                    </p>
+
+                </article>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- GALLERY -->
+
+        {% if vehicle.gallery %}
+
+        <section class="content-section gallery-section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    THE MACHINE
+                </span>
+
+                <h2>
+                    Gallery
+                </h2>
+
+            </div>
+
+
+            <div class="gallery-grid">
+
+                {% for image in vehicle.gallery %}
+
+                <figure class="gallery-item">
+
+                    <img
+                        src="{{ url_for('static', filename=image) }}"
+                        alt="{{ vehicle.name }} gallery image {{ loop.index }}"
+                        loading="lazy"
+                    >
+
+                </figure>
+
+                {% endfor %}
+
+            </div>
+
+        </section>
+
+        {% endif %}
+
+
+        <!-- FOOTER -->
+
+        <section class="vehicle-end">
+
+            <span>
+                MOTO GARAGE
+            </span>
+
+            <h2>
+                Machines built to be ridden.
+            </h2>
+
+            <a href="{{ url_for('moto_page') }}">
+                Explore the garage →
+            </a>
 
         </section>
 
@@ -159,55 +473,196 @@
 
 
     <footer class="vehicle-footer">
-        Moto Garage · Machines built to be ridden.
+        Moto Garage · 2026
     </footer>
 
 </div>
+
+
+<!-- VOICE DATA -->
+
 <script>
-    const speakButton = document.getElementById("speak-vehicle");
+    const vehicleVoiceData = {
+        overview: {{ vehicle.overview|default("")|tojson }},
+        story: {{ vehicle.story|default("")|tojson }},
+        specifications: {{ vehicle.specifications|default({})|tojson }}
+    };
+
+    const speakButton = document.getElementById("speak-overview");
     const speakIcon = document.getElementById("speak-icon");
     const speakText = document.getElementById("speak-text");
 
-    const vehicleMessage = {{ vehicle.voice_message | tojson }};
 
-    speakButton.addEventListener("click", async () => {
+    function buildSpecificationText() {
 
-        speakButton.disabled = true;
+        const specifications = vehicleVoiceData.specifications;
 
-        speakIcon.textContent = "…";
-        speakText.textContent = "Speaking...";
+        return Object.entries(specifications)
+            .map(([key, value]) => `${key}: ${value}`)
+            .join(". ");
+    }
+
+
+    function getVoiceText(type) {
+
+        if (type === "overview") {
+            return vehicleVoiceData.overview;
+        }
+
+        if (type === "story") {
+            return vehicleVoiceData.story;
+        }
+
+        if (type === "specifications") {
+            return buildSpecificationText();
+        }
+
+        return "";
+    }
+
+
+    async function speakVehicle(text, button = null) {
+
+        if (!text) {
+            return;
+        }
+
+        if (button) {
+            button.disabled = true;
+            button.classList.add("speaking");
+        }
 
         try {
 
-            const response = await fetch("/api/moto/speak", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    text: vehicleMessage
-                })
-            });
+            const response = await fetch(
+                "/api/moto/speak",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        text: text
+                    })
+                }
+            );
 
             const data = await response.json();
 
             if (!data.success) {
-                console.error(data.error);
+
+                console.error(
+                    "Voice error:",
+                    data.error
+                );
+
             }
 
         } catch (error) {
 
-            console.error("Could not speak vehicle:", error);
+            console.error(
+                "Could not speak:",
+                error
+            );
 
         } finally {
 
-            speakButton.disabled = false;
-            speakIcon.textContent = "🔊";
-            speakText.textContent = "Speak information";
+            if (button) {
+                button.disabled = false;
+                button.classList.remove("speaking");
+            }
 
         }
+    }
 
-    });
+
+    if (speakButton) {
+
+        speakButton.addEventListener(
+            "click",
+            async function() {
+
+                const text =
+                    vehicleVoiceData.overview;
+
+                speakButton.disabled = true;
+
+                speakIcon.textContent = "◉";
+                speakText.textContent = "Speaking...";
+
+                await speakVehicle(
+                    text
+                );
+
+                speakButton.disabled = false;
+
+                speakIcon.textContent = "🔊";
+                speakText.textContent = "Speak overview";
+
+            }
+        );
+
+    }
+
+
+    document
+        .querySelectorAll("[data-speak]")
+        .forEach(button => {
+
+            button.addEventListener(
+                "click",
+                async function() {
+
+                    const type =
+                        button.dataset.speak;
+
+                    const text =
+                        getVoiceText(type);
+
+                    await speakVehicle(
+                        text,
+                        button
+                    );
+
+                }
+            );
+
+        });
+
+
+    {% if vehicle.facts %}
+
+    const facts = {{ vehicle.facts|tojson }};
+
+    let factIndex = 0;
+
+    const factText =
+        document.getElementById("fact-text");
+
+    const nextFact =
+        document.getElementById("next-fact");
+
+
+    if (nextFact) {
+
+        nextFact.addEventListener(
+            "click",
+            function() {
+
+                factIndex =
+                    (factIndex + 1) % facts.length;
+
+                factText.textContent =
+                    facts[factIndex];
+
+            }
+        );
+
+    }
+
+    {% endif %}
 </script>
 
 </body>
