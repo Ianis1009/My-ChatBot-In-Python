@@ -201,7 +201,9 @@
         "gallery": [
             "images/moto/atv/cf_gen4.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=AoEm2LkUf1os"
+        ]
     },
     {
         "id": 8,
