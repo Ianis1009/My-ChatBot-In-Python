@@ -419,6 +419,13 @@
         "power": " 140 HP",
         "drive": "4x4",
         "description": "TODO",
+        "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
+    
         "overview": "A turbocharged side-by-side designed for high-performance offroad driving and demanding terrain.",
         "specifications": {
             "engine": "1000cc",
