@@ -61,15 +61,43 @@ def get_vehicles_by_category(category):
 
 #TODO: get it better
 
-def build_vehicle_message (vehicle):
-    info_to_display = f"Here is some information about the {vehicle['name']}. "
-    info_to_display += f"This is a {vehicle['type']} from the {vehicle['category']} category. "
-    info_to_display += f"It is powered by a {vehicle['engine']} engine "
-    info_to_display += f"with {vehicle['power']} of power. "
-    info_to_display += f"The drivetrain is {vehicle['drive']}. "
-    info_to_display +=  f"{vehicle['description']}"
+# def build_vehicle_message (vehicle):
+#     info_to_display = f"Here is some information about the {vehicle['name']}. "
+#     info_to_display += f"This is a {vehicle['type']} from the {vehicle['category']} category. "
+#     info_to_display += f"It is powered by a {vehicle['engine']} engine "
+#     info_to_display += f"with {vehicle['power']} of power. "
+#     info_to_display += f"The drivetrain is {vehicle['drive']}. "
+#     info_to_display +=  f"{vehicle['description']}"
 
-    return info_to_display
+#     return info_to_display
 
 def get_vehicle_info (vehicle_id):
     return VEHICLE_INFO.get(vehicle_id)
+
+def build_vehicle_message(vehicle):
+
+    info_to_display = f"Here is some information about the {vehicle['name']}. "
+
+    info_to_display += (
+        f"This is a {vehicle['type']} from the "
+        f"{vehicle['category']} category. "
+    )
+
+    info_to_display += (
+        f"It is powered by a {vehicle['engine']} engine "
+        f"with {vehicle['power']} of power. "
+    )
+
+    info_to_display += (
+        f"The drivetrain is {vehicle['drive']}. ")
+
+    info_to_display += vehicle["description"]
+
+    long_info = vehicle.get("long_info")
+
+    if long_info:
+
+        info_to_display += " "
+        info_to_display += long_info.get("text","").strip()
+
+    return info_to_display
