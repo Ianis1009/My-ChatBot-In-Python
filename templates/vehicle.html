@@ -414,145 +414,30 @@
         {% endif %}
 
 
-        <!-- FOOTER -->
-
-        <section class="vehicle-end">
-
-            <span>
-                MOTO GARAGE
-            </span>
-
-            <h2>
-                Machines built to be ridden.
-            </h2>
-
-            <a href="{{ url_for('moto_page') }}">
-                Explore the garage →
-            </a>
-
-        </section>
+        
 
     </main>
 
+   
+<section class="vehicle-end">
 
-<!-- VEHICLE FOOTER -->
+    <span>MOTO GARAGE</span>
+
+    <h2>
+        Machines built to be ridden.
+    </h2>
+
+    <a href="{{ url_for('moto_page') }}">
+        Explore the garage →
+    </a>
+
+</section>
+
 
 <footer class="vehicle-footer">
-
-    <div class="footer-background">
-        <img
-            src="{{ url_for('static', filename='images/moto/footer.png') }}"
-            alt=""
-        >
-    </div>
-
-    <div class="footer-overlay"></div>
-
-    <div class="footer-content">
-
-        <div class="footer-top">
-
-            <div class="footer-brand">
-
-                <span class="footer-eyebrow">
-                    MOTO GARAGE
-                </span>
-
-                <h2>
-                    Built for the
-                    <span>machines.</span>
-                </h2>
-
-                <p>
-                    Machines built to be ridden.
-                    Stories built to be remembered.
-                </p>
-
-            </div>
-
-
-            <div class="footer-navigation">
-
-                <span class="footer-label">
-                    EXPLORE
-                </span>
-
-                <a href="{{ url_for('moto_page') }}">
-                    Garage
-                    <span>→</span>
-                </a>
-
-                <a href="{{ url_for('index') }}">
-                    Voice Assistant
-                    <span>→</span>
-                </a>
-
-            </div>
-
-
-            <div class="footer-machine">
-
-                <span class="footer-label">
-                    CURRENT MACHINE
-                </span>
-
-                <strong>
-                    {{ vehicle.name }}
-                </strong>
-
-                <span>
-                    {{ vehicle.category|upper }}
-                </span>
-
-            </div>
-
-        </div>
-
-
-        <div class="footer-divider"></div>
-
-
-        <div class="footer-bottom">
-
-            <div class="footer-signature">
-                <span class="signature-mark">
-                    MG
-                </span>
-
-                <span>
-                    Moto Garage
-                </span>
-            </div>
-
-
-            <div class="footer-meta">
-
-                <span>
-                    © 2026 Moto Garage
-                </span>
-
-                <span class="footer-dot"></span>
-
-                <span>
-                    Passion · Machines · Offroad
-                </span>
-
-            </div>
-
-
-            <a
-                href="#top"
-                class="footer-top-button"
-            >
-                Back to top
-                <span>↑</span>
-            </a>
-
-        </div>
-
-    </div>
-
+    Moto Garage · 2026
 </footer>
+
 
 </div>
 
