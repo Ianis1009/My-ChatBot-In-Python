@@ -73,8 +73,34 @@ Its unique front suspension design provides stability in corners, while the rela
 
 The Spyder is not simply a motorcycle with an extra wheel; it is a category of its own, designed for riders seeking comfort, technology and a unique presence on the road.
 """
+    },
+
+    6: {
+        "title": "Can-Am Ryker - Urban Freedom",
+        "text": """
+The Can-Am Ryker was designed to deliver a fun and accessible riding experience, combining simplicity with modern technology.
+
+With automatic transmission, low seating position and a playful character, the Ryker is equally comfortable in urban environments and on scenic roads.
+
+Its modular design allows owners to customize both appearance and functionality, making each machine unique.
+
+The Ryker proves that riding can be simple, exciting and approachable without sacrificing style or personality.
+"""
+    },
+
+    7: {
+        "title": "CFMOTO X10 GEN4 - Modern ATV Evolution",
+        "text": """
+The CFMOTO X10 GEN4 represents the latest generation of high-performance utility and recreational ATVs.
+
+Built around a powerful engine and equipped with modern suspension systems, advanced electronics and selectable drive modes, it is designed to handle demanding terrain with confidence.
+
+Whether used for adventure, work or exploration, the X10 offers a balanced combination of comfort, capability and technology.
+
+It is a machine created for riders who expect both performance and reliability from their offroad experiences.
+"""
     }
-    
+
 }
 
 # TODO: 4-15
