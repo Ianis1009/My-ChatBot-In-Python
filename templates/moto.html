@@ -385,41 +385,89 @@
         </main>
 
 
-        <!-- FOOTER -->
+        
+<!-- GARAGE FOOTER -->
 
-        <footer class="moto-footer">
+<footer class="moto-footer">
 
-            <div class="footer-brand">
+    <div class="footer-background"></div>
+    <div class="footer-overlay"></div>
+
+    <div class="footer-content">
+
+        <div class="footer-brand">
+
+            <span class="footer-label">
+                MOTO GARAGE
+            </span>
+
+            <h2>
+                Built for people
+                <span>who love machines.</span>
+            </h2>
+
+            <p>
+                Motorcycles, ATVs, SXS and offroad machines.
+                Explore the garage and discover the machines
+                built to be ridden.
+            </p>
+
+        </div>
+
+
+        <div class="footer-stats">
+
+            <div class="footer-stat">
 
                 <strong>
-                    🏁 Moto Garage
+                    {{ vehicles|length }}
                 </strong>
 
                 <span>
-                    Built for people who love machines.
+                    Machines
                 </span>
 
             </div>
 
 
-            <div class="footer-info">
+            <div class="footer-divider"></div>
+
+
+            <div class="footer-stat">
+
+                <strong>
+                    2026
+                </strong>
 
                 <span>
-                    Vehicles:
-                    <strong>{{ vehicles|length }}</strong>
-                </span>
-
-                <span class="footer-separator">
-                    ·
-                </span>
-
-                <span>
-                    © 2026
+                    Moto Garage
                 </span>
 
             </div>
 
-        </footer>
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                MOTO GARAGE
+            </span>
+
+            <span>
+                Passion · Machines · Offroad
+            </span>
+
+            <a href="{{ url_for('index') }}">
+                Back to Assistant →
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
 
     </div>
 
