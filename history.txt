@@ -1,48 +1,4 @@
 🤖  Bot started.
-💬    New chat at: 10/08/2026, 00:29:54
+💬    New chat at: 11/08/2026, 18:37:05
 ────────────────────────────────────────────────────────────
 
-👤 User: mute
-🤖 Bot: [INFO]: Voice output is muted.
-👤 User: help
-🤖 Bot: Available commands:
-➤ Command: hello
-    Explication: Greets the assistant.
-➤ Command: how are you
-    Explication: Shows the assistant status.
-➤ Command: info <topic>
-    Explication: Searches Wikipedia for a topic.
-➤ Command: voices
-    Explication: Displays all available voices.
-➤ Command: set voice <1-2>
-    Explication: Changes the current voice.
-➤ Command: exit
-    Explication: Terminates the assistant.
-➤ Command: try voice <1-2>
-    Explication: Try voices.
-➤ Command: mute
-    Explication: The new state is Muted
-➤ Command: unmute
-    Explication: The new state is Voice
-➤ Command: time
-    Explication: Display current time.
-➤ Command: date
-    Explication: Display current date.
-➤ Command: joke
-    Explication: Dispaly a random joke.
-[INFO]: Use help <command> for more details.
-👤 User: help joke
-🤖 Bot: Command: joke
-Description: Dispaly a random joke.
-👤 User: joke
-🤖 Bot: Why was the computer cold? Because it left its Windows open.
-👤 User: joke
-🤖 Bot: Why did the developer go outside? To check whether the cloud was working.Why did the computer get promoted? It had outstanding processing skills.I told my computer I needed a break. Now it won't stop sending me vacation ads.Why did the function break up with the variable? It needed some space.
-👤 User: joke
-🤖 Bot: Why was the developer broke? Because they used up all their cache.
-👤 User: joke
-🤖 Bot: Why was the developer broke? Because they used up all their cache.
-👤 User: unmute
-🤖 Bot: [INFO]: Voice output is enabled.
-👤 User: mute
-🤖 Bot: [INFO]: Voice output is muted.
