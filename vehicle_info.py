@@ -33,7 +33,22 @@ VEHICLE_INFO = {
         It is the kind of machine that belongs far away from paved
         roads, where traction and durability matter more than comfort.
         """
+    },
+
+    3: {
+        "title": "Side by Side Performance",
+        "text": """
+        The SXS represents a completely different approach to
+        offroad driving. Instead of placing the rider directly on
+        the machine, it combines the excitement of an offroad vehicle
+        with the control and seating position of a compact car.
+
+        Its four-wheel-drive system and high-output engine make it
+        suitable for aggressive terrain and high-speed offroad
+        driving. Suspension travel, traction and stability become
+        essential parts of the experience.
+        """
     }
 }
 
-# TODO: 2-15
+# TODO: 3-15
