@@ -132,7 +132,10 @@
         "gallery": [
             "images/moto/others/spyder.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=9gduYOZMPJU"
+        
+        ]
     },
     {
         "id": 6,
