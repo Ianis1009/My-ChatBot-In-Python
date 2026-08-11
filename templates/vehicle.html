@@ -286,6 +286,85 @@
         {% endif %}
 
 
+
+        <!-- VEHICLE INFORMATION -->
+
+{% if vehicle.long_info %}
+
+<section class="content-section vehicle-info-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            GARAGE NOTES
+        </span>
+
+        <h2>
+            More about the machine.
+        </h2>
+
+    </div>
+
+
+    <div class="vehicle-info-layout">
+
+        <div class="vehicle-info-content">
+
+            <h3>
+                {{ vehicle.long_info.title }}
+            </h3>
+
+            {% for paragraph in vehicle.long_info.text.strip().split('\n\n') %}
+
+                {% if paragraph.strip() %}
+
+                <p>
+                    {{ paragraph.strip() }}
+                </p>
+
+                {% endif %}
+
+            {% endfor %}
+
+
+            <button
+                type="button"
+                class="text-speak-button"
+                data-speak="vehicle-info"
+            >
+                <span>🔊</span>
+                Read this section
+            </button>
+
+        </div>
+
+
+        <aside class="vehicle-info-side">
+
+            <span class="info-side-label">
+                MOTO GARAGE
+            </span>
+
+            <strong>
+                Built to be understood,
+                not just ridden.
+            </strong>
+
+            <span class="info-side-line"></span>
+
+            <span class="info-side-id">
+                MACHINE #{{ vehicle.id }}
+            </span>
+
+        </aside>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
         <!-- VIDEO -->
 
         
