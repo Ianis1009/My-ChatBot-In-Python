@@ -177,6 +177,32 @@ Its comfortable riding position and capable engine make it suitable for explorin
 
 The Canyon transforms travel into an experience rather than simply transportation.
 """
+    },
+
+    14: {
+        "title": "CFMOTO X10 Overland - Built For Exploration",
+        "text": """
+The X10 Overland expands the standard ATV concept by adding equipment specifically designed for adventure travel.
+
+Additional storage, protection and touring accessories transform it into a machine ready for remote destinations.
+
+Its powerful engine and four-wheel-drive system provide confidence in difficult conditions.
+
+The Overland is not just an ATV; it is a platform for exploration.
+"""
+    },
+
+    15: {
+        "title": "CFMOTO Z10 Turbo - Performance Beyond The Trail",
+        "text": """
+The CFMOTO Z10 Turbo is a side-by-side designed for riders seeking speed, power and capability.
+
+Its turbocharged engine delivers strong acceleration, while the advanced suspension system maintains control over rough terrain.
+
+Wide stance, modern design and performance-focused engineering make it suitable for both recreation and demanding offroad conditions.
+
+The Z10 Turbo represents a new generation of high-performance SXS machines.
+"""
     }
 
 }
