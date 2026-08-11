@@ -1,6 +1,8 @@
 import json
 import os
 
+from vehicle_info import VEHICLE_INFO # vehicle_info.py
+
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 VEHICLES_FILE = os.path.join(
@@ -32,16 +34,18 @@ def load_vehicles():
 def get_all_vehicles():
     return load_vehicles()
 
+def get_vehicle_by_id(vehicle_id):
 
-def get_vehicle_by_id(vehicle_id): #good
     vehicles = load_vehicles()
 
     for vehicle in vehicles:
+
         if vehicle["id"] == vehicle_id:
+
+            vehicle["long_info"] = get_vehicle_info(vehicle_id)
             return vehicle
 
     return None
-
 
 def get_vehicles_by_category(category):
     vehicles = load_vehicles()
@@ -66,3 +70,6 @@ def build_vehicle_message (vehicle):
     info_to_display +=  f"{vehicle['description']}"
 
     return info_to_display
+
+def get_vehicle_info (vehicle_id):
+    return VEHICLE_INFO.get(vehicle_id)
