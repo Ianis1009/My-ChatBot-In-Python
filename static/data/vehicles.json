@@ -10,10 +10,10 @@
         "drive": "2WD",
         "description": "A versatile adventure motorcycle built for long roads and demanding offroad terrain.",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 6,
+        "comfort": 9,
         "performance": 9,
-        "touring": 6
+        "touring": 10
     },
         "overview": "An adventure motorcycle designed for long-distance travel, mixed terrain and demanding journeys.",
         "specifications": {
@@ -81,9 +81,9 @@
         "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving.",
          "ratings": {
         "offroad": 10,
-        "comfort": 7,
-        "performance": 9,
-        "touring": 6
+        "comfort": 8,
+        "performance": 10,
+        "touring": 7
     },
         "overview": "A high-performance side-by-side focused on speed, suspension travel and aggressive offroad driving.",
         "specifications": {
@@ -116,7 +116,7 @@
         "description": "TODO",
          "ratings": {
         "offroad": 10,
-        "comfort": 7,
+        "comfort": 6,
         "performance": 9,
         "touring": 6
     },
@@ -150,10 +150,10 @@
         "drive": "1x3",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 4,
+        "comfort": 9,
         "performance": 9,
-        "touring": 6
+        "touring":9
     },
         "overview": "A three-wheel road machine combining motorcycle-inspired riding with a distinctive three-wheel configuration.",
         "specifications": {
@@ -188,10 +188,10 @@
         "drive": "1x3",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 3,
+        "comfort": 9,
         "performance": 9,
-        "touring": 6
+        "touring": 9
     },
         "overview": "A three-wheel machine focused on an accessible and customizable riding experience.",
         "specifications": {
@@ -224,9 +224,9 @@
         "description": "TODO",
          "ratings": {
         "offroad": 10,
-        "comfort": 7,
+        "comfort": 8,
         "performance": 9,
-        "touring": 6
+        "touring": 7
     },
         "overview": "A large-displacement ATV designed for demanding offroad use and exploration.",
         "specifications": {
@@ -258,10 +258,10 @@
         "drive": "2WD",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 4,
+        "comfort": 8,
         "performance": 9,
-        "touring": 6
+        "touring": 8
     },
         "overview": "An adventure motorcycle designed for road touring and exploration beyond the pavement.",
         "specifications": {
@@ -293,10 +293,10 @@
         "drive": "2WD",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
+        "offroad": 1,
         "comfort": 7,
-        "performance": 9,
-        "touring": 6
+        "performance": 10,
+        "touring": 8
     },
         "overview": "A lightweight motorcycle platform focused on an engaging riding experience and sporty character.",
         "specifications": {
@@ -328,7 +328,7 @@
         "drive": "4x4",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
+        "offroad": 9,
         "comfort": 7,
         "performance": 9,
         "touring": 6
@@ -363,10 +363,10 @@
         "drive": "2WD",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 3,
+        "comfort": 8,
         "performance": 9,
-        "touring": 6
+        "touring": 8
     },
         "overview": "A concept motorcycle showcasing a rally-inspired approach to adventure and performance.",
         "specifications": {
@@ -398,10 +398,10 @@
         "drive": "2WD",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 3,
+        "comfort": 6,
         "performance": 9,
-        "touring": 6
+        "touring": 8
     },
         "overview": "A performance-oriented motorcycle concept with an aggressive design and rally-inspired character.",
         "specifications": {
@@ -433,10 +433,10 @@
         "drive": "1x3",
         "description": "TODO",
          "ratings": {
-        "offroad": 10,
-        "comfort": 7,
+        "offroad": 4,
+        "comfort": 9,
         "performance": 9,
-        "touring": 6
+        "touring": 10
     },
         "overview": "An adventure-oriented three-wheel machine designed for exploring roads and longer journeys.",
         "specifications": {
@@ -470,9 +470,9 @@
         "description": "TODO",
          "ratings": {
         "offroad": 10,
-        "comfort": 7,
+        "comfort": 8,
         "performance": 9,
-        "touring": 6
+        "touring": 8
     },
         "overview": "An overland-oriented ATV designed for extended offroad exploration and difficult terrain.",
         "specifications": {
