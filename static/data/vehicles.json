@@ -257,7 +257,9 @@
         "gallery": [
             "images/moto/motorcycles/moto_cf2.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=ThWMPdSErd0"
+        ]
     },
     {
         "id": 10,
