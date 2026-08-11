@@ -288,77 +288,47 @@
 
         <!-- VIDEO -->
 
-        {% if vehicle.media %}
+        
+        <!-- VIDEO -->
 
-            {% if vehicle.media.youtube %}
+{% if vehicle.videos %}
 
-            <section class="content-section media-section">
+<section class="content-section media-section">
 
-                <div class="section-heading">
+    <div class="section-heading">
 
-                    <span class="section-label">
-                        WATCH
-                    </span>
+        <span class="section-label">
+            WATCH
+        </span>
 
-                    <h2>
-                        The machine in action.
-                    </h2>
+        <h2>
+            The machine in action.
+        </h2>
 
-                </div>
+    </div>
 
+    <div class="video-grid">
 
-                <div class="video-wrapper">
+        {% for video in vehicle.videos %}
 
-                    <iframe
-                        src="https://www.youtube.com/embed/{{ vehicle.media.youtube }}"
-                        title="{{ vehicle.name }} video"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                    ></iframe>
+        <div class="video-wrapper">
 
-                </div>
+            <iframe
+                src="{{ video | replace('watch?v=', 'embed/') }}"
+                title="{{ vehicle.name }} video {{ loop.index }}"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
 
-            </section>
+        </div>
 
-            {% elif vehicle.media.video %}
+        {% endfor %}
 
-            <section class="content-section media-section">
+    </div>
 
-                <div class="section-heading">
+</section>
 
-                    <span class="section-label">
-                        WATCH
-                    </span>
-
-                    <h2>
-                        The machine in action.
-                    </h2>
-
-                </div>
-
-
-                <div class="video-wrapper">
-
-                    <video
-                        controls
-                        preload="metadata"
-                    >
-                        <source
-                            src="{{ url_for(
-                                'static',
-                                filename=vehicle.media.video
-                            ) }}"
-                            type="video/mp4"
-                        >
-                    </video>
-
-                </div>
-
-            </section>
-
-            {% endif %}
-
-        {% endif %}
+{% endif %}
 
 
         <!-- HIGHLIGHTS -->
