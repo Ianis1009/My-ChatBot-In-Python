@@ -125,6 +125,32 @@ Aerodynamic styling and modern technology give the motorcycle a premium appearan
 
 The 450RS demonstrates that enjoyable performance does not require extreme power.
 """
+    },
+
+     10: {
+        "title": "CFMOTO C5 - Compact Offroad Capability",
+        "text": """
+The CFMOTO C5 is designed as a versatile ATV capable of handling a variety of tasks and terrains.
+
+Compact dimensions and manageable power make it suitable for both beginners and experienced riders.
+
+Its four-wheel-drive system ensures traction in challenging conditions, while the durable chassis provides reliability over time.
+
+The C5 is proof that compact machines can deliver impressive offroad performance.
+"""
+    },
+
+    11: {
+        "title": "CFMOTO MTX Concept - The Future Of Rally",
+        "text": """
+The CFMOTO MTX Concept showcases the company's vision for future adventure and rally motorcycles.
+
+Inspired by endurance races and long-distance exploration, the MTX combines aggressive styling with practical functionality.
+
+Its design emphasizes durability, rider comfort and performance in difficult environments.
+
+Concepts like the MTX represent more than ideas; they reveal the direction of future motorcycle development.
+"""
     }
 
 }
