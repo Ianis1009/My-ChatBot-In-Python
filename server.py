@@ -207,6 +207,27 @@ def chat():
     return jsonify({"response":response, "voice_enabled":voice.voice_enabled})
     
 
+
+@app.route("/api/moto/<int:vehicle_id>/info")
+def vehicle_info(vehicle_id):
+
+    vehicle = moto.get_vehicle_by_id(vehicle_id)
+
+    if vehicle is None:
+        return jsonify({
+            "success": False,
+            "error": "Vehicle not found."
+        }), 404
+
+    message = moto.build_vehicle_message(vehicle)
+
+    return jsonify({
+        "success": True,
+        "vehicle": vehicle["name"],
+        "message": message
+    })
+
+
 if __name__ == "__main__":
 
     voice.init_history()
