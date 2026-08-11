@@ -9,6 +9,12 @@
         "power": "100 HP",
         "drive": "2WD",
         "description": "A versatile adventure motorcycle built for long roads and demanding offroad terrain.",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "An adventure motorcycle designed for long-distance travel, mixed terrain and demanding journeys.",
         "specifications": {
             "engine": "1000cc",
@@ -38,6 +44,12 @@
         "power": "100 HP",
         "drive": "4x4",
         "description": "Designed for technical terrain and exploration.",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A powerful ATV designed to tackle technical terrain, mud and demanding offroad environments.",
         "specifications": {
             "engine": "1000cc",
@@ -67,6 +79,12 @@
         "power": "240 HP",
         "drive": "4x4",
         "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving.",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A high-performance side-by-side focused on speed, suspension travel and aggressive offroad driving.",
         "specifications": {
             "engine": "999cc",
@@ -96,6 +114,12 @@
         "power": "90 HP",
         "drive": "4x4",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "An iconic compact offroad vehicle with a lightweight construction and four-wheel-drive system.",
         "specifications": {
             "engine": "1300cc",
@@ -125,6 +149,12 @@
         "power": "140 HP",
         "drive": "1x3",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A three-wheel road machine combining motorcycle-inspired riding with a distinctive three-wheel configuration.",
         "specifications": {
             "engine": "1330cc",
@@ -157,6 +187,12 @@
         "power": "87 HP",
         "drive": "1x3",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A three-wheel machine focused on an accessible and customizable riding experience.",
         "specifications": {
             "engine": "900cc",
@@ -186,6 +222,12 @@
         "power": "115 HP",
         "drive": "4x4",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A large-displacement ATV designed for demanding offroad use and exploration.",
         "specifications": {
             "engine": "1000cc",
