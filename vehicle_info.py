@@ -99,6 +99,32 @@ Whether used for adventure, work or exploration, the X10 offers a balanced combi
 
 It is a machine created for riders who expect both performance and reliability from their offroad experiences.
 """
+    },
+
+    8: {
+        "title": "CFMOTO 1000MT - Adventure Without Limits",
+        "text": """
+The CFMOTO 1000MT is an adventure motorcycle built for long distances and diverse terrain.
+
+Its comfortable ergonomics, powerful engine and touring-focused equipment make it suitable for everything from highways to mountain roads.
+
+Designed with modern riders in mind, the 1000MT combines practicality, technology and adventure-ready capability.
+
+It is a machine that encourages exploration and rewards every kilometer traveled.
+"""
+    },
+
+    9: {
+        "title": "CFMOTO 450RS - Lightweight Sport Performance",
+        "text": """
+The CFMOTO 450RS offers an accessible and exciting entry into the world of sport motorcycles.
+
+Its lightweight chassis and responsive engine create a dynamic riding experience, ideal for both everyday riding and spirited weekend adventures.
+
+Aerodynamic styling and modern technology give the motorcycle a premium appearance while maintaining practicality.
+
+The 450RS demonstrates that enjoyable performance does not require extreme power.
+"""
     }
 
 }
