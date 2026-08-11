@@ -170,7 +170,9 @@
         "gallery": [
             "images/moto/others/ryker.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=EDgrC3D2niU"
+        ]
     },
     {
         "id": 7,
@@ -386,7 +388,9 @@
         "gallery": [
             "images/moto/atv/overland.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=brhC6B0ZO5g"
+        ]
     },
     {
         "id": 15,
@@ -413,6 +417,8 @@
         "gallery": [
             "images/moto/sxs/z10.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=pq-IIPewIiQ"
+        ]
     }
 ]
