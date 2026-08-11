@@ -287,6 +287,67 @@
 
 
 
+
+        {% if vehicle.ratings %}
+
+<section class="content-section ratings-section">
+
+    <div class="section-heading">
+
+        <span class="section-label">
+            MOTO GARAGE ASSESSMENT
+        </span>
+
+        <h2>
+            Machine profile
+        </h2>
+
+        <p>
+            A quick look at what this machine is built for.
+        </p>
+
+    </div>
+
+
+    <div class="ratings-card">
+
+        {% for key, value in vehicle.ratings.items() %}
+
+        <div class="rating-row">
+
+            <div class="rating-header">
+
+                <span class="rating-name">
+                    {{ key|replace('_', ' ')|title }}
+                </span>
+
+                <strong class="rating-value">
+                    {{ value }}/10
+                </strong>
+
+            </div>
+
+
+            <div class="rating-bar">
+
+                <div
+                    class="rating-fill"
+                    style="--rating: {{ value * 10 }}%;"
+                ></div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
         <!-- VEHICLE INFORMATION -->
 
 {% if vehicle.long_info %}
