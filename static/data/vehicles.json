@@ -226,7 +226,9 @@
         "gallery": [
             "images/moto/motorcycles/moto_cf1.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=VJs6gxaOwCA"
+        ]
     },
     {
         "id": 9,
@@ -280,7 +282,9 @@
         "gallery": [
             "images/moto/atv/cfmoto_520_gen4.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=a3T3bKLUTbE"
+        ]
     },
     {
         "id": 11,
@@ -334,7 +338,9 @@
         "gallery": [
             "images/moto/motorcycles/moto_cf3.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=nebpSB7FK3E"
+        ]
     },
     {
         "id": 13,
@@ -361,7 +367,10 @@
         "gallery": [
             "images/moto/others/canion.jpg"
         ],
-        "videos": []
+        "videos": [
+
+            "https://www.youtube.com/watch?v=bKd3NvZl164"
+        ]
     },
     {
         "id": 14,
