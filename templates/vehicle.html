@@ -331,53 +331,48 @@
 {% endif %}
 
 
-        <!-- HIGHLIGHTS -->
+       
+<!-- HIGHLIGHTS -->
 
-        {% if vehicle.highlights %}
+{% if vehicle.highlights %}
 
-        <section class="content-section highlights-section">
+<section class="content-section highlights-section">
 
-            <div class="section-heading">
+    <div class="section-heading">
 
-                <span class="section-label">
-                    WHY IT MATTERS
-                </span>
+        <span class="section-label">
+            WHY IT MATTERS
+        </span>
 
-                <h2>
-                    Built with purpose.
-                </h2>
+        <h2>
+            Built with purpose.
+        </h2>
 
-            </div>
+    </div>
 
+    <div class="highlights-grid">
 
-            <div class="highlights-grid">
+        {% for highlight in vehicle.highlights %}
 
-                {% for highlight in vehicle.highlights %}
+        <article class="highlight-card">
 
-                <article class="highlight-card">
+            <span class="highlight-number">
+                {{ "%02d"|format(loop.index) }}
+            </span>
 
-                    <span class="highlight-number">
-                        {{ "%02d"|format(loop.index) }}
-                    </span>
+            <h3>
+                {{ highlight }}
+            </h3>
 
-                    <h3>
-                        {{ highlight.title }}
-                    </h3>
+        </article>
 
-                    <p>
-                        {{ highlight.text }}
-                    </p>
+        {% endfor %}
 
-                </article>
+    </div>
 
-                {% endfor %}
+</section>
 
-            </div>
-
-        </section>
-
-        {% endif %}
-
+{% endif %}
 
         <!-- GALLERY -->
 
