@@ -527,7 +527,8 @@
     const vehicleVoiceData = {
         overview: {{ vehicle.overview|default("")|tojson }},
         story: {{ vehicle.story|default("")|tojson }},
-        specifications: {{ vehicle.specifications|default({})|tojson }}
+        specifications: {{ vehicle.specifications|default({})|tojson }},
+        vehicleInfo: {{ vehicle.long_info.text|default("")|tojson }}
     };
 
     const speakButton = document.getElementById("speak-overview");
