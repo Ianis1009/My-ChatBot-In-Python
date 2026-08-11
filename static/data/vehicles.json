@@ -215,6 +215,12 @@
         "power": "100 HP",
         "drive": "2WD",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "An adventure motorcycle designed for road touring and exploration beyond the pavement.",
         "specifications": {
             "engine": "1000cc",
@@ -244,6 +250,12 @@
         "power": "45 HP",
         "drive": "2WD",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A lightweight motorcycle platform focused on an engaging riding experience and sporty character.",
         "specifications": {
             "engine": "398cc",
@@ -273,6 +285,12 @@
         "power": "41 HP",
         "drive": "4x4",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A compact ATV designed for recreational riding, exploration and offroad use.",
         "specifications": {
             "engine": "500cc",
@@ -302,6 +320,12 @@
         "power": "63 HP",
         "drive": "2WD",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A concept motorcycle showcasing a rally-inspired approach to adventure and performance.",
         "specifications": {
             "engine": "698cc",
@@ -331,6 +355,12 @@
         "power": "60 HP",
         "drive": "2WD",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "A performance-oriented motorcycle concept with an aggressive design and rally-inspired character.",
         "specifications": {
             "engine": "497cc",
@@ -360,6 +390,12 @@
         "power": "92 HP",
         "drive": "1x3",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "An adventure-oriented three-wheel machine designed for exploring roads and longer journeys.",
         "specifications": {
             "engine": "1000cc",
@@ -390,6 +426,12 @@
         "power": "95 HP",
         "drive": "4x4",
         "description": "TODO",
+         "ratings": {
+        "offroad": 10,
+        "comfort": 7,
+        "performance": 9,
+        "touring": 6
+    },
         "overview": "An overland-oriented ATV designed for extended offroad exploration and difficult terrain.",
         "specifications": {
             "engine": "1000cc",
@@ -425,7 +467,7 @@
         "performance": 9,
         "touring": 6
     },
-    
+
         "overview": "A turbocharged side-by-side designed for high-performance offroad driving and demanding terrain.",
         "specifications": {
             "engine": "1000cc",
