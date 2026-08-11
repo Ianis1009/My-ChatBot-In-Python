@@ -151,6 +151,32 @@ Its design emphasizes durability, rider comfort and performance in difficult env
 
 Concepts like the MTX represent more than ideas; they reveal the direction of future motorcycle development.
 """
+    },
+
+    12: {
+        "title": "CFMOTO V4 SR-RR - High Performance Engineering",
+        "text": """
+The CFMOTO V4 SR-RR demonstrates advanced engineering and ambitious performance goals.
+
+With a compact V4 engine architecture and aggressive aerodynamics, it targets riders seeking precision and speed.
+
+Inspired by modern racing machines, the SR-RR combines power with technology to create an exciting riding experience.
+
+It symbolizes CFMOTO's evolution toward high-performance motorcycles.
+"""
+    },
+
+    13: {
+        "title": "Can-Am Canyon - Touring Reinvented",
+        "text": """
+The Can-Am Canyon blends long-distance touring comfort with the unique character of a three-wheel platform.
+
+Designed for adventure and travel, it provides stability, storage capacity and modern features for extended journeys.
+
+Its comfortable riding position and capable engine make it suitable for exploring roads without limits.
+
+The Canyon transforms travel into an experience rather than simply transportation.
+"""
     }
 
 }
