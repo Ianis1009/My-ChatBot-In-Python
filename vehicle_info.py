@@ -48,7 +48,33 @@ VEHICLE_INFO = {
         driving. Suspension travel, traction and stability become
         essential parts of the experience.
         """
+    },
+     4: {
+        "title": "Suzuki Samurai - Small, Lightweight, Capable",
+        "text": """
+The Suzuki Samurai became an icon in the world of compact offroad vehicles thanks to its simplicity, low weight and impressive capability on difficult terrain.
+
+Unlike modern SUVs, the Samurai relies on a traditional ladder frame, a solid axle setup and a true four-wheel-drive system, making it extremely effective on trails, mud and rocky sections.
+
+Its compact dimensions allow it to reach places larger vehicles cannot access, while its mechanical simplicity makes it easy to maintain and modify. Even today, enthusiasts around the world continue to build Samurai projects for adventure travel and serious offroad use.
+
+More than just a vehicle, the Samurai represents a philosophy: lightweight machines can often go further than powerful ones.
+"""
+    },
+
+    5: {
+        "title": "Can-Am Spyder - A Different Way To Ride",
+        "text": """
+The Can-Am Spyder introduced a completely different approach to road riding by combining motorcycle sensations with the stability of a three-wheel platform.
+
+Powered by a strong Rotax engine and equipped with modern electronic assistance systems, the Spyder offers confidence and comfort for long journeys while maintaining an engaging riding experience.
+
+Its unique front suspension design provides stability in corners, while the relaxed riding position makes touring enjoyable even over long distances.
+
+The Spyder is not simply a motorcycle with an extra wheel; it is a category of its own, designed for riders seeking comfort, technology and a unique presence on the road.
+"""
     }
+    
 }
 
 # TODO: 4-15
