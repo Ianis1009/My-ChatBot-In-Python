@@ -315,7 +315,9 @@
         "gallery": [
             "images/moto/motorcycles/cfmoto_concept.jpg"
         ],
-        "videos": []
+        "videos": [
+            "https://www.youtube.com/watch?v=73OK7h4neSQ"
+        ]
     },
     {
         "id": 12,
