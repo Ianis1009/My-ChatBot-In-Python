@@ -27,13 +27,25 @@ def history():
 def travel():
     return render_template("travel.html")
 
+
 @app.route("/blog")
 def blog_page():
-    pass #TODO
+
+    articles = blog.get_all_articles()
+
+    return render_template("blog.html",articles=articles)
+
 
 @app.route("/blog/<int:article_id>")
 def article_page(article_id):
-    pass #TODO
+
+    article = blog.get_article_by_id(article_id)
+
+    if article is None:
+        return "Article not found", 404
+
+    return render_template("article.html",article=article)
+
 @app.route("/moto")
 def moto_page():
     vehicles = moto.get_all_vehicles()
