@@ -71,9 +71,17 @@
 
             </nav>
 
-            <a href="{{ url_for('index') }}" class="back-button">
-                ← Assistant
-            </a>
+            <div class="navbar-actions">
+
+    <a href="{{ url_for('blog_page') }}" class="back-button blog-button">
+        ✦ Blog
+    </a>
+
+    <a href="{{ url_for('index') }}" class="back-button">
+        ← Assistant
+    </a>
+
+</div>
 
         </header>
 
