@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, send_from_directory
+
+import os
 
 import voice # voice.py
 import travel as travel_module # travel.py
@@ -17,6 +19,9 @@ def about():
 
     return render_template("about.html")
 
+@app.route("/history")
+def history():
+    return send_from_directory(os.path.join(app.root_path, "templates"),"history.txt",mimetype="text/plain")
 
 @app.route("/travel")
 def travel():
