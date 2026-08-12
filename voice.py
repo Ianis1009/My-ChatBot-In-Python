@@ -57,6 +57,12 @@ def save_message(author, message):
         else:
             f.write(f"{usr_icon} {author}: {message}\n")
 
+    with open("templates/history.txt", "a", encoding="utf-8") as f:
+        if author == "Bot":
+            f.write(f"{bot_icon} {author}: {message}\n")
+        else:
+            f.write(f"{usr_icon} {author}: {message}\n")
+
 
 
 def init_history():
@@ -68,6 +74,13 @@ def init_history():
     time = now.strftime("%H:%M:%S")
 
     with open("history.txt", "w", encoding="utf-8") as f:
+        initial_message = bot_icon + "  Bot started.\n"
+        f.write(initial_message)
+        f.write(f"{msg_icon}    New chat at: {date}, {time}\n")
+        f.write(bar * 60)
+        f.write("\n\n")
+
+    with open("templates/history.txt", "w", encoding="utf-8") as f:
         initial_message = bot_icon + "  Bot started.\n"
         f.write(initial_message)
         f.write(f"{msg_icon}    New chat at: {date}, {time}\n")
@@ -235,6 +248,10 @@ def main():
                 f.write(f"{msg_icon}    Chat ended at: {date}, {time}\n")
                 #TODO implement total time for the current chat
 
+            with open("templates/history.txt", "a") as f:
+                f.write(f"{bar * 60}\n")
+                f.write(f"{msg_icon}    Chat endet at: {date}, {time}\n")
+                
             break
 
         if command.lower() == "help":
