@@ -494,42 +494,6 @@
         ]
     },
     {
-        "id": 16,
-        "name": "SUZUKI KINGKUAD 750",
-        "category": "atv",
-        "type": "Offroad",
-        "image": "images/moto/sxs/z10.jpg",
-        "engine": "750cc",
-        "power": "63 HP",
-        "drive": "4x4",
-        "description": "TODO",
-        "ratings": {
-        "offroad": 19,
-        "comfort": 7,
-        "performance": 8,
-        "touring": 6
-    },
-
-        "overview": "A very powerfull 4x4 vehicle made by Suzuki",
-        "specifications": {
-            "engine": "1000cc",
-            "power": " 140 HP",
-            "drive": "4x4",
-            "type": "Offroad"
-        },
-        "highlights": [
-            "Turbocharged platform",
-            "High-performance offroad",
-            "4x4 drivetrain"
-        ],
-        "gallery": [
-            "images/moto/sxs/z10.jpg"
-        ],
-        "videos": [
-            "https://www.youtube.com/watch?v=pq-IIPewIiQ"
-        ]
-    }, 
-    {
 
         "id": 15,
         "name": "CFMOTO Z10 Turbo",
@@ -564,6 +528,41 @@
         ],
         "videos": [
             "https://www.youtube.com/watch?v=pq-IIPewIiQ"
+        ]
+    },
+    {
+        "id": 16,
+        "name": "SUZUKI KINGKUAD 750",
+        "category": "atv",
+        "type": "Offroad",
+        "image": "images/moto/sxs/z10.jpg",
+        "engine": "750cc",
+        "power": "63 HP",
+        "drive": "4x4",
+        "description": "TODO",
+        "ratings": {
+        "offroad": 19,
+        "comfort": 7,
+        "performance": 8,
+        "touring": 6
+    },
+
+        "overview": "A very powerfull 4x4 vehicle made by Suzuki",
+        "specifications": {
+            "engine": "750cc",
+            "power": "63 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "High-performance offroad",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/atv/suzuki_kingkuad.jpg"
+        ],
+        "videos": [
+            "https://www.youtube.com/watch?v=9JDjhj1aT4U"
         ]
     }
 
