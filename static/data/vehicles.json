@@ -148,6 +148,7 @@
         "engine": "1330cc",
         "power": "140 HP",
         "drive": "1x3",
+        "technical_pdf": "pdf/spyder.pdf",
         "description": "TODO",
          "ratings": {
         "offroad": 4,
