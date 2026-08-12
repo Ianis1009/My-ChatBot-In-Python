@@ -263,6 +263,15 @@
                 {% endif %}
 
 
+
+                {% for paragraph in article.content.split('\n\n') %}
+
+    <p>
+        {{ paragraph }}
+    </p>
+
+{% endfor %}
+
                 <!-- GALLERY -->
 
                 {% if article.gallery %}
