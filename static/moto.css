@@ -1531,3 +1531,157 @@ button {
 
     z-index: 0;
 }
+
+
+/* =========================================
+   NAVBAR ACTIONS
+========================================= */
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================================
+   NAVBAR BUTTONS
+========================================= */
+
+.back-button {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 17px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: rgba(255, 255, 255, 0.88);
+
+    text-decoration: none;
+
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+
+    overflow: hidden;
+}
+
+
+/* subtle light */
+
+.back-button::after {
+    content: "";
+
+    position: absolute;
+
+    left: 18%;
+    right: 18%;
+    bottom: -2px;
+
+    height: 2px;
+
+    border-radius: 999px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    opacity: 0;
+
+    filter: blur(3px);
+
+    transition:
+        opacity 0.25s ease,
+        left 0.25s ease,
+        right 0.25s ease;
+}
+
+
+/* hover */
+
+.back-button:hover {
+
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border-color: rgba(255, 255, 255, 0.25);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25),
+        0 0 18px rgba(255, 255, 255, 0.04);
+}
+
+
+.back-button:hover::after {
+
+    left: 10%;
+    right: 10%;
+
+    opacity: 1;
+}
+
+
+/* =========================================
+   BLOG BUTTON
+========================================= */
+
+.blog-button {
+
+    border-color: rgba(255, 255, 255, 0.16);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.07),
+            rgba(255, 255, 255, 0.025)
+        );
+}
+
+
+.blog-button:hover {
+
+    border-color: rgba(255, 255, 255, 0.32);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.28),
+        0 0 22px rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .navbar-actions {
+        gap: 7px;
+    }
+
+    .back-button {
+        min-height: 38px;
+        padding: 0 12px;
+
+        font-size: 0.75rem;
+    }
+
+}
