@@ -41,6 +41,7 @@
         "type": "Offroad",
         "image": "images/moto/atv/atv_adv.jpg",
         "engine": "1000cc",
+        "technical_pdf":"pdf/mud.pdf", 
         "power": "100 HP",
         "drive": "4x4",
         "description": "Designed for technical terrain and exploration.",
@@ -77,6 +78,7 @@
         "image": "images/moto/sxs/sxs_adv.jpg",
         "engine": "999cc",
         "power": "240 HP",
+        "technical_pdf":"pdf/maverick.pdf",
         "drive": "4x4",
         "description": "A high-performance side-by-side built for speed, suspension travel and serious offroad driving.",
          "ratings": {
@@ -187,6 +189,7 @@
         "engine": "900cc",
         "power": "87 HP",
         "drive": "1x3",
+        "technical_pdf": "pdf/ryker.pdf",
         "description": "TODO",
          "ratings": {
         "offroad": 3,
@@ -431,6 +434,7 @@
         "image": "images/moto/others/canion.jpg",
         "engine": "1000cc",
         "power": "92 HP",
+        "technical_pdf":"pdf/canyon.pdf",
         "drive": "1x3",
         "description": "TODO",
          "ratings": {
@@ -468,6 +472,7 @@
         "engine": "1000cc",
         "power": "95 HP",
         "drive": "4x4",
+        "technical_pdf":"pdf/x10_overland.pdf",
         "description": "TODO",
          "ratings": {
         "offroad": 10,
