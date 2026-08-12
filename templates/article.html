@@ -435,38 +435,124 @@
 
     <!-- FOOTER -->
 
-    <footer class="article-footer">
+  <footer class="article-footer">
 
-        <div class="footer-brand">
+    <div
+    class="article-footer-bg"
+    style="background-image: url('{{ url_for('static', filename='images/blog/footer.png') }}');"
+></div>
+    <div class="article-footer-overlay"></div>
 
-            <strong>
-                MOTO GARAGE
-            </strong>
+    <div class="article-footer-content">
 
-            <span>
-                Built for people who love machines.
-            </span>
+        <!-- TOP -->
+
+        <div class="article-footer-top">
+
+            <div class="footer-brand">
+
+                <span class="footer-eyebrow">
+                    MOTO GARAGE · JOURNAL
+                </span>
+
+                <strong>
+                    Built for people
+                    <span>who love machines.</span>
+                </strong>
+
+                <p>
+                    Stories, technical details and everything
+                    behind the machines we ride.
+                </p>
+
+            </div>
+
+
+            <div class="footer-machine-mark">
+                <span>MG</span>
+                <small>EST. 2026</small>
+            </div>
 
         </div>
 
 
-        <div class="footer-info">
+        <!-- NAVIGATION -->
 
-            <span>
-                Journal
-            </span>
+        <div class="article-footer-actions">
 
-            <span>
-                ·
-            </span>
+            <a
+                href="{{ url_for('blog_page') }}"
+                class="footer-action primary"
+            >
+                <span>←</span>
+                Back to Journal
+            </a>
 
-            <span>
-                © 2026
-            </span>
+
+            <a
+                href="{{ url_for('moto_page') }}"
+                class="footer-action"
+            >
+                Explore Garage
+                <span>→</span>
+            </a>
+
+
+            <a
+                href="{{ url_for('index') }}"
+                class="footer-action"
+            >
+                Assistant
+                <span>↗</span>
+            </a>
 
         </div>
 
-    </footer>
+
+        <!-- BOTTOM -->
+
+        <div class="article-footer-bottom">
+
+            <div class="footer-meta">
+
+                <span>
+                    MOTO GARAGE
+                </span>
+
+                <span class="footer-dot">
+                    ·
+                </span>
+
+                <span>
+                    Journal
+                </span>
+
+                <span class="footer-dot">
+                    ·
+                </span>
+
+                <span>
+                    © 2026
+                </span>
+
+            </div>
+
+
+            <div class="footer-status">
+
+                <span class="footer-status-dot"></span>
+
+                <span>
+                    Machines in motion
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
 
 </div>
 

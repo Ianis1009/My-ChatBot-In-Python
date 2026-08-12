@@ -1133,3 +1133,533 @@ button {
         line-height: 1.75;
     }
 }
+
+/* =========================================================
+   ARTICLE FOOTER
+   ========================================================= */
+
+.article-footer {
+    position: relative;
+    width: 100%;
+    min-height: 420px;
+
+    margin-top: 100px;
+
+    overflow: hidden;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    background: #070809;
+
+    isolation: isolate;
+}
+
+
+/* =========================================================
+   BACKGROUND IMAGE
+   ========================================================= */
+
+.article-footer-bg {
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        url("/static/images/blog/footer.jpg");
+
+    background-size: cover;
+    background-position: center 55%;
+
+    transform: scale(1.02);
+
+    z-index: -3;
+
+    transition:
+        transform 1.2s ease;
+}
+
+
+/* Subtle zoom */
+
+.article-footer:hover .article-footer-bg {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   OVERLAY
+   ========================================================= */
+
+.article-footer-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5, 7, 8, 0.94) 0%,
+            rgba(5, 7, 8, 0.78) 38%,
+            rgba(5, 7, 8, 0.42) 70%,
+            rgba(5, 7, 8, 0.68) 100%
+        );
+
+    z-index: -2;
+}
+
+
+/* Bottom fade */
+
+.article-footer::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 160px;
+
+    background:
+        linear-gradient(
+            to top,
+            rgba(5, 7, 8, 0.96),
+            transparent
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.article-footer-content {
+    position: relative;
+
+    width: min(1200px, calc(100% - 48px));
+
+    min-height: 420px;
+
+    margin: 0 auto;
+
+    padding: 70px 0 28px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+/* =========================================================
+   TOP
+   ========================================================= */
+
+.article-footer-top {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 40px;
+}
+
+
+/* =========================================================
+   BRAND
+   ========================================================= */
+
+.footer-brand {
+    max-width: 620px;
+}
+
+
+.footer-eyebrow {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 0.24em;
+
+    color: rgba(255, 255, 255, 0.58);
+}
+
+
+.footer-brand strong {
+    display: block;
+
+    font-size: clamp(34px, 5vw, 64px);
+
+    line-height: 0.98;
+
+    letter-spacing: -0.045em;
+
+    color: #ffffff;
+}
+
+
+.footer-brand strong span {
+    display: block;
+
+    color: rgba(255, 255, 255, 0.55);
+}
+
+
+.footer-brand p {
+    max-width: 480px;
+
+    margin-top: 24px;
+
+    font-size: 14px;
+    line-height: 1.7;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+
+/* =========================================================
+   MG MARK
+   ========================================================= */
+
+.footer-machine-mark {
+    display: flex;
+
+    flex-direction: column;
+    align-items: flex-end;
+
+    gap: 7px;
+
+    opacity: 0.85;
+}
+
+
+.footer-machine-mark span {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: 76px;
+    height: 76px;
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    border-radius: 50%;
+
+    font-size: 20px;
+    font-weight: 800;
+
+    letter-spacing: -0.05em;
+
+    color: #ffffff;
+
+    background:
+        rgba(255, 255, 255, 0.04);
+
+    backdrop-filter: blur(8px);
+
+    box-shadow:
+        0 0 35px rgba(255, 255, 255, 0.06);
+}
+
+
+.footer-machine-mark small {
+    font-size: 9px;
+
+    letter-spacing: 0.22em;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.article-footer-actions {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 45px;
+
+    flex-wrap: wrap;
+}
+
+
+.footer-action {
+    position: relative;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 12px;
+
+    background:
+        rgba(10, 12, 14, 0.48);
+
+    backdrop-filter: blur(12px);
+
+    color: rgba(255, 255, 255, 0.82);
+
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 0.04em;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        background 0.25s ease,
+        box-shadow 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.footer-action span {
+    font-size: 15px;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* Hover */
+
+.footer-action:hover {
+    transform: translateY(-3px);
+
+    color: #ffffff;
+
+    border-color:
+        rgba(255, 255, 255, 0.48);
+
+    background:
+        rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.35);
+}
+
+
+.footer-action:hover span {
+    transform: translateX(3px);
+}
+
+
+/* Primary */
+
+.footer-action.primary {
+    color: #08090a;
+
+    background: #ffffff;
+
+    border-color: #ffffff;
+}
+
+
+.footer-action.primary:hover {
+    color: #08090a;
+
+    background: #f1f1f1;
+
+    box-shadow:
+        0 10px 35px rgba(255, 255, 255, 0.15);
+}
+
+
+/* =========================================================
+   BOTTOM
+   ========================================================= */
+
+.article-footer-bottom {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-top: 24px;
+
+    border-top:
+        1px solid rgba(255, 255, 255, 0.11);
+}
+
+
+/* =========================================================
+   META
+   ========================================================= */
+
+.footer-meta {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.16em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.footer-meta span:first-child {
+    color: rgba(255, 255, 255, 0.8);
+
+    font-weight: 700;
+}
+
+
+.footer-dot {
+    color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.footer-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 10px;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+
+    color: rgba(255, 255, 255, 0.45);
+}
+
+
+.footer-status-dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 10px rgba(255, 255, 255, 0.7);
+
+    animation:
+        footerPulse 2s ease-in-out infinite;
+}
+
+
+@keyframes footerPulse {
+
+    0%,
+    100% {
+        opacity: 0.45;
+
+        transform: scale(0.9);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform: scale(1.15);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .article-footer {
+        min-height: auto;
+
+        margin-top: 70px;
+    }
+
+
+    .article-footer-content {
+        width: min(
+            100% - 32px,
+            1200px
+        );
+
+        min-height: auto;
+
+        padding:
+            55px 0 24px;
+    }
+
+
+    .article-footer-top {
+        flex-direction: column;
+    }
+
+
+    .footer-machine-mark {
+        align-items: flex-start;
+    }
+
+
+    .footer-brand strong {
+        font-size: 38px;
+    }
+
+
+    .article-footer-actions {
+        flex-direction: column;
+
+        align-items: stretch;
+
+        margin-top: 38px;
+    }
+
+
+    .footer-action {
+        width: 100%;
+    }
+
+
+    .article-footer-bottom {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 16px;
+
+        margin-top: 35px;
+    }
+
+
+    .footer-meta {
+        flex-wrap: wrap;
+    }
+
+}
