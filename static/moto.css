@@ -1413,9 +1413,6 @@ button {
     background: #050608;
 }
 
-/* =========================================================
-   HERO VIDEO
-   ========================================================= */
 
 .hero-video {
     position: absolute;
@@ -1433,7 +1430,6 @@ button {
 }
 
 
-/* DARK VIDEO LAYER */
 
 .hero-video-overlay {
     position: absolute;
@@ -1455,8 +1451,6 @@ button {
 }
 
 
-/* SUBTLE CONTRAST */
-
 .hero-video-overlay::after {
     content: "";
 
@@ -1472,9 +1466,6 @@ button {
             rgba(5, 6, 8, 0.85) 100%
         );
 }
-
-
-/* TRANSITION TO PAGE */
 
 .hero-gradient {
     position: absolute;
@@ -1497,8 +1488,6 @@ button {
     pointer-events: none;
 }
 
-
-/* CONTENT ABOVE EVERYTHING */
 
 .moto-hero .hero-content {
     position: relative;
@@ -1532,21 +1521,12 @@ button {
     z-index: 0;
 }
 
-
-/* =========================================
-   NAVBAR ACTIONS
-========================================= */
-
 .navbar-actions {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-
-/* =========================================
-   NAVBAR BUTTONS
-========================================= */
 
 .back-button {
     position: relative;
@@ -1583,9 +1563,6 @@ button {
 
     overflow: hidden;
 }
-
-
-/* subtle light */
 
 .back-button::after {
     content: "";
