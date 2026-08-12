@@ -541,7 +541,7 @@
         "drive": "4x4",
         "description": "TODO",
         "ratings": {
-        "offroad": 19,
+        "offroad": 9,
         "comfort": 7,
         "performance": 8,
         "touring": 6
@@ -564,7 +564,77 @@
         "videos": [
             "https://www.youtube.com/watch?v=9JDjhj1aT4U"
         ]
-    }
+    }, 
+    {
+        "id": 17,
+        "name": "POLARIS SCRAMBLER XP1000S",
+        "category": "atv",
+        "type": "Offroad",
+        "image": "images/moto/atv/polaris_scrambler.jpg",
+        "engine": "1000cc",
+        "power": "88 HP",
+        "drive": "4x4",
+        "description": "TODO",
+        "ratings": {
+        "offroad": 10,
+        "comfort": 8,
+        "performance": 9,
+        "touring": 6
+    },
 
+        "overview": "Polaris Scrambler XP 1000S",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "88 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "High-performance offroad",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/atv/polaris_scrambler.jpg"
+        ],
+        "videos": [
+            "https://www.youtube.com/watch?v=qOnbTHSVTho"
+        ]
+    }, 
+
+     {
+        "id": 18,
+        "name": "CAN AM OUTLANDER",
+        "category": "atv",
+        "type": "Offroad",
+        "image": "images/moto/atv/can_am_outlander.jpg",
+        "engine": "1000cc",
+        "power": "99 HP",
+        "drive": "4x4",
+        "description": "TODO",
+        "ratings": {
+        "offroad": 10,
+        "comfort": 8,
+        "performance": 9,
+        "touring": 6
+    },
+
+        "overview": "CAN AM OUTLANDER G3",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "98 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "High-performance offroad",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/atv/can_am_outlander.jpg"
+        ],
+        "videos": [
+            "https://www.youtube.com/watch?v=lVLMc_o_Ws0&t=13s"
+        ]
+    }
 
 ]
