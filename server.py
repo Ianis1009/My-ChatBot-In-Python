@@ -3,7 +3,7 @@ from flask import Flask, render_template, request, jsonify
 import voice # voice.py
 import travel as travel_module # travel.py
 import moto # moto.py
-
+import blog # blog.py
 
 app = Flask(__name__)
 
@@ -22,7 +22,13 @@ def about():
 def travel():
     return render_template("travel.html")
 
+@app.route("/blog")
+def blog_page():
+    pass #TODO
 
+@app.route("/blog/<int:article_id>")
+def article_page(article_id):
+    pass #TODO
 @app.route("/moto")
 def moto_page():
     vehicles = moto.get_all_vehicles()
