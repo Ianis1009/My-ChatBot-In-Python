@@ -249,9 +249,6 @@ body.travel-body .travel-header p {
 }
 
 
-/* =========================================================
-   TRAVEL CARD
-   ========================================================= */
 
 body.travel-body .travel-card {
     width: 100%;
@@ -282,10 +279,6 @@ body.travel-body .travel-card:hover {
         rgba(255, 255, 255, 0.12);
 }
 
-
-/* =========================================================
-   ROUTE FORM
-   ========================================================= */
 
 body.travel-body .route-form {
     width: 100%;
@@ -380,10 +373,6 @@ body.travel-body .route-arrow {
 }
 
 
-/* =========================================================
-   CALCULATE BUTTON
-   ========================================================= */
-
 body.travel-body .calculate-route-button {
     grid-column: 1 / -1;
 
@@ -443,9 +432,6 @@ body.travel-body .calculate-route-button:disabled {
 }
 
 
-/* =========================================================
-   RESULT
-   ========================================================= */
 
 body.travel-body .route-result {
     animation:
@@ -474,9 +460,6 @@ body.travel-body .route-result h3 {
 }
 
 
-/* =========================================================
-   ROUTE STATS
-   ========================================================= */
 
 body.travel-body .route-stats {
     display: grid;
@@ -547,9 +530,6 @@ body.travel-body .route-stat strong {
 }
 
 
-/* =========================================================
-   SPEAK BUTTON
-   ========================================================= */
 
 body.travel-body .speak-route-button {
     width: 100%;
@@ -598,9 +578,6 @@ body.travel-body .speak-route-button:disabled {
 }
 
 
-/* =========================================================
-   ERROR
-   ========================================================= */
 
 body.travel-body .route-error {
     width: 100%;
@@ -649,18 +626,11 @@ body.travel-body .route-error p {
 }
 
 
-/* =========================================================
-   HIDDEN
-   ========================================================= */
 
 body.travel-body .hidden {
     display: none !important;
 }
 
-
-/* =========================================================
-   FOOTER
-   ========================================================= */
 
 body.travel-body .travel-footer {
     width: min(1000px, calc(100% - 48px));
@@ -673,9 +643,6 @@ body.travel-body .travel-footer {
 }
 
 
-/* =========================================================
-   LIGHT MODE
-   ========================================================= */
 
 body.light-mode.travel-body {
     background: #f4f6fa;
@@ -776,10 +743,6 @@ body.light-mode.travel-body .speak-route-button:hover:not(:disabled) {
         rgba(0, 0, 0, 0.07);
 }
 
-
-/* =========================================================
-   RESPONSIVE
-   ========================================================= */
 
 @media (max-width: 850px) {
 
