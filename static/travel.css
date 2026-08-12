@@ -1,0 +1,968 @@
+
+
+/*TODO: REMAKE*/
+body.travel-body {
+    margin: 0;
+    min-height: 100vh;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    background: #0b1020;
+    color: #f5f7fb;
+
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+}
+
+
+/* =========================================================
+   APP
+   ========================================================= */
+
+body.travel-body .app {
+    width: 100%;
+    min-height: 100vh;
+
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   WORKSPACE
+   ========================================================= */
+
+body.travel-body .workspace {
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+
+    min-height: 0;
+
+    overflow: visible;
+}
+
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+body.travel-body .mode-sidebar {
+    flex-shrink: 0;
+
+    width: 96px;
+
+    padding: 24px 12px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 12px;
+
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+    background: rgba(10, 15, 30, 0.75);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+}
+
+
+body.travel-body .sidebar-label {
+    margin-bottom: 8px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   MODE BUTTONS
+   ========================================================= */
+
+body.travel-body .mode-button {
+    width: 70px;
+    min-height: 68px;
+
+    padding: 10px 6px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 6px;
+
+    border-radius: 16px;
+
+    color: rgba(255, 255, 255, 0.65);
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+body.travel-body .mode-button:hover {
+    transform: translateY(-2px);
+
+    background: rgba(255, 255, 255, 0.07);
+
+    color: #ffffff;
+}
+
+
+body.travel-body .mode-button.active {
+    background: rgba(255, 255, 255, 0.10);
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+        0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+
+body.travel-body .mode-icon {
+    font-size: 21px;
+
+    line-height: 1;
+}
+
+
+body.travel-body .mode-name {
+    font-size: 11px;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   TRAVEL CONTENT
+   ========================================================= */
+
+body.travel-body .chat-section {
+    flex: 1;
+
+    min-width: 0;
+
+    min-height: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: visible;
+}
+
+
+body.travel-body .travel-content {
+    flex: none;
+
+    width: min(1000px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 42px 0 80px;
+
+    box-sizing: border-box;
+
+    overflow: visible;
+
+    height: auto;
+}
+
+
+/* =========================================================
+   TRAVEL HEADER
+   ========================================================= */
+
+body.travel-body .travel-header {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+body.travel-body .travel-header-icon {
+    width: 64px;
+    height: 64px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+
+    font-size: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(100, 150, 255, 0.22),
+            rgba(150, 100, 255, 0.14)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.20);
+}
+
+
+body.travel-body .travel-label {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.45;
+}
+
+
+body.travel-body .travel-header h2 {
+    margin: 0;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+}
+
+
+body.travel-body .travel-header p {
+    margin: 7px 0 0;
+
+    font-size: 14px;
+
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   TRAVEL CARD
+   ========================================================= */
+
+body.travel-body .travel-card {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    padding: 26px;
+
+    margin-bottom: 20px;
+
+    border-radius: 24px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.18);
+
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+}
+
+
+body.travel-body .travel-card:hover {
+    border-color:
+        rgba(255, 255, 255, 0.12);
+}
+
+
+/* =========================================================
+   ROUTE FORM
+   ========================================================= */
+
+body.travel-body .route-form {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        auto
+        minmax(0, 1fr);
+
+    align-items: end;
+
+    gap: 16px;
+}
+
+
+body.travel-body .route-field {
+    min-width: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+body.travel-body .route-field label {
+    font-size: 12px;
+    font-weight: 600;
+
+    opacity: 0.6;
+}
+
+
+body.travel-body .route-field input {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    outline: none;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+body.travel-body .route-field input::placeholder {
+    color: rgba(255, 255, 255, 0.32);
+}
+
+
+body.travel-body .route-field input:focus {
+    border-color:
+        rgba(120, 160, 255, 0.65);
+
+    background:
+        rgba(0, 0, 0, 0.25);
+
+    box-shadow:
+        0 0 0 4px rgba(100, 140, 255, 0.10);
+}
+
+
+body.travel-body .route-arrow {
+    width: 42px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   CALCULATE BUTTON
+   ========================================================= */
+
+body.travel-body .calculate-route-button {
+    grid-column: 1 / -1;
+
+    width: 100%;
+
+    height: 50px;
+
+    margin-top: 8px;
+
+    border: none;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    background:
+        linear-gradient(
+            135deg,
+            #5b7cff,
+            #8066ff
+        );
+
+    box-shadow:
+        0 10px 25px rgba(80, 100, 255, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        opacity 0.2s ease;
+}
+
+
+body.travel-body .calculate-route-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 32px rgba(80, 100, 255, 0.30);
+}
+
+
+body.travel-body .calculate-route-button:active {
+    transform: translateY(0);
+}
+
+
+body.travel-body .calculate-route-button:disabled {
+    cursor: wait;
+
+    opacity: 0.55;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   RESULT
+   ========================================================= */
+
+body.travel-body .route-result {
+    animation:
+        travelResultIn 0.35s ease;
+}
+
+
+@keyframes travelResultIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+body.travel-body .route-result h3 {
+    margin: 0 0 22px;
+
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   ROUTE STATS
+   ========================================================= */
+
+body.travel-body .route-stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+body.travel-body .route-stat {
+    min-height: 90px;
+
+    padding: 18px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+
+    gap: 14px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.07);
+}
+
+
+body.travel-body .route-stat-icon {
+    width: 42px;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 13px;
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    font-size: 19px;
+}
+
+
+body.travel-body .route-stat span:not(.route-stat-icon) {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 11px;
+
+    opacity: 0.45;
+}
+
+
+body.travel-body .route-stat strong {
+    display: block;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   SPEAK BUTTON
+   ========================================================= */
+
+body.travel-body .speak-route-button {
+    width: 100%;
+
+    height: 48px;
+
+    margin-top: 18px;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius: 14px;
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+body.travel-body .speak-route-button:hover:not(:disabled) {
+    background:
+        rgba(255, 255, 255, 0.10);
+
+    border-color:
+        rgba(255, 255, 255, 0.16);
+
+    transform: translateY(-1px);
+}
+
+
+body.travel-body .speak-route-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   ERROR
+   ========================================================= */
+
+body.travel-body .route-error {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 18px 20px;
+
+    margin-bottom: 20px;
+
+    border-radius: 18px;
+
+    background:
+        rgba(255, 80, 80, 0.07);
+
+    border: 1px solid
+        rgba(255, 100, 100, 0.16);
+}
+
+
+body.travel-body .route-error .error-icon {
+    font-size: 20px;
+}
+
+
+body.travel-body .route-error strong {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 14px;
+}
+
+
+body.travel-body .route-error p {
+    margin: 0;
+
+    font-size: 13px;
+
+    opacity: 0.6;
+}
+
+
+/* =========================================================
+   HIDDEN
+   ========================================================= */
+
+body.travel-body .hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+body.travel-body .travel-footer {
+    width: min(1000px, calc(100% - 48px));
+
+    margin: 0 auto;
+
+    padding: 0 0 30px;
+
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+body.light-mode.travel-body {
+    background: #f4f6fa;
+
+    color: #151820;
+}
+
+
+body.light-mode.travel-body .mode-sidebar {
+    background:
+        rgba(255, 255, 255, 0.75);
+
+    border-right-color:
+        rgba(0, 0, 0, 0.08);
+}
+
+
+body.light-mode.travel-body .mode-button {
+    color:
+        rgba(0, 0, 0, 0.55);
+}
+
+
+body.light-mode.travel-body .mode-button:hover,
+body.light-mode.travel-body .mode-button.active {
+    background:
+        rgba(0, 0, 0, 0.06);
+
+    color: #111111;
+}
+
+
+body.light-mode.travel-body .travel-card {
+    background:
+        rgba(255, 255, 255, 0.78);
+
+    border-color:
+        rgba(0, 0, 0, 0.08);
+
+    box-shadow:
+        0 18px 50px rgba(0, 0, 0, 0.07);
+}
+
+
+body.light-mode.travel-body .route-field input {
+    background:
+        rgba(0, 0, 0, 0.035);
+
+    color: #111111;
+
+    border-color:
+        rgba(0, 0, 0, 0.10);
+}
+
+
+body.light-mode.travel-body .route-field input::placeholder {
+    color:
+        rgba(0, 0, 0, 0.35);
+}
+
+
+body.light-mode.travel-body .route-field input:focus {
+    background: #ffffff;
+
+    border-color:
+        rgba(80, 100, 220, 0.45);
+}
+
+
+body.light-mode.travel-body .route-stat {
+    background:
+        rgba(0, 0, 0, 0.025);
+
+    border-color:
+        rgba(0, 0, 0, 0.06);
+}
+
+
+body.light-mode.travel-body .route-stat-icon {
+    background:
+        rgba(0, 0, 0, 0.05);
+}
+
+
+body.light-mode.travel-body .speak-route-button {
+    color: #151820;
+
+    background:
+        rgba(0, 0, 0, 0.035);
+
+    border-color:
+        rgba(0, 0, 0, 0.09);
+}
+
+
+body.light-mode.travel-body .speak-route-button:hover:not(:disabled) {
+    background:
+        rgba(0, 0, 0, 0.07);
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    body.travel-body .mode-sidebar {
+        width: 78px;
+
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+
+    body.travel-body .mode-button {
+        width: 60px;
+    }
+
+
+    body.travel-body .travel-content {
+        width: min(100% - 32px, 760px);
+
+        padding-top: 30px;
+    }
+
+
+    body.travel-body .travel-footer {
+        width: min(100% - 32px, 760px);
+    }
+
+
+    body.travel-body .route-form {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    body.travel-body .route-arrow {
+        width: 100%;
+        height: 20px;
+
+        transform: rotate(90deg);
+    }
+
+
+    body.travel-body .calculate-route-button {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    body.travel-body .mode-sidebar {
+        width: 64px;
+
+        padding: 18px 6px;
+    }
+
+
+    body.travel-body .sidebar-label {
+        display: none;
+    }
+
+
+    body.travel-body .mode-button {
+        width: 52px;
+        min-height: 58px;
+
+        border-radius: 14px;
+    }
+
+
+    body.travel-body .mode-name {
+        display: none;
+    }
+
+
+    body.travel-body .mode-icon {
+        font-size: 20px;
+    }
+
+
+    body.travel-body .travel-content {
+        width: calc(100% - 24px);
+
+        padding-top: 24px;
+        padding-bottom: 50px;
+    }
+
+
+    body.travel-body .travel-footer {
+        width: calc(100% - 24px);
+    }
+
+
+    body.travel-body .travel-header {
+        align-items: flex-start;
+
+        gap: 12px;
+    }
+
+
+    body.travel-body .travel-header-icon {
+        width: 50px;
+        height: 50px;
+
+        border-radius: 15px;
+
+        font-size: 23px;
+    }
+
+
+    body.travel-body .travel-header h2 {
+        font-size: 23px;
+    }
+
+
+    body.travel-body .travel-header p {
+        font-size: 13px;
+    }
+
+
+    body.travel-body .travel-card {
+        padding: 18px;
+
+        border-radius: 19px;
+    }
+
+
+    body.travel-body .route-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    body.travel-body .workspace {
+        display: flex;
+    }
+
+
+    body.travel-body .mode-sidebar {
+        width: 58px;
+    }
+
+
+    body.travel-body .travel-content {
+        width: calc(100% - 16px);
+
+        padding-top: 20px;
+    }
+
+
+    body.travel-body .travel-footer {
+        width: calc(100% - 16px);
+    }
+
+
+    body.travel-body .travel-header-icon {
+        display: none;
+    }
+
+
+    body.travel-body .travel-header h2 {
+        font-size: 21px;
+    }
+}
