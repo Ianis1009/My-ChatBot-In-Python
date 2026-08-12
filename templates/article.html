@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="theme-color"
+        content="#070809"
+    >
+
+    <title>
+        {{ article.title }} · Moto Garage
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='article.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+<div class="article-page">
+
+
+    <!-- NAVBAR -->
+
+    <header class="article-navbar">
+
+        <a
+            href="{{ url_for('blog_page') }}"
+            class="article-nav-back"
+        >
+            <span>←</span>
+            Back to journal
+        </a>
+
+
+        <div class="article-brand">
+            MOTO GARAGE
+        </div>
+
+
+        <a
+            href="{{ url_for('moto_page') }}"
+            class="article-nav-garage"
+        >
+            Garage
+        </a>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ARTICLE HERO -->
+
+        <section class="article-hero">
+
+
+            {% if article.image %}
+
+            <div class="article-hero-image">
+
+                <img
+                    src="{{ url_for(
+                        'static',
+                        filename=article.image
+                    ) }}"
+                    alt="{{ article.title }}"
+                >
+
+                <div class="article-hero-overlay"></div>
+
+            </div>
+
+            {% endif %}
+
+
+            <div class="article-hero-content">
+
+                {% if article.category %}
+
+                <span class="article-category">
+                    {{ article.category }}
+                </span>
+
+                {% endif %}
+
+
+                <h1>
+                    {{ article.title }}
+                </h1>
+
+
+                {% if article.excerpt %}
+
+                <p>
+                    {{ article.excerpt }}
+                </p>
+
+                {% endif %}
+
+
+                <div class="article-meta">
+
+                    {% if article.date %}
+
+                    <span>
+                        {{ article.date }}
+                    </span>
+
+                    {% endif %}
+
+
+                    {% if article.author %}
+
+                    <span>
+                        ·
+                    </span>
+
+                    <span>
+                        {{ article.author }}
+                    </span>
+
+                    {% endif %}
+
+
+                    {% if article.read_time %}
+
+                    <span>
+                        ·
+                    </span>
+
+                    <span>
+                        {{ article.read_time }}
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTICLE BODY -->
+
+        <section class="article-body-layout">
+
+
+            <!-- MAIN CONTENT -->
+
+            <article class="article-body">
+
+
+                {% if article.introduction %}
+
+                <p class="article-introduction">
+                    {{ article.introduction }}
+                </p>
+
+                {% endif %}
+
+
+                <!-- PARAGRAPHS -->
+
+                {% if article.content %}
+
+                    {% for paragraph in article.content %}
+
+                        {% if paragraph.type == "paragraph" %}
+
+                        <p>
+                            {{ paragraph.text }}
+                        </p>
+
+
+                        {% elif paragraph.type == "heading" %}
+
+                        <h2>
+                            {{ paragraph.text }}
+                        </h2>
+
+
+                        {% elif paragraph.type == "quote" %}
+
+                        <blockquote>
+
+                            <p>
+                                {{ paragraph.text }}
+                            </p>
+
+                        </blockquote>
+
+
+                        {% elif paragraph.type == "image" %}
+
+                        <figure class="article-inline-image">
+
+                            <img
+                                src="{{ url_for(
+                                    'static',
+                                    filename=paragraph.src
+                                ) }}"
+                                alt="{{ paragraph.alt|default(article.title) }}"
+                                loading="lazy"
+                            >
+
+                            {% if paragraph.caption %}
+
+                            <figcaption>
+                                {{ paragraph.caption }}
+                            </figcaption>
+
+                            {% endif %}
+
+                        </figure>
+
+
+                        {% elif paragraph.type == "video" %}
+
+                        <div class="article-video">
+
+                            <iframe
+                                src="{{ paragraph.src }}"
+                                title="{{ paragraph.title|default(article.title) }}"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                allowfullscreen
+                            ></iframe>
+
+                        </div>
+
+
+                        {% elif paragraph.type == "list" %}
+
+                        <ul>
+
+                            {% for item in paragraph.items %}
+
+                            <li>
+                                {{ item }}
+                            </li>
+
+                            {% endfor %}
+
+                        </ul>
+
+                        {% endif %}
+
+                    {% endfor %}
+
+                {% endif %}
+
+
+                <!-- GALLERY -->
+
+                {% if article.gallery %}
+
+                <section class="article-gallery">
+
+                    <div class="section-label">
+                        GALLERY
+                    </div>
+
+                    <h2>
+                        Inside the story.
+                    </h2>
+
+
+                    <div class="article-gallery-grid">
+
+                        {% for image in article.gallery %}
+
+                        <figure>
+
+                            <img
+                                src="{{ url_for(
+                                    'static',
+                                    filename=image
+                                ) }}"
+                                alt="{{ article.title }} gallery image {{ loop.index }}"
+                                loading="lazy"
+                            >
+
+                        </figure>
+
+                        {% endfor %}
+
+                    </div>
+
+                </section>
+
+                {% endif %}
+
+
+                <!-- SPEAK -->
+
+                {% if article.speak_text %}
+
+                <div class="article-speak">
+
+                    <div>
+
+                        <span class="section-label">
+                            LISTEN
+                        </span>
+
+                        <h3>
+                            Hear the story.
+                        </h3>
+
+                        <p>
+                            Let Moto Garage read this article for you.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="speak-article"
+                        class="speak-button"
+                    >
+                        <span id="speak-icon">
+                            🔊
+                        </span>
+
+                        <span id="speak-text">
+                            Read article
+                        </span>
+                    </button>
+
+                </div>
+
+                {% endif %}
+
+            </article>
+
+
+            <!-- SIDEBAR -->
+
+            <aside class="article-sidebar">
+
+
+                <div class="article-side-card">
+
+                    <span class="section-label">
+                        MOTO GARAGE
+                    </span>
+
+                    <strong>
+                        Stories about machines,
+                        people and the road.
+                    </strong>
+
+                    <span class="side-line"></span>
+
+                    <span>
+                        ARTICLE #{{ article.id }}
+                    </span>
+
+                </div>
+
+
+                {% if article.vehicle_id %}
+
+                <div class="article-side-card vehicle-related">
+
+                    <span class="section-label">
+                        RELATED MACHINE
+                    </span>
+
+                    <strong>
+                        {{ article.vehicle_name|default("View machine") }}
+                    </strong>
+
+                    <a
+                        href="{{ url_for(
+                            'vehicle_page',
+                            vehicle_id=article.vehicle_id
+                        ) }}"
+                    >
+                        View machine →
+                    </a>
+
+                </div>
+
+                {% endif %}
+
+            </aside>
+
+        </section>
+
+
+        <!-- ARTICLE END -->
+
+        <section class="article-end">
+
+            <span>
+                MOTO GARAGE JOURNAL
+            </span>
+
+            <h2>
+                Keep exploring.
+            </h2>
+
+            <a href="{{ url_for('blog_page') }}">
+                More stories →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="article-footer">
+
+        <div class="footer-brand">
+
+            <strong>
+                MOTO GARAGE
+            </strong>
+
+            <span>
+                Built for people who love machines.
+            </span>
+
+        </div>
+
+
+        <div class="footer-info">
+
+            <span>
+                Journal
+            </span>
+
+            <span>
+                ·
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- SPEAK JAVASCRIPT -->
+
+{% if article.speak_text %}
+
+<script>
+
+    const articleText =
+        {{ article.speak_text|tojson }};
+
+
+    const speakButton =
+        document.getElementById("speak-article");
+
+    const speakIcon =
+        document.getElementById("speak-icon");
+
+    const speakText =
+        document.getElementById("speak-text");
+
+
+    if (speakButton) {
+
+        speakButton.addEventListener(
+            "click",
+            async function() {
+
+                speakButton.disabled = true;
+
+                speakButton.classList.add("speaking");
+
+                speakIcon.textContent = "◉";
+
+                speakText.textContent = "Speaking...";
+
+
+                try {
+
+                    const response = await fetch(
+                        "/api/moto/speak",
+                        {
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body: JSON.stringify({
+                                text: articleText
+                            })
+                        }
+                    );
+
+
+                    const data =
+                        await response.json();
+
+
+                    if (!data.success) {
+
+                        console.error(
+                            "Voice error:",
+                            data.error
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    console.error(
+                        "Could not speak:",
+                        error
+                    );
+
+                } finally {
+
+                    speakButton.disabled = false;
+
+                    speakButton.classList.remove(
+                        "speaking"
+                    );
+
+                    speakIcon.textContent = "🔊";
+
+                    speakText.textContent =
+                        "Read article";
+
+                }
+
+            }
+        );
+
+    }
+
+</script>
+
+{% endif %}
+
+
+</body>
+</html>
