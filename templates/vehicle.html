@@ -556,6 +556,73 @@
 
     </main>
 
+
+    {% if vehicle.technical_pdf %}
+
+<section class="technical-data-section">
+
+    <div class="technical-data-card">
+
+        <div class="technical-data-content">
+
+            <span class="section-label">
+                TECHNICAL DATA
+            </span>
+
+            <h2>
+                The complete technical sheet.
+            </h2>
+
+            <p>
+                Explore the official technical documentation
+                for the {{ vehicle.name }} and discover its
+                specifications, dimensions and technical details.
+            </p>
+
+            <a
+                href="{{ url_for('static', filename=vehicle.technical_pdf) }}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="technical-data-button"
+            >
+                <span class="technical-icon">↗</span>
+
+                <span>
+                    Open technical data
+                </span>
+
+                <span class="technical-arrow">
+                    →
+                </span>
+            </a>
+
+        </div>
+
+
+        <div class="technical-data-side">
+
+            <span class="technical-side-label">
+                DOCUMENT
+            </span>
+
+            <strong>
+                Technical
+                documentation
+            </strong>
+
+            <span class="technical-side-id">
+                MACHINE #{{ vehicle.id }}
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endif %}
+
+
 <section class="vehicle-end">
 
     <span>MOTO GARAGE</span>
