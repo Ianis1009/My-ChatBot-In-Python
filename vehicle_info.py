@@ -62,16 +62,20 @@ More than just a vehicle, the Samurai represents a philosophy: lightweight machi
 """
     },
 
-    5: {
-        "title": "Can-Am Spyder - A Different Way To Ride",
+  5: {
+        "title": "Can-Am Spyder — A different way to ride",
         "text": """
-The Can-Am Spyder introduced a completely different approach to road riding by combining motorcycle sensations with the stability of a three-wheel platform.
+The Can-Am Spyder takes the idea of a motorcycle and completely rethinks the way it connects with the road. Instead of the traditional two-wheel configuration, the Spyder uses two wheels at the front and one at the rear, creating a distinctive riding experience that sits somewhere between a motorcycle and a road-going three-wheel machine.
 
-Powered by a strong Rotax engine and equipped with modern electronic assistance systems, the Spyder offers confidence and comfort for long journeys while maintaining an engaging riding experience.
+One of the biggest characteristics of the Spyder is its stability. The two front wheels provide a wide contact area with the road, while the three-wheel configuration gives the machine a very different feeling through corners compared with a conventional motorcycle. It is designed primarily for paved roads, long-distance riding and riders who want something visually and mechanically different from a traditional bike.
 
-Its unique front suspension design provides stability in corners, while the relaxed riding position makes touring enjoyable even over long distances.
+The 1330cc engine gives the Spyder enough performance for both everyday riding and longer touring trips. Combined with its three-wheel platform, the machine is capable of covering significant distances while offering a level of road presence that is difficult to mistake for anything else on the road.
 
-The Spyder is not simply a motorcycle with an extra wheel; it is a category of its own, designed for riders seeking comfort, technology and a unique presence on the road.
+The Spyder is also strongly associated with touring. Its larger dimensions, comfortable riding position and ability to carry additional luggage make it suitable for riders who want to explore longer routes rather than simply ride short technical sections. It feels less like a lightweight motorcycle and more like a dedicated road machine built around the idea of travelling.
+
+What makes the Can-Am Spyder interesting is not necessarily raw performance. Its character comes from the completely different experience it offers. The rider does not simply sit on another motorcycle; they interact with a machine built around a different architecture, different proportions and a different approach to stability and road riding.
+
+For riders looking for something unconventional, comfortable and instantly recognizable, the Spyder occupies a category of its own. It combines the visual character of a motorcycle with the stability and presence of a three-wheel platform, creating a machine designed to be experienced rather than simply described by numbers.
 """
     },
 
