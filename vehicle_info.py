@@ -209,8 +209,63 @@ The Z10 Turbo represents a new generation of high-performance SXS machines.
 """
     }, 
 
-    16:{}, 
-    17:{},
-    18:{}
+    16: {
+        "title": "Suzuki KingQuad 750 — Built for the hard work",
+        "text": """
+The Suzuki KingQuad 750 is an ATV built around a simple idea: capability comes first. Its large-displacement engine, four-wheel-drive system and practical chassis make it a machine designed to handle everything from demanding trails to difficult terrain and utility work.
+
+At the heart of the KingQuad is its 750cc single-cylinder engine, delivering strong low and mid-range torque. Rather than being focused purely on outright speed, the machine is designed to provide predictable and usable power when the terrain becomes difficult. That character makes it particularly well suited to technical trails, steep sections and situations where controlled throttle response matters more than top speed.
+
+The four-wheel-drive system gives the KingQuad the ability to adapt to changing terrain. When traction becomes limited, the ATV can put its drivetrain to work and continue moving through surfaces where a conventional two-wheel-drive machine would quickly struggle. This makes it a particularly capable platform for mud, loose ground, climbs and rough trails.
+
+Another important part of the KingQuad experience is its balance between capability and practicality. It is not simply a recreational machine built for short bursts of excitement. The platform is equally at home exploring trails, working around difficult terrain or carrying equipment when the situation demands it.
+
+The suspension and chassis are designed with rough terrain in mind, allowing the KingQuad to absorb uneven surfaces while maintaining a stable and controlled riding position. This becomes especially important when riding for longer periods or when the terrain constantly changes underneath the machine.
+
+What makes the KingQuad 750 interesting is its versatility. It can be aggressive when the trail demands it, but it can also be used as a practical utility ATV. That combination has made the KingQuad name strongly associated with dependable four-wheel-drive performance and serious all-terrain capability.
+
+For Moto Garage, the KingQuad represents the classic idea of a capable ATV: strong engine, useful four-wheel drive, durable construction and enough versatility to make it useful both on the trail and away from it.
+"""
+    },
+
+    17: {
+        "title": "Polaris Scrambler XP 1000 S — Performance with attitude",
+        "text": """
+The Polaris Scrambler XP 1000 S is an ATV designed with a much stronger focus on performance. Where some utility ATVs prioritize practicality above everything else, the Scrambler combines serious all-terrain capability with a chassis and powertrain designed to make fast trail riding considerably more exciting.
+
+Its 1000-class engine gives the Scrambler the kind of power that immediately changes the character of the machine. Throttle response becomes an important part of the experience, allowing the rider to accelerate hard when the terrain opens up while still having enough control for tighter and more technical sections.
+
+One of the defining characteristics of the Scrambler XP 1000 S is its wide and performance-oriented chassis. The increased width contributes to stability when riding aggressively, particularly when cornering at higher speeds or dealing with uneven terrain. It gives the ATV a planted feeling that encourages the rider to explore what the chassis is capable of.
+
+The suspension package is another major part of the Scrambler's personality. Long-travel suspension and a performance-oriented setup allow the machine to deal with rough trails, jumps and rapidly changing surfaces while maintaining control. Instead of simply absorbing bumps, the chassis is designed to let the rider attack terrain with confidence.
+
+Four-wheel-drive capability gives the Scrambler another layer of versatility. When traction disappears, the drivetrain can help the machine maintain forward momentum and keep moving through difficult surfaces. This means the Scrambler does not sacrifice all-terrain capability in exchange for performance.
+
+What separates the Scrambler from a conventional utility ATV is its attitude. It feels like a machine built to be ridden aggressively, with enough power and chassis capability to turn an ordinary trail into something much more entertaining.
+
+At Moto Garage, the Scrambler XP 1000 S belongs in the performance section of the garage. It is an ATV for riders who want the practicality of four wheels and all-terrain capability, but who also want a machine that rewards aggressive riding and makes every trail feel like an opportunity to push harder.
+"""
+    },
+
+   18: {
+        "title": "Can-Am Outlander G3 — The new generation of ATV",
+        "text": """
+The Can-Am Outlander G3 represents a new generation of the Outlander platform, combining the familiar all-terrain philosophy of the Outlander family with a redesigned approach to chassis, ergonomics and overall rider experience.
+
+The Outlander has always been associated with strong performance and versatility, and the G3 generation continues that philosophy. It is designed to work across a wide range of environments, from recreational trail riding to demanding terrain where traction, ground clearance and controlled power become essential.
+
+One of the most important characteristics of the G3 platform is the way the machine connects the rider with the chassis. The riding position, controls and overall ergonomics are designed to make the ATV feel predictable and manageable, even when the terrain becomes rough. This becomes particularly valuable during longer rides where comfort and rider confidence are just as important as engine performance.
+
+The Outlander platform also places a strong emphasis on four-wheel-drive capability. When the surface becomes slippery, steep or unpredictable, the drivetrain becomes one of the machine's most important tools. Combined with suitable ground clearance and suspension travel, this allows the Outlander to tackle terrain that would quickly stop less capable machines.
+
+Another strength of the G3 is versatility. The same basic machine can be used for recreational riding, exploration, utility tasks and long trail rides. It does not need to be limited to one particular type of riding because its platform has been designed around a much broader range of conditions.
+
+The Outlander also carries a strong sense of purpose in its design. The aggressive bodywork communicates its performance character, while the proportions of the machine make it clear that this is an ATV designed to be taken seriously when the trail becomes difficult.
+
+What makes the Can-Am Outlander G3 interesting is the combination of modern design, all-terrain capability and everyday versatility. It is not built around a single perfect environment. Instead, it is designed to give the rider a machine capable of adapting when the environment changes.
+
+For Moto Garage, the Outlander G3 represents the modern performance ATV: powerful, capable, adaptable and designed to make difficult terrain feel considerably more accessible.
+"""
+    }
 
 }
