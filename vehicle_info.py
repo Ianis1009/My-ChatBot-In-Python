@@ -207,6 +207,10 @@ Wide stance, modern design and performance-focused engineering make it suitable 
 
 The Z10 Turbo represents a new generation of high-performance SXS machines.
 """
-    }
+    }, 
+
+    16:{}, 
+    17:{},
+    18:{}
 
 }
