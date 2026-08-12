@@ -1,0 +1,35 @@
+{
+    "id": 2,
+    "title": "Inside the CFMOTO X10",
+    "category": "Technical",
+    "date": "2026-08-12",
+    "author": "Moto Garage",
+
+    "cover": "images/moto/blog/x10-cover.jpg",
+
+    "excerpt": "A technical look at the machine.",
+
+    "content": [
+        {
+            "type": "text",
+            "value": "The X10 is built around..."
+        },
+
+        {
+            "type": "image",
+            "src": "images/moto/blog/x10-engine.jpg",
+            "caption": "Engine detail."
+        },
+
+        {
+            "type": "text",
+            "value": "The next important component..."
+        },
+
+        {
+            "type": "image",
+            "src": "images/moto/blog/x10-suspension.jpg",
+            "caption": "Suspension setup."
+        }
+    ]
+}
