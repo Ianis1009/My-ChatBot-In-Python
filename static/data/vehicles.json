@@ -64,7 +64,9 @@
             "4x4 drivetrain"
         ],
         "gallery": [
-            "images/moto/atv/atv_adv.jpg"
+            "images/moto/atv/atv_adv.jpg",
+            "images/blog/mud_blog.png",
+            "images/blog/mud_engine.jpg"
         ],
         "videos": [
             "https://www.youtube.com/watch?v=Y0l95DDraIM"
