@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070809">
+
+    <title>Moto Garage · Blog</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='blog.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="blog-page">
+
+    <!-- NAVBAR -->
+
+    <header class="blog-navbar">
+
+        <a
+            href="{{ url_for('moto_page') }}"
+            class="blog-nav-back"
+        >
+            <span>←</span>
+            Moto Garage
+        </a>
+
+        <div class="blog-brand">
+            <span class="brand-label">
+                MOTO GARAGE
+            </span>
+
+            <strong>
+                Journal
+            </strong>
+        </div>
+
+        <a
+            href="{{ url_for('index') }}"
+            class="blog-assistant"
+        >
+            Assistant
+        </a>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <main>
+
+        <section class="blog-hero">
+
+            <div class="blog-hero-content">
+
+                <span class="section-label">
+                    MOTO GARAGE JOURNAL
+                </span>
+
+                <h1>
+                    Stories behind
+                    <span>the machines.</span>
+                </h1>
+
+                <p>
+                    Stories, technical discoveries, riding experiences
+                    and everything that makes these machines worth
+                    understanding.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- BLOG CONTENT -->
+
+        <section class="blog-content">
+
+            <div class="blog-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        LATEST STORIES
+                    </span>
+
+                    <h2>
+                        From the garage.
+                    </h2>
+
+                </div>
+
+                <p>
+                    {{ articles|length }} published
+                    {% if articles|length == 1 %}
+                        story
+                    {% else %}
+                        stories
+                    {% endif %}
+                </p>
+
+            </div>
+
+
+            <!-- FILTERS -->
+
+            <div class="blog-filters">
+
+                <button
+                    type="button"
+                    class="blog-filter active"
+                    data-category="all"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="blog-filter"
+                    data-category="news"
+                >
+                    News
+                </button>
+
+                <button
+                    type="button"
+                    class="blog-filter"
+                    data-category="technical"
+                >
+                    Technical
+                </button>
+
+                <button
+                    type="button"
+                    class="blog-filter"
+                    data-category="stories"
+                >
+                    Stories
+                </button>
+
+                <button
+                    type="button"
+                    class="blog-filter"
+                    data-category="offroad"
+                >
+                    Offroad
+                </button>
+
+            </div>
+
+
+            <!-- ARTICLES -->
+
+            <section
+                class="article-grid"
+                id="article-grid"
+            >
+
+                {% if articles %}
+
+                    {% for article in articles %}
+
+                    <article
+                        class="article-card"
+                        data-category="{{ article.category }}"
+                    >
+
+                        <!-- IMAGE -->
+
+                        <div class="article-image">
+
+                            <img
+                                src="{{ url_for(
+                                    'static',
+                                    filename=article.image
+                                ) }}"
+                                alt="{{ article.title }}"
+                                loading="lazy"
+                            >
+
+                            <span class="article-category">
+                                {{ article.category }}
+                            </span>
+
+                        </div>
+
+
+                        <!-- CONTENT -->
+
+                        <div class="article-content">
+
+                            <div class="article-meta">
+
+                                {% if article.date %}
+                                <span>
+                                    {{ article.date }}
+                                </span>
+                                {% endif %}
+
+                                {% if article.read_time %}
+                                <span>
+                                    {{ article.read_time }}
+                                </span>
+                                {% endif %}
+
+                            </div>
+
+
+                            <h3>
+                                {{ article.title }}
+                            </h3>
+
+
+                            {% if article.excerpt %}
+
+                            <p>
+                                {{ article.excerpt }}
+                            </p>
+
+                            {% endif %}
+
+
+                            <div class="article-footer">
+
+                                <a
+                                    href="{{ url_for(
+                                        'article_page',
+                                        article_id=article.id
+                                    ) }}"
+                                    class="read-article"
+                                >
+                                    Read story
+                                    <span>→</span>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                    {% endfor %}
+
+                {% else %}
+
+                    <!-- EMPTY STATE -->
+
+                    <div class="blog-empty">
+
+                        <span>
+                            MOTO GARAGE JOURNAL
+                        </span>
+
+                        <h3>
+                            No stories yet.
+                        </h3>
+
+                        <p>
+                            The garage is quiet for now.
+                            New stories will appear here.
+                        </p>
+
+                    </div>
+
+                {% endif %}
+
+            </section>
+
+        </section>
+
+
+        <!-- END -->
+
+        <section class="blog-end">
+
+            <span>
+                MOTO GARAGE
+            </span>
+
+            <h2>
+                Machines are only half the story.
+            </h2>
+
+            <a href="{{ url_for('moto_page') }}">
+                Back to the garage →
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="blog-footer">
+
+        <div class="footer-brand">
+
+            <strong>
+                MOTO GARAGE
+            </strong>
+
+            <span>
+                Built for people who love machines.
+            </span>
+
+        </div>
+
+        <div class="footer-info">
+
+            <span>
+                Journal
+            </span>
+
+            <span>
+                ·
+            </span>
+
+            <span>
+                © 2026
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
+
+
+<!-- FILTER JAVASCRIPT -->
+
+<script>
+
+    const filterButtons =
+        document.querySelectorAll(".blog-filter");
+
+    const articleCards =
+        document.querySelectorAll(".article-card");
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const category =
+                button.dataset.category;
+
+
+            filterButtons.forEach(item => {
+                item.classList.remove("active");
+            });
+
+            button.classList.add("active");
+
+
+            articleCards.forEach(card => {
+
+                const cardCategory =
+                    card.dataset.category;
+
+
+                if (
+                    category === "all" ||
+                    cardCategory === category
+                ) {
+
+                    card.style.display = "";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>
