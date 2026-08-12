@@ -29,3 +29,16 @@ def get_articles_by_category(category):
     category = category.lower()
     return [article for article in articles if article["category"].lower() == category]
 
+
+def get_all_articles():
+    return load_articles()
+
+
+def get_article_by_id(article_id):
+    articles = load_articles()
+
+    for article in articles:
+        if article["id"] == article_id:
+            return article
+
+    return None
