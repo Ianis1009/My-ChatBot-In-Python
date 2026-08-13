@@ -231,32 +231,69 @@
 
         <!-- USER AREA -->
 
+        
         <div class="user-area">
 
-            <button
-                class="user-button"
-                type="button"
-                title="Account"
-            >
+    {% if session.get("user_id") %}
 
-                <span class="user-icon">👤</span>
+        <a
+            href="{{ url_for('profile') }}"
+            class="user-button"
+        >
 
-                <span class="user-info">
+            <span class="user-icon">
+                👤
+            </span>
 
-                    <span class="user-name">Guest</span>
+            <span class="user-info">
 
-                    <span class="user-status">
-                        Not logged in
-                    </span>
-
+                <span class="user-name">
+                    {{ session.get("username") }}
                 </span>
 
-            </button>
+                <span class="user-status">
+                    Logged in
+                </span>
 
-        </div>
+            </span>
 
-    </div>
+        </a>
 
+        <a
+            href="{{ url_for('logout') }}"
+            class="user-logout"
+        >
+            Logout
+        </a>
+
+    {% else %}
+
+        <a
+            href="{{ url_for('login') }}"
+            class="user-button"
+        >
+
+            <span class="user-icon">
+                👤
+            </span>
+
+            <span class="user-info">
+
+                <span class="user-name">
+                    Guest
+                </span>
+
+                <span class="user-status">
+                    Not logged in
+                </span>
+
+            </span>
+
+        </a>
+
+    {% endif %}
+
+</div>
 
     <!-- JAVASCRIPT -->
 
