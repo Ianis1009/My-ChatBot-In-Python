@@ -228,18 +228,13 @@
 
         </div>
 
+<!-- USER AREA -->
 
-        <!-- USER AREA -->
-
-        
-        <div class="user-area">
+<div class="user-area">
 
     {% if session.get("user_id") %}
 
-        <a
-            href="{{ url_for('profile') }}"
-            class="user-button"
-        >
+        <div class="user-button">
 
             <span class="user-icon">
                 👤
@@ -257,7 +252,7 @@
 
             </span>
 
-        </a>
+        </div>
 
         <a
             href="{{ url_for('logout') }}"
