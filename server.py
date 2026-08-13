@@ -93,6 +93,40 @@ def register():
 
     return render_template("register.html")
 
+
+@app.route("/login", methods=["GET", "POST"])
+def login():
+
+    if request.method == "POST":
+
+        email = request.form.get("email", "").strip().lower()
+        password = request.form.get("password", "")
+
+
+        user = User.query.filter_by(
+            email=email
+        ).first()
+
+
+        if user and user.check_password(password):
+
+            session["user_id"] = user.id
+            session["username"] = user.username
+
+            return redirect(url_for("index"))
+
+
+        flash(
+            "Invalid email or password.",
+            "error"
+        )
+
+        return redirect(url_for("login"))
+
+
+    return render_template("login.html")
+
+
 @app.route("/blog")
 def blog_page():
 
