@@ -1,1 +1,97 @@
-<!---TODO-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login · Moto Garage</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='auth.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <span class="auth-label">
+                MOTO GARAGE
+            </span>
+
+            <h1>
+                Welcome back.
+            </h1>
+
+            <p>
+                Sign in to continue.
+            </p>
+
+
+            {% with messages = get_flashed_messages(with_categories=true) %}
+
+                {% for category, message in messages %}
+
+                    <div class="flash {{ category }}">
+                        {{ message }}
+                    </div>
+
+                {% endfor %}
+
+            {% endwith %}
+
+
+            <form method="POST">
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    name="email"
+                    required
+                >
+
+
+                <label>
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    name="password"
+                    required
+                >
+
+
+                <button type="submit">
+                    Sign in →
+                </button>
+
+            </form>
+
+
+            <div class="auth-switch">
+
+                Don't have an account?
+
+                <a href="{{ url_for('register') }}">
+                    Create one
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+
+</html>
