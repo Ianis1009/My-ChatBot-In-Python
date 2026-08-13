@@ -143,6 +143,8 @@ def blog_page():
     return render_template("blog.html",articles=articles)
 
 
+
+
 @app.route("/blog/<int:article_id>")
 def article_page(article_id):
 
