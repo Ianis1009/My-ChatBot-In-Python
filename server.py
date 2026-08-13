@@ -7,6 +7,8 @@ import travel as travel_module # travel.py
 import moto # moto.py
 import blog # blog.py
 
+from models import db, User #models.py
+
 app = Flask(__name__)
 
 @app.route("/")
