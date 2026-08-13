@@ -21,7 +21,7 @@ db.init_app(app)
 
 with app.app_context():
     db.create_all()
-    
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -40,6 +40,58 @@ def history():
 def travel():
     return render_template("travel.html")
 
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+
+    if request.method == "POST":
+
+        username = request.form.get("username", "").strip()
+        email = request.form.get("email", "").strip().lower()
+        password = request.form.get("password", "")
+
+        if not username or not email or not password:
+
+            flash("Please fill in all fields.", "error")
+
+            return redirect(url_for("register"))
+
+
+        existing_user = User.query.filter(
+            (User.username == username) |
+            (User.email == email)
+        ).first()
+
+
+        if existing_user:
+
+            flash(
+                "Username or email already exists.",
+                "error"
+            )
+
+            return redirect(url_for("register"))
+
+
+        user = User(
+            username=username,
+            email=email
+        )
+
+        user.set_password(password)
+
+        db.session.add(user)
+        db.session.commit()
+
+
+        session["user_id"] = user.id
+        session["username"] = user.username
+
+
+        return redirect(url_for("index"))
+
+
+    return render_template("register.html")
 
 @app.route("/blog")
 def blog_page():
