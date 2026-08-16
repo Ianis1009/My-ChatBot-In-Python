@@ -840,10 +840,6 @@ img {
 
 }
 
-/* =========================================
-   ARTICLE CONTENT
-   ========================================= */
-
 .article-content-body {
     max-width: 900px;
     margin: 0 auto;
@@ -865,8 +861,6 @@ img {
 }
 
 
-/* subtle hover */
-
 .article-content-body:hover {
 
     border-color: rgba(255, 255, 255, 0.24);
@@ -878,10 +872,6 @@ img {
     transform: translateY(-2px);
 }
 
-
-/* =========================================
-   PARAGRAPHS
-   ========================================= */
 
 .article-content-body p {
 
@@ -906,10 +896,6 @@ img {
 }
 
 
-/* =========================================
-   FIRST PARAGRAPH
-   ========================================= */
-
 .article-content-body p:first-child {
 
     color: rgba(255, 255, 255, 0.92);
@@ -920,19 +906,10 @@ img {
 }
 
 
-/* =========================================
-   TEXT SELECTION
-   ========================================= */
-
 .article-content-body p::selection {
     background: rgba(255, 255, 255, 0.18);
     color: #ffffff;
 }
-
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
 
 @media (max-width: 768px) {
 
@@ -958,7 +935,6 @@ img {
         font-size: 1.08rem;
     }
 }
-
 
 @media (max-width: 480px) {
 
