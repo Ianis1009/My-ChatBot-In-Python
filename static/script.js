@@ -8,7 +8,6 @@ const ICONS = {
     USER: "\u{1F464}"
 
 };
-
 const form = document.getElementById("chat-form");
 const input = document.getElementById("message-input");
 const chat = document.getElementById("chat");
@@ -138,8 +137,6 @@ form.addEventListener(
 
 );
 
-/*DARK / LIGHT MODE*/
-
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-toggle-icon");
 const themeText = document.getElementById( "theme-toggle-text");
@@ -218,9 +215,6 @@ const voiceText =
     document.getElementById(
         "voice-toggle-text"
     );
-
-
-//swap interfaces
 
 function updateVoiceButton (enabled) {
 
