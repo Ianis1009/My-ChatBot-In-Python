@@ -439,7 +439,7 @@
         "power": "92 HP",
         "technical_pdf":"pdf/canyon.pdf",
         "drive": "1x3",
-        "description": "TODO",
+        "description": "Can-Am Canyon — built for adventure, ready for every road less traveled. Explore farther, ride harder, and make every journey unforgettable.",
          "ratings": {
         "offroad": 4,
         "comfort": 9,
@@ -512,7 +512,7 @@
         "engine": "1000cc",
         "power": " 140 HP",
         "drive": "4x4",
-        "description": "TODO",
+        "description": "Hit the throttle, conquer the terrain, and chase the adrenaline.",
         "ratings": {
         "offroad": 10,
         "comfort": 7,
