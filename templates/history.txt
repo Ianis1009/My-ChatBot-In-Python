@@ -1,4 +1,39 @@
 🤖  Bot started.
-💬    New chat at: 13/08/2026, 23:19:26
+💬    New chat at: 16/08/2026, 22:26:40
 ────────────────────────────────────────────────────────────
 
+👤 User: mute
+🤖 Bot: [INFO]: Voice output is muted.
+👤 User: hello
+🤖 Bot: Hello! How can I help you?
+👤 User: adsada
+🤖 Bot: [INFO]: Sorry, I don't recognize that command.
+👤 User: help
+🤖 Bot: Available commands:
+➤ Command: hello
+    Explication: Greets the assistant.
+➤ Command: how are you
+    Explication: Shows the assistant status.
+➤ Command: info <topic>
+    Explication: Searches Wikipedia for a topic.
+➤ Command: voices
+    Explication: Displays all available voices.
+➤ Command: set voice <1-2>
+    Explication: Changes the current voice.
+➤ Command: exit
+    Explication: Terminates the assistant.
+➤ Command: try voice <1-2>
+    Explication: Try voices.
+➤ Command: mute
+    Explication: The new state is Muted
+➤ Command: unmute
+    Explication: The new state is Voice
+➤ Command: time
+    Explication: Display current time.
+➤ Command: date
+    Explication: Display current date.
+➤ Command: joke
+    Explication: Dispaly a random joke.
+[INFO]: Use help <command> for more details.
+👤 User: joke
+🤖 Bot: Why do programmers prefer dark mode? Because light attracts bugs.
