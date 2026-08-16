@@ -30,9 +30,6 @@ const speakRouteButton =
 
 let currentVoiceMessage = "";
 
-
-/* MESSAGE MANAGEMENT */
-
 function hideMessages() {
 
     routeResult.classList.add("hidden");
@@ -47,9 +44,6 @@ function showError(message) {
     routeError.classList.remove("hidden");
 }
 
-
-/* 
-   DURATION FORMAT */
 
 function formatDuration(hours) {
 
@@ -73,8 +67,6 @@ function formatDuration(hours) {
 }
 
 
-/* 
-   CALCULATE ROUTE */
 
 if (routeForm) {
 
