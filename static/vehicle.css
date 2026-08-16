@@ -2029,8 +2029,6 @@ button {
 }
 
 
-/* INDIVIDUAL RATING */
-
 .rating-row {
     position: relative;
 
@@ -2383,7 +2381,6 @@ button {
     color: rgba(255, 255, 255, 0.4);
 }
 
-
 .technical-data-side strong {
     max-width: 170px;
 
@@ -2392,7 +2389,6 @@ button {
 
     color: #ffffff;
 }
-
 
 .technical-side-id {
     margin-top: 35px;
@@ -2403,9 +2399,6 @@ button {
 
     color: rgba(255, 255, 255, 0.32);
 }
-
-
-/* RESPONSIVE */
 
 @media (max-width: 800px) {
 
@@ -2446,8 +2439,6 @@ button {
     }
 
 }
-
-
 @media (max-width: 480px) {
 
     .technical-data-content {
