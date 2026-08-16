@@ -6358,7 +6358,6 @@ body.about-page {
 }
 
 
-/* subtle accent line */
 
 .history-button::before {
     content: "";
@@ -6388,7 +6387,6 @@ body.about-page {
 }
 
 
-/* hover */
 
 .history-button:hover {
     color: #ffffff;
@@ -6410,9 +6408,6 @@ body.about-page {
     transform: scaleX(1);
 }
 
-
-/* click */
-
 .history-button:active {
     transform: translateY(0);
 
@@ -6433,10 +6428,6 @@ body.about-page {
 }
 
 
-/* =========================================================
-   MOBILE
-   ========================================================= */
-
 @media (max-width: 700px) {
 
     .history-button {
@@ -6449,9 +6440,6 @@ body.about-page {
 
 }
 
-/* =========================================================
-   NAVBAR BUTTON — LIGHT LINE EFFECT
-   ========================================================= */
 
 .navbar-button {
     position: relative;
@@ -6597,14 +6585,10 @@ body.about-page {
     transform: translateY(-1px);
 }
 
-/* click */
-
 .user-logout:active {
     transform: translateY(0);
     box-shadow: none;
 }
-
-/* focus - accessibility */
 
 .user-logout:focus-visible {
     outline: none;
