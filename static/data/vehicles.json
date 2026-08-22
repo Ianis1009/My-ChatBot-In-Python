@@ -646,6 +646,44 @@
         "videos": [
             "https://www.youtube.com/watch?v=lVLMc_o_Ws0&t=13s"
         ]
+    },
+
+     {
+        "id": 18,
+        "name": "CAN AM OUTLANDER",
+        "category": "atv",
+        "type": "Offroad",
+        "image": "images/moto/atv/can_am_outlander.jpg",
+        "engine": "1000cc",
+        "power": "99 HP",
+        "drive": "4x4",
+        "description": "Can-Am Outlander — unstoppable power built to take on any terrain. Ride harder, explore farther, and let the adventure begin.",
+        "ratings": {
+        "offroad": 10,
+        "comfort": 8,
+        "performance": 9,
+        "touring": 6
+    },
+
+        "overview": "CAN AM OUTLANDER G3",
+        "specifications": {
+            "engine": "1000cc",
+            "power": "98 HP",
+            "drive": "4x4",
+            "type": "Offroad"
+        },
+        "highlights": [
+            "High-performance offroad",
+            "4x4 drivetrain"
+        ],
+        "gallery": [
+            "images/moto/atv/can_am_outlander.jpg"
+        ],
+        "videos": [
+            "https://www.youtube.com/watch?v=lVLMc_o_Ws0&t=13s"
+        ]
     }
+
+    
 
 ]
