@@ -720,14 +720,14 @@
     },
     {
         "id": 21,
-        "name": "TODO",
+        "name": "CAN AM 570",
         "category": "atv",
         "type": "Offroad",
-        "image": "images/moto/atv/can_am_outlander.jpg",
-        "engine": "1000cc",
-        "power": "99 HP",
+        "image": "images/moto/atv/can_am_570.jpg",
+        "engine": "570cc",
+        "power": "45 HP",
         "drive": "4x4",
-        "description": "Can-Am Outlander — unstoppable power built to take on any terrain. Ride harder, explore farther, and let the adventure begin.",
+        "description": "TODO",
         "ratings": {
         "offroad": 10,
         "comfort": 8,
@@ -735,10 +735,10 @@
         "touring": 6
     },
 
-        "overview": "CAN AM OUTLANDER G3",
+        "overview": "CAN AM 570",
         "specifications": {
-            "engine": "1000cc",
-            "power": "98 HP",
+            "engine": "570cc",
+            "power": "45 HP",
             "drive": "4x4",
             "type": "Offroad"
         },
