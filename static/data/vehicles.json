@@ -659,16 +659,16 @@
         "drive": "4x4",
         "description": "TODO",
         "ratings": {
-        "offroad": 10,
+        "offroad": 8,
         "comfort": 8,
         "performance": 9,
         "touring": 6
     },
 
-        "overview": "CAN AM OUTLANDER G3",
+        "overview": "POLARIS 570 EPS",
         "specifications": {
-            "engine": "1000cc",
-            "power": "98 HP",
+            "engine": "570cc",
+            "power": "46 HP",
             "drive": "4x4",
             "type": "Offroad"
         },
@@ -677,7 +677,7 @@
             "4x4 drivetrain"
         ],
         "gallery": [
-            "images/moto/atv/can_am_outlander.jpg"
+            "images/moto/atv/polaris_570.jpg"
         ],
         "videos": [
             "https://www.youtube.com/watch?v=lVLMc_o_Ws0&t=13s"
