@@ -98,10 +98,14 @@ def calculate_route(origin, destination):
         return {"success": False, "error": str(error)}
     
 
-def build_route_message (route):
-    # description for a calculated route
+
+def build_route_message(route):
+
     if not route.get("success"):
-        return route.get("error", "I could not calculate this route.")
+        return route.get(
+            "error",
+            "I could not calculate this route."
+        )
 
     origin = route["origin"]["name"]
     destination = route["destination"]["name"]
@@ -110,6 +114,7 @@ def build_route_message (route):
 
     hours = duration_minutes // 60
     minutes = duration_minutes % 60
+
     if hours > 0 and minutes > 0:
         duration_text = f"{hours} hours and {minutes} minutes"
     elif hours > 0:
@@ -125,6 +130,4 @@ def build_route_message (route):
         f"{duration_text}."
     )
 
-
     return message
-
