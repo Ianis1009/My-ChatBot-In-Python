@@ -106,10 +106,10 @@ def build_route_message (route):
     origin = route["origin"]["name"]
     destination = route["destination"]["name"]
     distance = route["distance_km"]
-    duration = route["duration_hours"]
+    duration_minutes = route["duration_minutes"]
 
-    hours = int(duration)
-    minutes = round((duration - hours) * 60)
+    hours = duration_minutes // 60
+    minutes = duration_minutes % 60
     if hours > 0 and minutes > 0:
         duration_text = f"{hours} hours and {minutes} minutes"
     elif hours > 0:
