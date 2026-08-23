@@ -62,9 +62,10 @@ def calculate_route(origin, destination):
     url = f"{OSRM_URL}/{coordinates}"
 
     params = {
-        "overview": "false",
-        "steps": "false"
-    }
+    "overview": "full",
+    "geometries": "geojson",
+    "steps": "false"
+}
 
     try:
         response = requests.get(url, params=params, headers=HEADERS, timeout=15)
