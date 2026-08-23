@@ -320,6 +320,36 @@ What makes the CFMOTO CFORCE X8 interesting is the way it combines large-engine 
 For Moto Garage, the CFORCE X8 represents the large-displacement ATV approach: strong, capable, versatile and designed to give the rider the performance and traction needed when the terrain becomes demanding.
 
 """
+},
+
+21: {
+    "title": "Can-Am Outlander 570 — Balanced power and all-terrain capability",
+
+    "text": """
+
+The Can-Am Outlander 570 is a versatile mid-displacement ATV that combines the responsive character of a Rotax engine with the traction, suspension and practicality required for demanding all-terrain riding.
+
+The Outlander 570 occupies an interesting position in the Can-Am range. It provides enough performance for challenging trails and recreational riding while maintaining the manageable character expected from a mid-displacement ATV. This balance makes it suitable for riders who want both useful performance and everyday versatility.
+
+One of the most important characteristics of the Outlander 570 is its Rotax V-twin engine. The 570-class powerplant provides strong torque across the usable rev range, giving the ATV a responsive feel when accelerating, climbing or navigating technical terrain. Rather than relying purely on high engine speed, the engine is designed to provide useful power where an off-road rider needs it most.
+
+The drivetrain is another important part of the Outlander platform. When the terrain becomes slippery, steep or uneven, four-wheel-drive capability allows the available engine torque to be used more effectively. Combined with appropriate ground clearance and suspension travel, this gives the Outlander 570 the ability to maintain traction across a wide variety of surfaces.
+
+Suspension performance also plays an important role in the overall character of the machine. An ATV needs to absorb rocks, roots, ruts and sudden changes in terrain while keeping the chassis stable and the wheels connected to the ground. The suspension therefore contributes not only to comfort, but also to steering response, traction and rider confidence.
+
+The Outlander 570 is also designed around versatility. It can be used for recreational trail riding, exploration, utility work and general off-road transportation. This makes the platform useful for riders who do not want an ATV limited to one particular type of environment.
+
+Another important aspect is the relationship between engine output and chassis behavior. A capable ATV is not simply a machine with a powerful engine. The drivetrain, suspension, brakes, tires and chassis all have to work together so that the available performance can be converted into controlled movement across the terrain.
+
+The riding position and controls are designed to give the rider a direct connection with the machine. This becomes especially important when conditions change quickly and precise throttle, steering and body control are required to maintain stability and traction.
+
+The design of the Outlander 570 reflects the philosophy behind the platform. Its proportions and bodywork give it a purposeful appearance, while the mechanical layout focuses on providing a practical combination of performance, durability and off-road capability.
+
+What makes the Can-Am Outlander 570 particularly interesting is its balance. It does not rely solely on displacement or outright power. Instead, the engine, drivetrain, suspension and chassis are combined into a package capable of adapting to different types of terrain and riding.
+
+For Moto Garage, the Outlander 570 represents a balanced approach to ATV engineering: responsive, capable, versatile and powerful enough to make demanding off-road terrain considerably more accessible.
+
+"""
 }
 
 }
