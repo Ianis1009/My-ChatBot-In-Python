@@ -1,3 +1,8 @@
+let routeMap = null;
+let routeLine = null;
+let originMarker = null;
+let destinationMarker = null;
+
 const routeForm = document.getElementById("route-form");
 
 const originInput = document.getElementById("origin");
@@ -29,6 +34,23 @@ const speakRouteButton =
 
 
 let currentVoiceMessage = "";
+
+
+function initializeRouteMap() {
+
+    if (routeMap) {
+        return;
+    }
+
+    routeMap = L.map("route-map");
+
+    L.tileLayer(
+        "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+        {
+            attribution: "&copy; OpenStreetMap contributors"
+        }
+    ).addTo(routeMap);
+}
 
 function hideMessages() {
 
