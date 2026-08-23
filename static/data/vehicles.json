@@ -650,14 +650,14 @@
 
      {
         "id": 19,
-        "name": "TODO",
+        "name": "POLARIS 570 EPS",
         "category": "atv",
         "type": "Offroad",
-        "image": "images/moto/atv/can_am_outlander.jpg",
-        "engine": "1000cc",
-        "power": "99 HP",
+        "image": "images/moto/atv/polaris_570.jpg",
+        "engine": "570cc",
+        "power": "46 HP",
         "drive": "4x4",
-        "description": "Can-Am Outlander — unstoppable power built to take on any terrain. Ride harder, explore farther, and let the adventure begin.",
+        "description": "TODO",
         "ratings": {
         "offroad": 10,
         "comfort": 8,
