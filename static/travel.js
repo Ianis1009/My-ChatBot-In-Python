@@ -52,6 +52,69 @@ function initializeRouteMap() {
     ).addTo(routeMap);
 }
 
+
+function displayRouteMap(route) {
+
+    const mapContainer = document.getElementById("route-map");
+
+    mapContainer.classList.remove("hidden");
+
+    initializeRouteMap();
+
+    if (routeLine) {
+        routeMap.removeLayer(routeLine);
+    }
+
+    if (originMarker) {
+        routeMap.removeLayer(originMarker);
+    }
+
+    if (destinationMarker) {
+        routeMap.removeLayer(destinationMarker);
+    }
+
+    const coordinates = route.geometry.coordinates;
+
+    const latLngs = coordinates.map(
+        coordinate => [
+            coordinate[1],
+            coordinate[0]
+        ]
+    );
+
+    routeLine = L.polyline(
+        latLngs,
+        {
+            weight: 5
+        }
+    ).addTo(routeMap);
+
+    originMarker = L.marker([
+        route.origin.latitude,
+        route.origin.longitude
+    ])
+    .addTo(routeMap)
+    .bindPopup(
+        `<strong>Departure</strong><br>${route.origin.name}`
+    );
+
+    destinationMarker = L.marker([
+        route.destination.latitude,
+        route.destination.longitude
+    ])
+    .addTo(routeMap)
+    .bindPopup(
+        `<strong>Destination</strong><br>${route.destination.name}`
+    );
+
+    routeMap.fitBounds(
+        routeLine.getBounds(),
+        {
+            padding: [40, 40]
+        }
+    );
+}
+
 function hideMessages() {
 
     routeResult.classList.add("hidden");
