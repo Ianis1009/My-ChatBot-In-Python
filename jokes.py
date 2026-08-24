@@ -37,7 +37,13 @@ JOKES = [
     "It needed some space.", 
 
     "What is a programmer's favorite hangout place?"
-    "The Foo Bar."
+    "The Foo Bar.",
+
+    "How do you comfort a JavaScript bug?"
+    "You console it.",
+
+    "What is a programmer's favorite object-oriented way to become wealthy?"
+    "Inheritance."
 
 
 ] #TODO add more
