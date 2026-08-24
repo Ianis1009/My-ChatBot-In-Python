@@ -46,8 +46,10 @@ JOKES = [
     "Inheritance.", 
 
     "Why did the Python snake cross the road?"
-    "To import road." 
+    "To import road.",
 
+    "Why do Python developers look so relaxed?"
+    "Because they don't have to deal with semicolons."
 
 
 ] #TODO add more
