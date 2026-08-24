@@ -32,13 +32,30 @@ const errorMessage =
 const speakRouteButton =
     document.getElementById("speak-route");
 
+const routeMapContainer =
+    document.getElementById("route-map");
+
 
 let currentVoiceMessage = "";
 
 
+/* =========================================================
+   ROUTE MAP
+   ========================================================= */
+
 function initializeRouteMap() {
 
     if (routeMap) {
+        return;
+    }
+
+    if (!routeMapContainer) {
+        console.error("Route map container was not found.");
+        return;
+    }
+
+    if (typeof L === "undefined") {
+        console.error("Leaflet is not loaded.");
         return;
     }
 
@@ -47,111 +64,251 @@ function initializeRouteMap() {
     L.tileLayer(
         "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
         {
-            attribution: "&copy; OpenStreetMap contributors"
+            attribution:
+                "&copy; OpenStreetMap contributors"
         }
     ).addTo(routeMap);
 }
 
 
+/* =========================================================
+   DISPLAY ROUTE ON MAP
+   ========================================================= */
+
 function displayRouteMap(route) {
 
-    const mapContainer = document.getElementById("route-map");
+    if (!routeMapContainer) {
+        return;
+    }
 
-    mapContainer.classList.remove("hidden");
+    if (!route.geometry ||
+        !route.geometry.coordinates ||
+        !route.geometry.coordinates.length) {
+
+        console.error(
+            "Route geometry is missing."
+        );
+
+        return;
+    }
+
+    routeMapContainer.classList.remove("hidden");
 
     initializeRouteMap();
 
-    if (routeLine) {
-        routeMap.removeLayer(routeLine);
+    if (!routeMap) {
+        return;
     }
+
+
+    /* Remove previous route */
+
+    if (routeLine) {
+
+        routeMap.removeLayer(
+            routeLine
+        );
+
+        routeLine = null;
+    }
+
+
+    /* Remove previous origin marker */
 
     if (originMarker) {
-        routeMap.removeLayer(originMarker);
+
+        routeMap.removeLayer(
+            originMarker
+        );
+
+        originMarker = null;
     }
+
+
+    /* Remove previous destination marker */
 
     if (destinationMarker) {
-        routeMap.removeLayer(destinationMarker);
+
+        routeMap.removeLayer(
+            destinationMarker
+        );
+
+        destinationMarker = null;
     }
 
-    const coordinates = route.geometry.coordinates;
 
-    const latLngs = coordinates.map(
-        coordinate => [
-            coordinate[1],
-            coordinate[0]
-        ]
-    );
+    /*
+       OSRM returns:
 
-    routeLine = L.polyline(
-        latLngs,
-        {
-            weight: 5
-        }
-    ).addTo(routeMap);
+       [longitude, latitude]
 
-    originMarker = L.marker([
-        route.origin.latitude,
-        route.origin.longitude
-    ])
-    .addTo(routeMap)
-    .bindPopup(
-        `<strong>Departure</strong><br>${route.origin.name}`
-    );
+       Leaflet expects:
 
-    destinationMarker = L.marker([
-        route.destination.latitude,
-        route.destination.longitude
-    ])
-    .addTo(routeMap)
-    .bindPopup(
-        `<strong>Destination</strong><br>${route.destination.name}`
-    );
+       [latitude, longitude]
+    */
+
+    const coordinates =
+        route.geometry.coordinates;
+
+
+    const latLngs =
+        coordinates.map(
+            function (coordinate) {
+
+                return [
+                    coordinate[1],
+                    coordinate[0]
+                ];
+            }
+        );
+
+
+    /* Draw route */
+
+    routeLine =
+        L.polyline(
+            latLngs,
+            {
+                weight: 5
+            }
+        ).addTo(routeMap);
+
+
+    /* Origin marker */
+
+    originMarker =
+        L.marker([
+            route.origin.latitude,
+            route.origin.longitude
+        ])
+        .addTo(routeMap)
+        .bindPopup(
+            `<strong>Departure</strong><br>${route.origin.name}`
+        );
+
+
+    /* Destination marker */
+
+    destinationMarker =
+        L.marker([
+            route.destination.latitude,
+            route.destination.longitude
+        ])
+        .addTo(routeMap)
+        .bindPopup(
+            `<strong>Destination</strong><br>${route.destination.name}`
+        );
+
+
+    /* Fit map to route */
 
     routeMap.fitBounds(
         routeLine.getBounds(),
         {
-            padding: [40, 40]
+            padding: [
+                40,
+                40
+            ]
         }
     );
+
+
+    /*
+       Leaflet sometimes calculates the map size
+       incorrectly when the container was hidden.
+    */
+
+    setTimeout(
+        function () {
+
+            routeMap.invalidateSize();
+
+        },
+        100
+    );
 }
+
+
+/* =========================================================
+   HIDE MESSAGES
+   ========================================================= */
 
 function hideMessages() {
 
-    routeResult.classList.add("hidden");
-    routeError.classList.add("hidden");
+    routeResult.classList.add(
+        "hidden"
+    );
+
+    routeError.classList.add(
+        "hidden"
+    );
 }
 
+
+/* =========================================================
+   ERROR
+   ========================================================= */
 
 function showError(message) {
 
-    errorMessage.textContent = message;
+    errorMessage.textContent =
+        message;
 
-    routeError.classList.remove("hidden");
+    routeError.classList.remove(
+        "hidden"
+    );
 }
 
 
-function formatDuration(hours) {
+/* =========================================================
+   FORMAT DURATION
+   ========================================================= */
 
-    const wholeHours = Math.floor(hours);
+function formatDuration(minutes) {
 
-    const minutes = Math.round(
-        (hours - wholeHours) * 60
-    );
+    const totalMinutes =
+        Math.round(
+            Number(minutes)
+        );
+
+    if (
+        Number.isNaN(totalMinutes) ||
+        totalMinutes < 0
+    ) {
+
+        return "—";
+    }
+
+
+    const wholeHours =
+        Math.floor(
+            totalMinutes / 60
+        );
+
+
+    const remainingMinutes =
+        totalMinutes % 60;
+
 
     if (wholeHours === 0) {
 
-        return `${minutes} min`;
+        return `${remainingMinutes} min`;
     }
 
-    if (minutes === 0) {
+
+    if (remainingMinutes === 0) {
 
         return `${wholeHours}h`;
     }
 
-    return `${wholeHours}h ${minutes}m`;
+
+    return `${wholeHours}h ${remainingMinutes}m`;
 }
 
 
+/* =========================================================
+   ROUTE FORM
+   ========================================================= */
 
 if (routeForm) {
 
@@ -162,6 +319,7 @@ if (routeForm) {
             event.preventDefault();
 
             hideMessages();
+
 
             const origin =
                 originInput.value.trim();
@@ -207,22 +365,23 @@ if (routeForm) {
 
             try {
 
-                const response = await fetch(
-                    "/api/travel/route",
-                    {
-                        method: "POST",
+                const response =
+                    await fetch(
+                        "/api/travel/route",
+                        {
+                            method: "POST",
 
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
 
-                        body: JSON.stringify({
-                            origin: origin,
-                            destination: destination
-                        })
-                    }
-                );
+                            body: JSON.stringify({
+                                origin: origin,
+                                destination: destination
+                            })
+                        }
+                    );
 
 
                 /* HTTP error */
@@ -274,9 +433,18 @@ if (routeForm) {
 
                 /* Duration */
 
+                /*
+                   New backend value:
+
+                   duration_minutes
+
+                   Example:
+                   151 → 2h 31m
+                */
+
                 durationElement.textContent =
                     formatDuration(
-                        Number(data.duration_hours)
+                        data.duration_minutes
                     );
 
 
@@ -284,6 +452,13 @@ if (routeForm) {
 
                 routeResult.classList.remove(
                     "hidden"
+                );
+
+
+                /* Display route on map */
+
+                displayRouteMap(
+                    data
                 );
 
 
@@ -311,7 +486,8 @@ if (routeForm) {
 
             finally {
 
-                calculateButton.disabled = false;
+                calculateButton.disabled =
+                    false;
 
                 calculateButton.textContent =
                     "Calculate route";
@@ -320,9 +496,6 @@ if (routeForm) {
     );
 }
 
-
-/* 
-   SPEAK ROUTE */
 
 if (speakRouteButton) {
 
@@ -340,7 +513,8 @@ if (speakRouteButton) {
 
             /* Loading state */
 
-            speakRouteButton.disabled = true;
+            speakRouteButton.disabled =
+                true;
 
             speakRouteButton.innerHTML =
                 "<span>🔊</span> Speaking...";
@@ -348,21 +522,22 @@ if (speakRouteButton) {
 
             try {
 
-                const response = await fetch(
-                    "/api/travel/speak",
-                    {
-                        method: "POST",
+                const response =
+                    await fetch(
+                        "/api/travel/speak",
+                        {
+                            method: "POST",
 
-                        headers: {
-                            "Content-Type":
-                                "application/json"
-                        },
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
 
-                        body: JSON.stringify({
-                            text: currentVoiceMessage
-                        })
-                    }
-                );
+                            body: JSON.stringify({
+                                text: currentVoiceMessage
+                            })
+                        }
+                    );
 
 
                 if (!response.ok) {
@@ -409,13 +584,12 @@ if (speakRouteButton) {
     );
 }
 
-/* =========================================================
-   INITIAL STATE
-   ========================================================= */
+
 
 hideMessages();
 
 if (speakRouteButton) {
 
-    speakRouteButton.disabled = true;
+    speakRouteButton.disabled =
+        true;
 }
