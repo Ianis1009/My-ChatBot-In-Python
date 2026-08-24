@@ -535,6 +535,7 @@ if (routeForm) {
                 );
 
                 displayCoordinates(data);
+                displayRoute3D(data);
 
 
                 /* Enable / disable speak button */
