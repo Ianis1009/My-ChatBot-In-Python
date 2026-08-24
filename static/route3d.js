@@ -541,16 +541,7 @@ function animateRoute3D() {
         ) * 80;
 
 
-    route3DCamera.lookAt(
-        0,
-        0,
-        0
-    );
-
-
-    /*
-       Animate endpoint slightly
-    */
+    route3DCamera.lookAt( 0,0, 0);
 
     if (route3DEndPoint) {
 
@@ -569,10 +560,6 @@ function animateRoute3D() {
     );
 }
 
-
-/* =========================================================
-   MOUSE CONTROLS
-   ========================================================= */
 
 function onRoute3DMouseDown(
     event
@@ -638,11 +625,6 @@ function onRoute3DMouseUp() {
     route3DDragging =
         false;
 }
-
-
-/* =========================================================
-   ZOOM
-   ========================================================= */
 
 function onRoute3DWheel(
     event
