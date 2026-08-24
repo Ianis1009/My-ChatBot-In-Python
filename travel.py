@@ -86,12 +86,13 @@ def calculate_route(origin, destination):
         duration_minutes = round(route["duration"] / 60)
 
         return {
-            "success": True,
-            "origin": origin_data,
-            "destination": destination_data,
-            "distance_km": round(distance_km, 1),
-            "duration_minutes": duration_minutes,
-            "geometry": route["geometry"]
+        "success": True,
+
+        "origin": origin_data,
+        "destination": destination_data,
+        "distance_km": round(distance_km, 1),
+        "duration_minutes": round(route["duration"] / 60),
+        "geometry": route["geometry"]
 }
 
     except requests.RequestException as error:
