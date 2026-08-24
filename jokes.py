@@ -34,7 +34,10 @@ JOKES = [
     "Now it won't stop sending me vacation ads.",
 
     "Why did the function break up with the variable? "
-    "It needed some space."
+    "It needed some space.", 
+
+    "What is a programmer's favorite hangout place?"
+    "The Foo Bar."
 
 
 ] #TODO add more
