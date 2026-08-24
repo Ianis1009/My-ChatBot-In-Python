@@ -25,13 +25,13 @@ JOKES = [
     "Algorithm and blues.",
 
     "Why did the developer go outside? "
-    "To check whether the cloud was working."
+    "To check whether the cloud was working.", 
 
     "Why did the computer get promoted? "
-    "It had outstanding processing skills."
+    "It had outstanding processing skills.",
 
     "I told my computer I needed a break. "
-    "Now it won't stop sending me vacation ads."
+    "Now it won't stop sending me vacation ads.",
 
     "Why did the function break up with the variable? "
     "It needed some space."
