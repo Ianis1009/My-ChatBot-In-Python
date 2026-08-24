@@ -673,11 +673,6 @@ function onRoute3DWheel(
         );
 }
 
-
-/* =========================================================
-   RESIZE
-   ========================================================= */
-
 function resizeRoute3D() {
 
     const container =
@@ -695,7 +690,6 @@ function resizeRoute3D() {
         return;
     }
 
-
     const width =
         container.clientWidth;
 
@@ -707,7 +701,6 @@ function resizeRoute3D() {
     if (!width || !height) {
         return;
     }
-
 
     route3DCamera.aspect =
         width / height;
