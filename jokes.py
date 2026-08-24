@@ -43,7 +43,11 @@ JOKES = [
     "You console it.",
 
     "What is a programmer's favorite object-oriented way to become wealthy?"
-    "Inheritance."
+    "Inheritance.", 
+
+    "Why did the Python snake cross the road?"
+    "To import road." 
+
 
 
 ] #TODO add more
