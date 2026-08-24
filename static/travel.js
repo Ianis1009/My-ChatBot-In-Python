@@ -39,6 +39,42 @@ const routeMapContainer =
 let currentVoiceMessage = "";
 
 
+
+const coordinatesCard =
+    document.getElementById("coordinates-card");
+
+const originCity =
+    document.getElementById("origin-city");
+
+const originLocation =
+    document.getElementById("origin-location");
+
+const originLatitude =
+    document.getElementById("origin-latitude");
+
+const originLongitude =
+    document.getElementById("origin-longitude");
+
+const originCoordinates =
+    document.getElementById("origin-coordinates");
+
+
+const destinationCity =
+    document.getElementById("destination-city");
+
+const destinationLocation =
+    document.getElementById("destination-location");
+
+const destinationLatitude =
+    document.getElementById("destination-latitude");
+
+const destinationLongitude =
+    document.getElementById("destination-longitude");
+
+const destinationCoordinates =
+    document.getElementById("destination-coordinates");
+
+    
 /* =========================================================
    ROUTE MAP
    ========================================================= */
