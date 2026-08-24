@@ -213,11 +213,6 @@ function displayRouteMap(route) {
     );
 
 
-    /*
-       Leaflet sometimes calculates the map size
-       incorrectly when the container was hidden.
-    */
-
     setTimeout(
         function () {
 
@@ -228,10 +223,6 @@ function displayRouteMap(route) {
     );
 }
 
-
-/* =========================================================
-   HIDE MESSAGES
-   ========================================================= */
 
 function hideMessages() {
 
@@ -245,10 +236,6 @@ function hideMessages() {
 }
 
 
-/* =========================================================
-   ERROR
-   ========================================================= */
-
 function showError(message) {
 
     errorMessage.textContent =
@@ -258,11 +245,6 @@ function showError(message) {
         "hidden"
     );
 }
-
-
-/* =========================================================
-   FORMAT DURATION
-   ========================================================= */
 
 function formatDuration(minutes) {
 
@@ -304,11 +286,6 @@ function formatDuration(minutes) {
 
     return `${wholeHours}h ${remainingMinutes}m`;
 }
-
-
-/* =========================================================
-   ROUTE FORM
-   ========================================================= */
 
 if (routeForm) {
 
