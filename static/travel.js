@@ -74,7 +74,7 @@ const destinationLongitude =
 const destinationCoordinates =
     document.getElementById("destination-coordinates");
 
-    
+
 /* =========================================================
    ROUTE MAP
    ========================================================= */
@@ -259,6 +259,66 @@ function displayRouteMap(route) {
     );
 }
 
+
+function displayCoordinates(route) {
+
+    if (!coordinatesCard) {
+        return;
+    }
+
+    const origin =
+        route.origin;
+
+    const destination =
+        route.destination;
+
+
+    /* ORIGIN */
+
+    originCity.textContent =
+        origin.name.split(",")[0];
+
+    originLocation.textContent =
+        origin.name;
+
+
+    originLatitude.textContent =
+        `${Number(origin.latitude).toFixed(4)}° N`;
+
+
+    originLongitude.textContent =
+        `${Number(origin.longitude).toFixed(4)}° E`;
+
+
+    originCoordinates.textContent =
+        `${Number(origin.latitude).toFixed(6)}, ${Number(origin.longitude).toFixed(6)}`;
+
+
+    /* DESTINATION */
+
+    destinationCity.textContent =
+        destination.name.split(",")[0];
+
+    destinationLocation.textContent =
+        destination.name;
+
+
+    destinationLatitude.textContent =
+        `${Number(destination.latitude).toFixed(4)}° N`;
+
+
+    destinationLongitude.textContent =
+        `${Number(destination.longitude).toFixed(4)}° E`;
+
+
+    destinationCoordinates.textContent =
+        `${Number(destination.latitude).toFixed(6)}, ${Number(destination.longitude).toFixed(6)}`;
+
+
+    coordinatesCard.classList.remove(
+        "hidden"
+    );
+}
 
 function hideMessages() {
 
@@ -473,6 +533,8 @@ if (routeForm) {
                 displayRouteMap(
                     data
                 );
+
+                displayCoordinates(data);
 
 
                 /* Enable / disable speak button */
