@@ -911,3 +911,359 @@ body.light-mode.travel-body .speak-route-button:hover:not(:disabled) {
     width: 100%;
     height: 100%;
 }
+
+
+/* =========================================================
+   GEOGRAPHIC DATA
+   ========================================================= */
+
+.coordinates-card {
+    margin-top: 22px;
+    padding: 26px;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.045),
+            rgba(255, 255, 255, 0.015)
+        );
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.18);
+}
+
+
+.coordinates-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+}
+
+
+.coordinates-label {
+    display: block;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    opacity: 0.55;
+}
+
+
+.coordinates-header h3 {
+    margin: 5px 0;
+
+    font-size: 22px;
+}
+
+
+.coordinates-header p {
+    margin: 0;
+
+    font-size: 13px;
+
+    opacity: 0.55;
+}
+
+
+.coordinates-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 14px;
+
+    font-size: 22px;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   GRID
+   ========================================================= */
+
+.coordinates-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        80px
+        minmax(0, 1fr);
+
+    align-items: stretch;
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.coordinate-panel {
+
+    padding: 22px;
+
+    border-radius: 15px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+.coordinate-panel-header {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.65;
+}
+
+
+.coordinate-dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+
+.origin-dot {
+    background: #4ade80;
+
+    box-shadow:
+        0 0 12px rgba(74, 222, 128, 0.65);
+}
+
+
+.destination-dot {
+    background: #60a5fa;
+
+    box-shadow:
+        0 0 12px rgba(96, 165, 250, 0.65);
+}
+
+
+.coordinate-panel h4 {
+
+    margin: 14px 0 3px;
+
+    font-size: 21px;
+}
+
+
+.coordinate-location {
+
+    display: block;
+
+    font-size: 12px;
+
+    opacity: 0.5;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   COORDINATE VALUES
+   ========================================================= */
+
+.coordinate-values {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+
+.coordinate-value {
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.12);
+}
+
+
+.coordinate-value span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1.3px;
+
+    opacity: 0.45;
+
+    margin-bottom: 6px;
+}
+
+
+.coordinate-value strong {
+
+    font-size: 14px;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+}
+
+
+/* =========================================================
+   COORDINATE CODE
+   ========================================================= */
+
+.coordinate-code {
+
+    margin-top: 14px;
+
+    padding-top: 14px;
+
+    border-top:
+        1px solid
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.coordinate-code span {
+
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 1.2px;
+
+    opacity: 0.4;
+
+    margin-bottom: 6px;
+}
+
+
+.coordinate-code code {
+
+    font-size: 12px;
+
+    font-family:
+        "SFMono-Regular",
+        Consolas,
+        monospace;
+
+    opacity: 0.75;
+}
+
+
+/* =========================================================
+   CONNECTION
+   ========================================================= */
+
+.coordinate-connection {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+}
+
+
+.coordinate-connection span {
+
+    font-size: 9px;
+
+    letter-spacing: 1.5px;
+
+    opacity: 0.35;
+
+    font-weight: 700;
+}
+
+
+.connection-line {
+
+    width: 1px;
+
+    flex: 1;
+
+    min-height: 20px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+        );
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .coordinates-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .coordinate-connection {
+
+        flex-direction: row;
+
+        height: 30px;
+    }
+
+
+    .connection-line {
+
+        width: auto;
+
+        height: 1px;
+
+        min-height: 0;
+    }
+}
